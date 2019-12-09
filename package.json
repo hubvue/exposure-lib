@@ -1,0 +1,20 @@
+{
+  "name": "vue-exposure",
+  "version": "1.0.0",
+  "description": "基于InterfaceObserver API，当绑定元素出现在视窗内的时候执行回调。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hubvue/vue-exposure.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hubvue/vue-exposure/issues"
+  },
+  "homepage": "https://github.com/hubvue/vue-exposure#readme"
+}
