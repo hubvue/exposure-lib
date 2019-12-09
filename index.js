@@ -91,10 +91,10 @@ const bind = (el, binding, vnode) => {
 const update = (el, binding, vnode) => {
   const { value } = binding
   const { context } = vnode
-  if (typeof value === 'function' && elTocb.has(el)) {
-    const oldCallback = elTocb.get(el)
+  if (typeof value === 'function' && elToMeta.has(el)) {
+    const oldCallback = elToMeta.get(el)
     if (oldCallback !== value) {
-      elTocb.set(el, {
+      elToMeta.set(el, {
         active: false,
         callback: value,
         context
