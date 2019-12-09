@@ -30,8 +30,8 @@ const createObserver = () => {
   if (window.IntersectionObserver && !observer) {
     observer = new window.IntersectionObserver((list, observer) => {
       for (let entry of list) {
-        const { isIntersecting, isVisible, target } = entry
-        if (isIntersecting && isVisible) {
+        const { isIntersecting, target } = entry
+        if (isIntersecting) {
           const config = elToMeta.get(target)
           if (!config.active) {
             typeof config.callback === 'function' && config.callback(target)
