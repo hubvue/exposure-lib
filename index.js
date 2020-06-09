@@ -38,8 +38,9 @@ const createObserver = () => {
               target,
               null
             )
+            console.log(visibility)
             if (
-              visibility === 'hiddle' ||
+              visibility === 'hidden' ||
               parseInt(height) === 0 ||
               parseInt(width) === 0
             ) {
