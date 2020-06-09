@@ -9,14 +9,14 @@ let observer
 const OBSERVER_OPTIONS = {
   delay: 100,
   threshold: [1],
-  trackVisibility: true
+  trackVisibility: true,
 }
 const elToMeta = new Map()
 /**
  * @description 重置监听元素的callback为可执行状态，目的是为了兼容keepAlive，将$resetExposure方法绑定到Vue实例上，
  *              在deactivated生命周期中执行。
  */
-const $resetExposure = function() {
+const $resetExposure = function () {
   for (let [key, config] of elToMeta.entries()) {
     if (config.context === this && config.active) {
       elToMeta.set(key, Object.assign(config, { active: false }))
@@ -34,6 +34,17 @@ const createObserver = () => {
         if (isIntersecting) {
           const config = elToMeta.get(target)
           if (!config.active) {
+            const { visibility, height, width } = window.getComputedStyle(
+              target,
+              null
+            )
+            if (
+              visibility === 'hiddle' ||
+              parseInt(height) === 0 ||
+              parseInt(width) === 0
+            ) {
+              break
+            }
             typeof config.callback === 'function' && config.callback(target)
             elToMeta.set(target, Object.assign(config, { active: true }))
           }
@@ -56,7 +67,7 @@ const addElToObserve = (el, callback, context) => {
     elToMeta.set(el, {
       active: false,
       callback,
-      context
+      context,
     })
     observer && observer.observe(el)
   }
@@ -97,7 +108,7 @@ const update = (el, binding, vnode) => {
       elToMeta.set(el, {
         active: false,
         callback: value,
-        context
+        context,
       })
     }
   }
@@ -107,7 +118,7 @@ const update = (el, binding, vnode) => {
  * @param {*} el
  * @description 当组件销毁的时候，去订阅
  */
-const unbind = el => {
+const unbind = (el) => {
   if (elToMeta.has(el) && observer) {
     elToMeta.delete(el)
     observer.unobserve(el)
@@ -120,23 +131,24 @@ const installDirective = () => {
   Vue.directive('exposure', {
     bind,
     update,
-    unbind
+    unbind,
   })
 }
 /**
  * @param {*} _Vue
  * @description Vue插件机制的install方法，创建观察者即注册指令
  */
-const install = _Vue => {
+const install = (_Vue, options = {}) => {
   if (!Vue) {
     Vue = _Vue
   }
+  Object.assign(OBSERVER_OPTIONS, options)
   createObserver()
   installDirective()
 }
 
 const Exposure = {
-  install
+  install,
 }
 
 export default Exposure
