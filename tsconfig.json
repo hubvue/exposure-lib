@@ -15,8 +15,8 @@
     "jsx": "preserve",
     "lib": ["esnext", "dom"],
     "declaration": true,
-    "declarationDir": "./types/"
-    // "types": ["jest", "puppeteer", "node"],
+    "declarationDir": "./types/",
+    "types": ["node"]
   },
   "include": ["src/index.ts"],
   "exclude": ["dist"]

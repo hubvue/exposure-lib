@@ -1,12 +1,12 @@
 import VueType, { VNode } from 'vue'
 import { DirectiveBinding } from 'vue/types/options'
+declare var __POLYFILL__: boolean
 /**
  * @name vueExposure
  * @author wangchong
  * @description 基于Vue指令的可见性执行方案，当绑定元素出现在视窗内的时候，执行。单例且可支持keepAlive
  * @example <div v-exposure="handler"></div> 注：handler必须是一个方法，且当前组件实例上不能有$resetExposure属性或方法。
  */
-
 interface ObserverOptionsType {
   delay?: number
   threshold?: number[]
@@ -27,6 +27,9 @@ interface DirectiveHandlerType {
 }
 interface InstallHandlerType {
   (_Vue: typeof VueType, options: ObserverOptionsType): void
+}
+if (__POLYFILL__) {
+  require('./polyfill.js')
 }
 
 let Vue: typeof VueType
