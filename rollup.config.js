@@ -39,10 +39,10 @@ function createConfig(packageName, output, plugins = []) {
 
 function createReplacePlugin(packageName) {
   const replacements = {
-    __PLOYFILL__: false,
+    __POLYFILL__: false,
   }
   if (packageName === 'exposure-polyfill') {
-    replacements.__PLOYFILL__ = true
+    replacements.__POLYFILL__ = true
   }
   return replace(replacements)
 }
