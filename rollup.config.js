@@ -35,11 +35,9 @@ function createConfig(packageName, output) {
 
 function createReplacePlugin(packageName) {
   const replacements = {
-    __POLYFILL__: false,
     __POLYFILL_PLACEHOLDER__: '',
   }
   if (packageName === 'exposure-polyfill') {
-    replacements.__POLYFILL__ = true
     replacements.__POLYFILL_PLACEHOLDER__ = 'import "./polyfill.js"'
   }
   return replace(replacements)
