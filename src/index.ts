@@ -1,6 +1,6 @@
 import VueType, { VNode } from 'vue'
 import { DirectiveBinding } from 'vue/types/options'
-declare var __POLYFILL__: boolean
+declare var __POLYFILL_PLACEHOLDER__: String
 /**
  * @name vueExposure
  * @author wangchong
@@ -28,9 +28,8 @@ interface DirectiveHandlerType {
 interface InstallHandlerType {
   (_Vue: typeof VueType, options: ObserverOptionsType): void
 }
-if (__POLYFILL__) {
-  require('./polyfill.js')
-}
+// 动态替换，引入polyfill
+__POLYFILL_PLACEHOLDER__
 
 let Vue: typeof VueType
 let observer: IntersectionObserver

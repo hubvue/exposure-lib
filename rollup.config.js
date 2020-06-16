@@ -1,8 +1,5 @@
 import { resolve } from 'path'
 import ts from 'rollup-plugin-typescript2'
-import json from '@rollup/plugin-json'
-import commonjs from '@rollup/plugin-commonjs'
-import nodeResolve from '@rollup/plugin-node-resolve'
 import replace from '@rollup/plugin-replace'
 
 const outputConfigs = {
@@ -15,14 +12,13 @@ const outputConfigs = {
     format: 'es',
   },
 }
-const plugins = [commonjs(), nodeResolve(), json()]
 const packageConfig = Object.keys(outputConfigs).map((packageName) => {
-  return createConfig(packageName, outputConfigs[packageName], plugins)
+  return createConfig(packageName, outputConfigs[packageName])
 })
 
 export default packageConfig
 
-function createConfig(packageName, output, plugins = []) {
+function createConfig(packageName, output) {
   if (!output) {
     console.log(require('chalk')).yellow(`invalid formatL: "${foramt}"`)
     process.exit(1)
@@ -33,16 +29,18 @@ function createConfig(packageName, output, plugins = []) {
   return {
     input: './src/index.ts',
     output,
-    plugins: [tsPlugin, createReplacePlugin(packageName), ...plugins],
+    plugins: [tsPlugin, createReplacePlugin(packageName)],
   }
 }
 
 function createReplacePlugin(packageName) {
   const replacements = {
     __POLYFILL__: false,
+    __POLYFILL_PLACEHOLDER__: '',
   }
   if (packageName === 'exposure-polyfill') {
     replacements.__POLYFILL__ = true
+    replacements.__POLYFILL_PLACEHOLDER__ = 'import "./polyfill.js"'
   }
   return replace(replacements)
 }
