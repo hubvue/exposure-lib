@@ -38,7 +38,7 @@ function createReplacePlugin(packageName) {
     __POLYFILL_PLACEHOLDER__: '',
   }
   if (packageName === 'exposure-polyfill') {
-    replacements.__POLYFILL_PLACEHOLDER__ = 'import "./polyfill.js"'
+    replacements.__POLYFILL_PLACEHOLDER__ = 'import "../polyfill/polyfill.js"'
   }
   return replace(replacements)
 }

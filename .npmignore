@@ -1,10 +1,12 @@
 src/
 node_modules/
 example/
+ployfill/
 .eslintignore
 .eslintrc
 .gitignore
 .prettierrc
+.travis.yml
 package-lock.json
 rollup.config.js
 tsconfig.json
