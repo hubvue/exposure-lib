@@ -53,7 +53,7 @@ const $resetExposure = function (this: VueType) {
     }
   }
 }
-// 声明合并
+// 声明合并$resetExposure函数
 declare module 'vue/types/vue' {
   interface Vue {
     $resetExposure: typeof $resetExposure
