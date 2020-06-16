@@ -4,12 +4,12 @@ import json from '@rollup/plugin-json'
 
 const outputConfigs = {
   exposure: {
-    file: `dist/exposure.js`,
-    format: `es`,
+    file: 'dist/exposure.js',
+    format: 'es',
   },
   'exposure-polyfill': {
-    file: `dist/exposure-polyfill.js`,
-    format: `es`,
+    file: 'dist/exposure-polyfill.js',
+    format: 'es',
   },
 }
 const packageConfig = Object.keys(outputConfigs).map((packageName) => {

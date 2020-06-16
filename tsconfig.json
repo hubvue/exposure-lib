@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "dist",
     "sourceMap": false,
     "target": "esnext",
@@ -16,7 +15,7 @@
     "jsx": "preserve",
     "lib": ["esnext", "dom"],
     "declaration": true,
-    "declarationDir": "./types"
+    "declarationDir": "./types/"
     // "types": ["jest", "puppeteer", "node"],
   },
   "include": ["src/index.ts"],

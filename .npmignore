@@ -1,0 +1,9 @@
+src/
+node_modules/
+.eslintignore
+.eslintrc
+.gitignore
+.prettierrc
+package-lock.json
+rollup.config.js
+tsconfig.json
