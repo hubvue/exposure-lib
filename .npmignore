@@ -1,5 +1,6 @@
 src/
 node_modules/
+example/
 .eslintignore
 .eslintrc
 .gitignore
