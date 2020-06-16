@@ -1,26 +1,59 @@
+import VueType, { VNode } from 'vue'
+import { DirectiveBinding } from 'vue/types/options'
 /**
  * @name vueExposure
  * @author wangchong
  * @description 基于Vue指令的可见性执行方案，当绑定元素出现在视窗内的时候，执行。单例且可支持keepAlive
  * @example <div v-exposure="handler"></div> 注：handler必须是一个方法，且当前组件实例上不能有$resetExposure属性或方法。
  */
-let Vue
-let observer
-const OBSERVER_OPTIONS = {
+
+interface ObserverOptionsType {
+  delay?: number
+  threshold?: number[]
+  trackVisibility?: boolean
+}
+
+interface ElToMetaType {
+  active: boolean
+  callback: (el?: Element) => void
+  context: VueType | undefined
+}
+interface addElToObserveType {
+  (el: Element, callback: (el?: Element) => void, context: VueType): void
+}
+
+interface DirectiveHandlerType {
+  (el: Element, binding: DirectiveBinding, vnode: VNode): void
+}
+interface InstallHandlerType {
+  (_Vue: typeof VueType, options: ObserverOptionsType): void
+}
+
+let Vue: typeof VueType
+let observer: IntersectionObserver
+
+const OBSERVER_OPTIONS: ObserverOptionsType = {
   delay: 100,
   threshold: [1],
   trackVisibility: true,
 }
-const elToMeta = new Map()
+
+const elToMeta: Map<Element, ElToMetaType> = new Map()
 /**
  * @description 重置监听元素的callback为可执行状态，目的是为了兼容keepAlive，将$resetExposure方法绑定到Vue实例上，
  *              在deactivated生命周期中执行。
  */
-const $resetExposure = function () {
+const $resetExposure = function (this: VueType) {
   for (let [key, config] of elToMeta.entries()) {
     if (config.context === this && config.active) {
       elToMeta.set(key, Object.assign(config, { active: false }))
     }
+  }
+}
+// 声明合并
+declare module 'vue/types/vue' {
+  interface Vue {
+    $resetExposure: typeof $resetExposure
   }
 }
 /**
@@ -33,12 +66,11 @@ const createObserver = () => {
         const { isIntersecting, target } = entry
         if (isIntersecting) {
           const config = elToMeta.get(target)
-          if (!config.active) {
+          if (config && !config.active) {
             const { visibility, height, width } = window.getComputedStyle(
               target,
               null
             )
-            console.log(visibility)
             if (
               visibility === 'hidden' ||
               parseInt(height) === 0 ||
@@ -63,7 +95,8 @@ const createObserver = () => {
  * @param {*} context 当前的组件实例
  * @description 监听元素，并将元素及Mate映射
  */
-const addElToObserve = (el, callback, context) => {
+
+const addElToObserve: addElToObserveType = (el, callback, context) => {
   if (!elToMeta.has(el)) {
     elToMeta.set(el, {
       active: false,
@@ -79,11 +112,15 @@ const addElToObserve = (el, callback, context) => {
  * @param {*} vnode
  * @description 自定义指定的bind方法， 将$resetExposure方法绑定到Vue实例上，执行addElToObserve监听el
  */
-const bind = (el, binding, vnode) => {
+
+const bind: DirectiveHandlerType = (el, binding, vnode) => {
   const { value } = binding
   const { context } = vnode
   if (typeof value !== 'function') {
     console.error('directive value is not function ')
+    return
+  }
+  if (!context) {
     return
   }
   if (context.$resetExposure && context.$resetExposure !== $resetExposure) {
@@ -100,11 +137,15 @@ const bind = (el, binding, vnode) => {
  * @param {*} vnode
  * @description 当组件触发更新的时候，更新el映射的信息
  */
-const update = (el, binding, vnode) => {
+const update: DirectiveHandlerType = (el, binding, vnode) => {
   const { value } = binding
   const { context } = vnode
   if (typeof value === 'function' && elToMeta.has(el)) {
-    const oldCallback = elToMeta.get(el)
+    const meta = elToMeta.get(el)
+    if (!meta) {
+      return
+    }
+    const oldCallback = meta.callback
     if (oldCallback !== value) {
       elToMeta.set(el, {
         active: false,
@@ -119,7 +160,7 @@ const update = (el, binding, vnode) => {
  * @param {*} el
  * @description 当组件销毁的时候，去订阅
  */
-const unbind = (el) => {
+const unbind: DirectiveHandlerType = (el) => {
   if (elToMeta.has(el) && observer) {
     elToMeta.delete(el)
     observer.unobserve(el)
@@ -139,7 +180,7 @@ const installDirective = () => {
  * @param {*} _Vue
  * @description Vue插件机制的install方法，创建观察者即注册指令
  */
-const install = (_Vue, options = {}) => {
+const install: InstallHandlerType = (_Vue, options = {}) => {
   if (!Vue) {
     Vue = _Vue
   }

@@ -4,7 +4,8 @@
   "description": "基于InterfaceObserver API，当绑定元素出现在视窗内的时候执行回调。",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/hubvue/vue-exposure/issues"
   },
-  "homepage": "https://github.com/hubvue/vue-exposure#readme"
+  "homepage": "https://github.com/hubvue/vue-exposure#readme",
+  "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
+    "chalk": "^4.1.0",
+    "rollup": "^2.16.1",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "typescript": "^3.9.5",
+    "vue": "^2.6.11"
+  }
 }
