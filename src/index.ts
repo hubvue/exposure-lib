@@ -45,10 +45,17 @@ const elToMeta: Map<Element, ElToMetaType> = new Map()
  * @description 重置监听元素的callback为可执行状态，目的是为了兼容keepAlive，将$resetExposure方法绑定到Vue实例上，
  *              在deactivated生命周期中执行。
  */
-const $resetExposure = function (this: VueType) {
-  for (let [key, config] of elToMeta.entries()) {
+const $resetExposure = function (this: VueType, el: Element) {
+  if (el && elToMeta.has(el)) {
+    const config = elToMeta.get(el) as ElToMetaType
     if (config.context === this && config.active) {
-      elToMeta.set(key, Object.assign(config, { active: false }))
+      elToMeta.set(el, Object.assign(config, { active: false }))
+    }
+  } else {
+    for (let [key, config] of elToMeta.entries()) {
+      if (config.context === this && config.active) {
+        elToMeta.set(key, Object.assign(config, { active: false }))
+      }
     }
   }
 }
