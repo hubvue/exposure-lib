@@ -1,7 +1,7 @@
 src/
 node_modules/
 example/
-ployfill/
+polyfill/
 .eslintignore
 .eslintrc
 .gitignore
