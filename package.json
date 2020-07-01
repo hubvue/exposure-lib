@@ -1,13 +1,14 @@
 {
   "name": "vue-exposure",
   "version": "0.0.4",
-  "description": "基于InterfaceObserver API，当绑定元素出现在视窗内的时候执行回调。",
+  "description": "基于InterfaceObserver API，当绑定元素出现在视窗内的时候执行回调",
   "main": "./dist/exposure.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add ./CHANGELOG.md",
-    "format": "eslint --fix . --ext .js,.ts"
+    "format": "eslint --fix . --ext .js,.ts",
+    "test": "echo test"
   },
   "repository": {
     "type": "git",
