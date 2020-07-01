@@ -1,5 +1,6 @@
 import VueType, { VNode } from 'vue'
 import { DirectiveBinding } from 'vue/types/options'
+const Logger = console
 declare var __POLYFILL_PLACEHOLDER__: String
 /**
  * @name vueExposure
@@ -95,7 +96,7 @@ const createObserver = () => {
     }, OBSERVER_OPTIONS)
   }
   if (!observer) {
-    console.warn('current browser does not support IntersectionObserve API')
+    Logger.warn('current browser does not support IntersectionObserve API')
   }
 }
 /**
@@ -126,14 +127,14 @@ const bind: DirectiveHandlerType = (el, binding, vnode) => {
   const { value } = binding
   const { context } = vnode
   if (typeof value !== 'function') {
-    console.error('directive value is not function ')
+    Logger.error('directive value is not function ')
     return
   }
   if (!context) {
     return
   }
   if (context.$resetExposure && context.$resetExposure !== $resetExposure) {
-    console.error('context bind $resetExposure propertyKey')
+    Logger.error('context bind $resetExposure propertyKey')
     return
   }
   !context.$resetExposure && (context.$resetExposure = $resetExposure)
