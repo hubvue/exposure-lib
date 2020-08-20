@@ -2,15 +2,15 @@
   <div class="exposure-test">
     <div
       class="top"
-      v-exposure:[0.1]="handlerTop"
+      v-exposure="handlerTop"
     ></div>
     <div
       class="middle"
-      v-exposure:aaa="handlerMiddle"
+      v-exposure="handlerMiddle"
     ></div>
     <div
       class="bottom"
-      v-exposure:[a]="handlerBottom"
+      v-exposure="handlerBottom"
     ></div>
   </div>
 </template>
@@ -18,11 +18,6 @@
 <script>
 export default {
   name: 'BaseExposure',
-  data() {
-    return {
-      a: 0.7,
-    }
-  },
   deactivated() {
     this.$resetExposure()
   },

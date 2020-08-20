@@ -5,9 +5,7 @@ import Exposure from '../../dist/exposure'
 import router from './router/router'
 Vue.config.productionTip = false
 
-Vue.use(Exposure, {
-  threshold: [0.5],
-})
+Vue.use(Exposure)
 
 new Vue({
   router,
