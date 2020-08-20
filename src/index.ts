@@ -147,24 +147,24 @@ const bind: DirectiveHandlerType = (el, binding, vnode) => {
  * @param {*} vnode
  * @description 当组件触发更新的时候，更新el映射的信息
  */
-const update: DirectiveHandlerType = (el, binding, vnode) => {
-  const { value } = binding
-  const { context } = vnode
-  if (typeof value === 'function' && elToMeta.has(el)) {
-    const meta = elToMeta.get(el)
-    if (!meta) {
-      return
-    }
-    const oldCallback = meta.callback
-    if (oldCallback !== value) {
-      elToMeta.set(el, {
-        active: false,
-        callback: value,
-        context,
-      })
-    }
-  }
-}
+// const update: DirectiveHandlerType = (el, binding, vnode) => {
+//   const { value } = binding
+//   const { context } = vnode
+//   if (typeof value === 'function' && elToMeta.has(el)) {
+//     const meta = elToMeta.get(el)
+//     if (!meta) {
+//       return
+//     }
+//     const oldCallback = meta.callback
+//     if (oldCallback !== value) {
+//       elToMeta.set(el, {
+//         active: false,
+//         callback: value,
+//         context,
+//       })
+//     }
+//   }
+// }
 /**
  *
  * @param {*} el
@@ -182,7 +182,6 @@ const unbind: DirectiveHandlerType = (el) => {
 const installDirective = () => {
   Vue.directive('exposure', {
     bind,
-    update,
     unbind,
   })
 }
