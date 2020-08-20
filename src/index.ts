@@ -18,9 +18,15 @@ interface ElToMetaType {
   active: boolean
   callback: (el?: Element) => void
   context: VueType | undefined
+  threshold: number
 }
 interface addElToObserveType {
-  (el: Element, callback: (el?: Element) => void, context: VueType): void
+  (
+    el: Element,
+    arg: number,
+    callback: (el?: Element) => void,
+    context: VueType
+  ): void
 }
 
 interface DirectiveHandlerType {
@@ -34,10 +40,17 @@ __POLYFILL_PLACEHOLDER__
 
 let Vue: typeof VueType
 let observer: IntersectionObserver
+let count = 0
+const unit = 0.1
+let threshold: number[] = []
+while (count <= 1) {
+  threshold.push(count)
+  count = Number((count + unit).toFixed(2))
+}
 
 const OBSERVER_OPTIONS: ObserverOptionsType = {
   delay: 100,
-  threshold: [1],
+  threshold: threshold,
   trackVisibility: true,
 }
 
@@ -73,10 +86,14 @@ const createObserver = () => {
   if (window.IntersectionObserver && !observer) {
     observer = new window.IntersectionObserver((list, observer) => {
       for (let entry of list) {
-        const { isIntersecting, target } = entry
+        const { isIntersecting, target, intersectionRatio } = entry
         if (isIntersecting) {
           const config = elToMeta.get(target)
-          if (config && !config.active) {
+          if (
+            config &&
+            !config.active &&
+            intersectionRatio >= config.threshold
+          ) {
             const { visibility, height, width } = window.getComputedStyle(
               target,
               null
@@ -106,12 +123,18 @@ const createObserver = () => {
  * @description 监听元素，并将元素及Mate映射
  */
 
-const addElToObserve: addElToObserveType = (el, callback, context) => {
+const addElToObserve: addElToObserveType = (
+  el,
+  threshold,
+  callback,
+  context
+) => {
   if (!elToMeta.has(el)) {
     elToMeta.set(el, {
       active: false,
       callback,
       context,
+      threshold,
     })
     observer && observer.observe(el)
   }
@@ -124,7 +147,8 @@ const addElToObserve: addElToObserveType = (el, callback, context) => {
  */
 
 const bind: DirectiveHandlerType = (el, binding, vnode) => {
-  const { value } = binding
+  let { value, arg } = binding
+  let threshold: number
   const { context } = vnode
   if (typeof value !== 'function') {
     Logger.error('directive value is not function ')
@@ -133,12 +157,17 @@ const bind: DirectiveHandlerType = (el, binding, vnode) => {
   if (!context) {
     return
   }
+  threshold = Number(arg)
+  if ((arg && typeof arg !== 'number') || !arg) {
+    arg && Logger.error('element arguments  must be number type')
+    threshold = 1
+  }
   if (context.$resetExposure && context.$resetExposure !== $resetExposure) {
     Logger.error('context bind $resetExposure propertyKey')
     return
   }
   !context.$resetExposure && (context.$resetExposure = $resetExposure)
-  addElToObserve(el, value, context)
+  addElToObserve(el, threshold, value, context)
 }
 /**
  *
@@ -189,11 +218,10 @@ const installDirective = () => {
  * @param {*} _Vue
  * @description Vue插件机制的install方法，创建观察者即注册指令
  */
-const install: InstallHandlerType = (_Vue, options = {}) => {
+const install: InstallHandlerType = (_Vue) => {
   if (!Vue) {
     Vue = _Vue
   }
-  Object.assign(OBSERVER_OPTIONS, options)
   createObserver()
   installDirective()
 }
