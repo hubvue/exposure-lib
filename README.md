@@ -28,21 +28,17 @@ import Exposure from 'vue-exposure/dist/exposure-polyfill'
 Vue.use(Exposure)
 ```
 
-vue-exposure 默认当元素全部区域都展示在视窗时才会执行回调函数，如果需求需要紧紧展示一半或者百分比需要传入 option 进行设置
+vue-exposure 默认当元素全部区域都展示在视窗时才会执行回调函数。
 
 ```js
-Vue.use(Exposure, {
-  threshold: [0.5],
-})
+Vue.use(Exposure)
 ```
-
-`threshold`属性表示当元素可视区域相对于元素全部区域的占比是多少时触发回调函数。
 
 #### 在组件中使用
 
 vue-exposure 基于 vue 指令封装，使得在开发过程中更加方便，例如下面这个组件。
 
-```js
+```vue
 <template>
   <div class="exposure-test">
     <div class="top" v-exposure="handlerTop"></div>
@@ -63,8 +59,8 @@ export default {
     },
     handlerTop() {
       alert('top')
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -84,6 +80,33 @@ export default {
 ```
 
 滚动界面，当元素出现在视窗内的时候触发回调函数。
+
+##### threshold
+
+默认情况下，曝光回调的执行是等待整个绑定元素全部包裹后才会执行。如果您有需求当元素出现一定比例是曝光，可以使用下面这种方式。
+
+```vue
+<template>
+  <div class="exposure-test">
+    <div class="top" v-exposure:[0.1]="handlerTop"></div>
+    <div class="middle" v-exposure:[0.5]="handlerMiddle"></div>
+    <div class="bottom" v-exposure:[threshold]="handlerBottom"></div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ExposureText',
+  data() {
+    return {
+      threshold: 0.8,
+    }
+  },
+}
+</script>
+```
+
+使用 Vue 动态指令参数的方式对指令传参，所传值必须是`[0,1]`之间的数值，这样在监听曝光的时候就会按照所传值的比例进行曝光。
 
 #### \$resetExposure
 

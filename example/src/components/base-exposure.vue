@@ -10,7 +10,7 @@
     ></div>
     <div
       class="bottom"
-      v-exposure="handlerBottom"
+      v-exposure:[a]="handlerBottom"
     ></div>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   name: 'BaseExposure',
   data() {
     return {
-      a: 123,
+      a: 0.7,
     }
   },
   deactivated() {
