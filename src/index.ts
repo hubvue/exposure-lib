@@ -33,12 +33,13 @@ interface DirectiveHandlerType {
   (el: Element, binding: DirectiveBinding, vnode: VNode): void
 }
 interface InstallHandlerType {
-  (_Vue: typeof VueType, options: ObserverOptionsType): void
+  (_Vue: typeof VueType, options?: { threshold?: number }): void
 }
 // 动态替换，引入polyfill
 __POLYFILL_PLACEHOLDER__
 
 let Vue: typeof VueType
+let GLOBAL_THERSHOLD: number
 let observer: IntersectionObserver
 let count = 0
 const unit = 0.1
@@ -160,7 +161,7 @@ const bind: DirectiveHandlerType = (el, binding, vnode) => {
   threshold = Number(arg)
   if ((arg && typeof arg !== 'number') || !arg) {
     arg && Logger.error('element arguments  must be number type')
-    threshold = 1
+    threshold = GLOBAL_THERSHOLD || 1
   }
   if (context.$resetExposure && context.$resetExposure !== $resetExposure) {
     Logger.error('context bind $resetExposure propertyKey')
@@ -218,9 +219,12 @@ const installDirective = () => {
  * @param {*} _Vue
  * @description Vue插件机制的install方法，创建观察者即注册指令
  */
-const install: InstallHandlerType = (_Vue) => {
+const install: InstallHandlerType = (_Vue, options) => {
   if (!Vue) {
     Vue = _Vue
+  }
+  if (options && options.threshold) {
+    GLOBAL_THERSHOLD = options.threshold
   }
   createObserver()
   installDirective()
