@@ -5,5 +5,4 @@ workflows:
   vue-exposure:
     jobs:
       test:
-        steps:
-          - run: npm run test
+        - run: npm run test
