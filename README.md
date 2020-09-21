@@ -1,10 +1,10 @@
-## vue-exposure
+# vue-exposure
 
 基于 InterfaceObserver API，采用 vue 指令的方式绑定元素，当元素出现在视窗内的时候执行回调函数。
 
-### Quick Start
+## Quick Start
 
-#### Install
+### Install
 
 > npm install vue-exposure --save
 
@@ -22,7 +22,7 @@ import Exposure from 'vue-exposure'
 import Exposure from 'vue-exposure/dist/exposure-polyfill'
 ```
 
-#### 使用插件
+### 使用插件
 
 ```js
 Vue.use(Exposure)
@@ -34,7 +34,7 @@ vue-exposure 默认当元素全部区域都展示在视窗时才会执行回调�
 Vue.use(Exposure)
 ```
 
-#### 在组件中使用
+### 在组件中使用
 
 vue-exposure 基于 vue 指令封装，使得在开发过程中更加方便，例如下面这个组件。
 
@@ -81,9 +81,26 @@ export default {
 
 滚动界面，当元素出现在视窗内的时候触发回调函数。
 
-##### threshold
+#### threshold
 
-默认情况下，曝光回调的执行是等待整个绑定元素全部包裹后才会执行。如果您有需求当元素出现一定比例是曝光，可以使用下面这种方式。
+默认情况下，曝光回调的执行是等待整个绑定元素全部包裹后才会执行。如果您有需求当元素出现一定比例是曝光，
+可以设置 threshold，使用下面两种方式。
+
+##### 全局级 threshold
+
+vue-exposure 支持全局的 threshold 设置。
+
+```js
+Vue.use(Exposure, {
+  threshold: 0.2,
+})
+```
+
+如上面代码所示，当元素的曝光比例达到 0.2 的时候，就会执行回调函数。
+
+##### 元素级 threshold
+
+如果你想要某个元素的曝光比例与其他元素的不同，可单独为元素设置 threshold，
 
 ```vue
 <template>
@@ -108,7 +125,9 @@ export default {
 
 使用 Vue 动态指令参数的方式对指令传参，所传值必须是`[0,1]`之间的数值，这样在监听曝光的时候就会按照所传值的比例进行曝光。
 
-#### \$resetExposure
+> 需要注意：元素级 threshold > 全局级 threshold
+
+### \$resetExposure
 
 曝光回调的执行是单例的，也就是说当曝光过一次并且回调执行后，再次曝光就不会再执行回调函数。
 
