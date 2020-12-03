@@ -1,42 +1,42 @@
 # vue-exposure
+![npm](https://img.shields.io/npm/v/vue-exposure) ![npm bundle size](https://img.shields.io/bundlephobia/min/vue-exposure) ![npm](https://img.shields.io/npm/dm/vue-exposure) ![NPM](https://img.shields.io/npm/l/vue-exposure)
 
-基于 InterfaceObserver API，采用 vue 指令的方式绑定元素，当元素出现在视窗内的时候执行回调函数。
-
+Based on the `InterfaceObserver` API, the vue directive is used to bind the element and execute callback functions when the element appears in the viewport.
 ## Quick Start
 
 ### Install
 
 > npm install vue-exposure --save
 
-由于 InterfaceObserver API 的兼容性在一些低版本浏览器上支持的还是不怎么好，于是 vue-exposure 推出两个包：一个是正常的、一个是带有 polyfill 的。
+Since `InterfaceObserver` API compatibility is still not well supported in some lower versions of browsers, `vue-exposure` released two packages: `normal` and `with polyfill`.
 
-**引入正常包**
+**import normal package**
 
 ```js
 import Exposure from 'vue-exposure'
 ```
 
-**引入带有 polyfill 包**
+**import polyfill package**
 
 ```js
 import Exposure from 'vue-exposure/dist/exposure-polyfill'
 ```
 
-### 使用插件
+### Use Plugin
 
 ```js
 Vue.use(Exposure)
 ```
 
-vue-exposure 默认当元素全部区域都展示在视窗时才会执行回调函数。
+By default, vue-exposure executes the callback function only when all areas of the element are displayed in the viewport.
 
 ```js
 Vue.use(Exposure)
 ```
 
-### 在组件中使用
+### Use in component
 
-vue-exposure 基于 vue 指令封装，使得在开发过程中更加方便，例如下面这个组件。
+vue-exposure is based on the vue directive wrapper, making it easier to develop, components such as the following.
 
 ```vue
 <template>
@@ -79,16 +79,15 @@ export default {
 </style>
 ```
 
-滚动界面，当元素出现在视窗内的时候触发回调函数。
+Scroll through the interface, triggering the callback function when the element appears in the viewport.
 
 #### threshold
 
-默认情况下，曝光回调的执行是等待整个绑定元素全部包裹后才会执行。如果您有需求当元素出现一定比例是曝光，
-可以设置 threshold，使用下面两种方式。
+By default, exposure callbacks are not executed until the entire bound element is wrapped. If you have a need when a certain percentage of the element is exposed, the threshold can be set in the following two ways.
 
-##### 全局级 threshold
+##### Global threshold
 
-vue-exposure 支持全局的 threshold 设置。
+vue-exposure supports global threshold setting.
 
 ```js
 Vue.use(Exposure, {
@@ -96,11 +95,11 @@ Vue.use(Exposure, {
 })
 ```
 
-如上面代码所示，当元素的曝光比例达到 0.2 的时候，就会执行回调函数。
+As shown in the above code, the callback function is executed when the exposure ratio of the element reaches 0.2.
 
-##### 元素级 threshold
+##### Element threshold
 
-如果你想要某个元素的曝光比例与其他元素的不同，可单独为元素设置 threshold，
+If you want an element to have a different exposure ratio than other elements, you can set the threshold for the element separately.
 
 ```vue
 <template>
@@ -123,15 +122,15 @@ export default {
 </script>
 ```
 
-使用 Vue 动态指令参数的方式对指令传参，所传值必须是`[0,1]`之间的数值，这样在监听曝光的时候就会按照所传值的比例进行曝光。
+The directive is parameterized using Vue's dynamic directive parameters, which must be passed as a value between `[0,1]` so that the exposure is scaled to the passed value when listening to the exposure.
 
-> 需要注意：元素级 threshold > 全局级 threshold
+> Note: Element threshold > Global threshold.
 
 ### \$resetExposure
 
-曝光回调的执行是单例的，也就是说当曝光过一次并且回调执行后，再次曝光就不会再执行回调函数。
+The execution of the exposure callback is single-case, which means that when exposed once and the callback is executed, the callback function is not executed when exposed again.
 
-在 Vue 组件中存在 KeepAlive 的场景，当 KeepAlive 组件切换的时候曝光回调也不会重新执行。这种情况下如果想要重新执行就需要使用`$resetExposure`API 去重置元素状态。
+In the case of a KeepAlive scenario in a Vue component, the exposure callback is not re-executed when the KeepAlive component is switched. In this case, you need to use the `$resetExposure` API to reset the element state if you want to re-execute it.
 
 ```js
 deactivated() {
@@ -139,7 +138,7 @@ deactivated() {
 }
 ```
 
-当调用`this.$resetExposure()`不传入任何参数的时候讲会把当前实例中所有监听元素的执行状态全部重置。如果需要只重置某个元素的执行状态，需要传入当前元素。
+When `this.$resetExposure()` is called without any arguments, it resets the execution state of all listener elements in the current instance. If you need to reset the execution state of just one element, you need to pass in the current element.
 
 ```js
 deactivated() {
@@ -147,6 +146,6 @@ deactivated() {
 }
 ```
 
-#### 注意事项
+#### Caution
 
-vue-exposure 监听元素是严格模式的，当一个元素的`visibility`为`hidden`或者`width`为`0`或者`height`为`0`都不会去监听。
+vue-exposure listens on elements in strict mode, and does not listen on elements whose `visibility` is `hidden` or whose `width` is `0` or whose `height` is `0`.
