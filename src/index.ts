@@ -5,8 +5,11 @@ declare var __POLYFILL_PLACEHOLDER__: String
 /**
  * @name vueExposure
  * @author wangchong
- * @description 基于Vue指令的可见性执行方案，当绑定元素出现在视窗内的时候，执行。单例且可支持keepAlive
- * @example <div v-exposure="handler"></div> 注：handler必须是一个方法，且当前组件实例上不能有$resetExposure属性或方法。
+ * @description Vue-based directive visibility scheme that executes when a bound element appears in the viewport.
+ *              Single instance and support for keepAlive.
+ * @example <div v-exposure="handler"></div>
+ *          Note: The handler must be a method, and the current component instance
+ *                cannot have a $resetExposure attribute or method on it.
  */
 interface ObserverOptionsType {
   delay?: number
@@ -35,7 +38,7 @@ interface DirectiveHandlerType {
 interface InstallHandlerType {
   (_Vue: typeof VueType, options?: { threshold?: number }): void
 }
-// 动态替换，引入polyfill
+// Dynamic Substitution，import polyfill
 __POLYFILL_PLACEHOLDER__
 
 let Vue: typeof VueType
@@ -57,8 +60,9 @@ const OBSERVER_OPTIONS: ObserverOptionsType = {
 
 const elToMeta: Map<Element, ElToMetaType> = new Map()
 /**
- * @description 重置监听元素的callback为可执行状态，目的是为了兼容keepAlive，将$resetExposure方法绑定到Vue实例上，
- *              在deactivated生命周期中执行。
+ * @description Resets the callback of a listening element to an executable state.
+ *              The purpose is to be compatible with keepAlive,
+ *              Bind the $resetExposure method to a Vue instance and execute it in the deactivated lifecycle.
  */
 const $resetExposure = function (this: VueType, el: Element) {
   if (el && elToMeta.has(el)) {
@@ -74,14 +78,14 @@ const $resetExposure = function (this: VueType, el: Element) {
     }
   }
 }
-// 声明合并$resetExposure函数
+// statement Merging  $resetExposure method
 declare module 'vue/types/vue' {
   interface Vue {
     $resetExposure: typeof $resetExposure
   }
 }
 /**
- * @description 创建IntersectionObserver实例，单例。
+ * @description Create an instance of IntersectionObserver, single instance mode.
  */
 const createObserver = () => {
   if (window.IntersectionObserver && !observer) {
@@ -118,10 +122,10 @@ const createObserver = () => {
   }
 }
 /**
- * @param {*} el 需要监听的元素
- * @param {*} callback 可执行的回调
- * @param {*} context 当前的组件实例
- * @description 监听元素，并将元素及Mate映射
+ * @param {*} el listening element
+ * @param {*} callback executable callbacks
+ * @param {*} context current component instance
+ * @description listens to the element and maps the element to Mate.
  */
 
 const addElToObserve: addElToObserveType = (
@@ -144,7 +148,9 @@ const addElToObserve: addElToObserveType = (
  * @param {*} el
  * @param {*} binding
  * @param {*} vnode
- * @description 自定义指定的bind方法， 将$resetExposure方法绑定到Vue实例上，执行addElToObserve监听el
+ * @description customize the directive bind method,
+ *              bind the $resetExposure method to a Vue instance,
+ *              execute addElToObserve to listen to the el.
  */
 
 const bind: DirectiveHandlerType = (el, binding, vnode) => {
@@ -173,32 +179,7 @@ const bind: DirectiveHandlerType = (el, binding, vnode) => {
 /**
  *
  * @param {*} el
- * @param {*} binding
- * @param {*} vnode
- * @description 当组件触发更新的时候，更新el映射的信息
- */
-// const update: DirectiveHandlerType = (el, binding, vnode) => {
-//   const { value } = binding
-//   const { context } = vnode
-//   if (typeof value === 'function' && elToMeta.has(el)) {
-//     const meta = elToMeta.get(el)
-//     if (!meta) {
-//       return
-//     }
-//     const oldCallback = meta.callback
-//     if (oldCallback !== value) {
-//       elToMeta.set(el, {
-//         active: false,
-//         callback: value,
-//         context,
-//       })
-//     }
-//   }
-// }
-/**
- *
- * @param {*} el
- * @description 当组件销毁的时候，去订阅
+ * @description unsubscribe when components are destroyed
  */
 const unbind: DirectiveHandlerType = (el) => {
   if (elToMeta.has(el) && observer) {
@@ -207,7 +188,7 @@ const unbind: DirectiveHandlerType = (el) => {
   }
 }
 /**
- * @description Vue全局注册自定义指令
+ * @description Vue global registration of custom directives
  */
 const installDirective = () => {
   Vue.directive('exposure', {
@@ -217,7 +198,7 @@ const installDirective = () => {
 }
 /**
  * @param {*} _Vue
- * @description Vue插件机制的install方法，创建观察者即注册指令
+ * @description the install method of the Vue plugin mechanism to create an observer, i.e. a registration directive.
  */
 const install: InstallHandlerType = (_Vue, options) => {
   if (!Vue) {
