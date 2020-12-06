@@ -1,10 +1,11 @@
 # vue-exposure
+
 ![npm](https://img.shields.io/npm/v/vue-exposure) ![npm bundle size](https://img.shields.io/bundlephobia/min/vue-exposure) ![npm](https://img.shields.io/npm/dm/vue-exposure) ![NPM](https://img.shields.io/npm/l/vue-exposure)
 
 [中文简体](./README.zh-CN.md)
 
-
 Based on the `InterfaceObserver` API, the vue directive is used to bind the element and execute callback functions when the element appears in the viewport.
+
 ## Quick Start
 
 ### Install
@@ -26,10 +27,6 @@ import Exposure from 'vue-exposure/dist/exposure-polyfill'
 ```
 
 ### Use Plugin
-
-```js
-Vue.use(Exposure)
-```
 
 By default, vue-exposure executes the callback function only when all areas of the element are displayed in the viewport.
 

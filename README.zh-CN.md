@@ -1,6 +1,6 @@
 # vue-exposure
-![npm](https://img.shields.io/npm/v/vue-exposure) ![npm bundle size](https://img.shields.io/bundlephobia/min/vue-exposure) ![npm](https://img.shields.io/npm/dm/vue-exposure) ![NPM](https://img.shields.io/npm/l/vue-exposure)
 
+![npm](https://img.shields.io/npm/v/vue-exposure) ![npm bundle size](https://img.shields.io/bundlephobia/min/vue-exposure) ![npm](https://img.shields.io/npm/dm/vue-exposure) ![NPM](https://img.shields.io/npm/l/vue-exposure)
 
 基于 InterfaceObserver API，采用 vue 指令的方式绑定元素，当元素出现在视窗内的时候执行回调函数。
 
@@ -25,10 +25,6 @@ import Exposure from 'vue-exposure/dist/exposure-polyfill'
 ```
 
 ### 使用插件
-
-```js
-Vue.use(Exposure)
-```
 
 vue-exposure 默认当元素全部区域都展示在视窗时才会执行回调函数。
 
