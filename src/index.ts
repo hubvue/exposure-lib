@@ -1,5 +1,4 @@
-import VueType, { VNode } from 'vue'
-import { DirectiveBinding } from 'vue/types/options'
+import { App, VNode, DirectiveBinding } from 'vue'
 const Logger = console
 declare var __POLYFILL_PLACEHOLDER__: String
 /**
@@ -36,7 +35,7 @@ interface DirectiveHandlerType {
   (el: Element, binding: DirectiveBinding, vnode: VNode): void
 }
 interface InstallHandlerType {
-  (_Vue: typeof VueType, options?: { threshold?: number }): void
+  (_Vue: App, options?: { threshold?: number }): void
 }
 // Dynamic Substitution，import polyfill
 __POLYFILL_PLACEHOLDER__
