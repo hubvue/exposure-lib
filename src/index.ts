@@ -19,16 +19,10 @@ interface ObserverOptionsType {
 interface ElToMetaType {
   active: boolean
   callback: (el?: Element) => void
-  context: VueType | undefined
   threshold: number
 }
 interface addElToObserveType {
-  (
-    el: Element,
-    arg: number,
-    callback: (el?: Element) => void,
-    context: VueType
-  ): void
+  (el: Element, arg: number, callback: (el?: Element) => void): void
 }
 
 interface DirectiveHandlerType {
@@ -40,7 +34,7 @@ interface InstallHandlerType {
 // Dynamic Substitution，import polyfill
 __POLYFILL_PLACEHOLDER__
 
-let Vue: typeof VueType
+let Vue: App
 let GLOBAL_THERSHOLD: number
 let observer: IntersectionObserver
 let count = 0
@@ -63,24 +57,16 @@ const elToMeta: Map<Element, ElToMetaType> = new Map()
  *              The purpose is to be compatible with keepAlive,
  *              Bind the $resetExposure method to a Vue instance and execute it in the deactivated lifecycle.
  */
-const $resetExposure = function (this: VueType, el: Element) {
+export const useResetExposure = function (el?: Element) {
   if (el && elToMeta.has(el)) {
     const config = elToMeta.get(el) as ElToMetaType
-    if (config.context === this && config.active) {
-      elToMeta.set(el, Object.assign(config, { active: false }))
-    }
+    elToMeta.set(el, Object.assign(config, { active: false }))
   } else {
     for (let [key, config] of elToMeta.entries()) {
-      if (config.context === this && config.active) {
+      if (config.active) {
         elToMeta.set(key, Object.assign(config, { active: false }))
       }
     }
-  }
-}
-// statement Merging  $resetExposure method
-declare module 'vue/types/vue' {
-  interface Vue {
-    $resetExposure: typeof $resetExposure
   }
 }
 /**
@@ -127,17 +113,11 @@ const createObserver = () => {
  * @description listens to the element and maps the element to Mate.
  */
 
-const addElToObserve: addElToObserveType = (
-  el,
-  threshold,
-  callback,
-  context
-) => {
+const addElToObserve: addElToObserveType = (el, threshold, callback) => {
   if (!elToMeta.has(el)) {
     elToMeta.set(el, {
       active: false,
       callback,
-      context,
       threshold,
     })
     observer && observer.observe(el)
@@ -148,19 +128,14 @@ const addElToObserve: addElToObserveType = (
  * @param {*} binding
  * @param {*} vnode
  * @description customize the directive bind method,
- *              bind the $resetExposure method to a Vue instance,
  *              execute addElToObserve to listen to the el.
  */
 
-const bind: DirectiveHandlerType = (el, binding, vnode) => {
+const mounted: DirectiveHandlerType = (el, binding, vnode) => {
   let { value, arg } = binding
   let threshold: number
-  const { context } = vnode
   if (typeof value !== 'function') {
     Logger.error('directive value is not function ')
-    return
-  }
-  if (!context) {
     return
   }
   threshold = Number(arg)
@@ -168,19 +143,14 @@ const bind: DirectiveHandlerType = (el, binding, vnode) => {
     arg && Logger.error('element arguments  must be number type')
     threshold = GLOBAL_THERSHOLD || 1
   }
-  if (context.$resetExposure && context.$resetExposure !== $resetExposure) {
-    Logger.error('context bind $resetExposure propertyKey')
-    return
-  }
-  !context.$resetExposure && (context.$resetExposure = $resetExposure)
-  addElToObserve(el, threshold, value, context)
+  addElToObserve(el, threshold, value)
 }
 /**
  *
  * @param {*} el
  * @description unsubscribe when components are destroyed
  */
-const unbind: DirectiveHandlerType = (el) => {
+const beforeUnmount: DirectiveHandlerType = (el) => {
   if (elToMeta.has(el) && observer) {
     elToMeta.delete(el)
     observer.unobserve(el)
@@ -191,8 +161,8 @@ const unbind: DirectiveHandlerType = (el) => {
  */
 const installDirective = () => {
   Vue.directive('exposure', {
-    bind,
-    unbind,
+    mounted,
+    beforeUnmount,
   })
 }
 /**
