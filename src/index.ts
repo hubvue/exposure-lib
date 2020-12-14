@@ -1,4 +1,4 @@
-import { App, VNode, DirectiveBinding } from 'vue'
+import { App, VNode, DirectiveBinding, Plugin } from 'vue'
 const Logger = console
 declare var __POLYFILL_PLACEHOLDER__: String
 /**
@@ -169,7 +169,7 @@ const installDirective = () => {
  * @param {*} _Vue
  * @description the install method of the Vue plugin mechanism to create an observer, i.e. a registration directive.
  */
-const install: InstallHandlerType = (_Vue, options) => {
+const install: InstallHandlerType = (_Vue: App, options) => {
   if (!Vue) {
     Vue = _Vue
   }
@@ -180,7 +180,7 @@ const install: InstallHandlerType = (_Vue, options) => {
   installDirective()
 }
 
-const Exposure = {
+const Exposure: Plugin = {
   install,
 }
 
