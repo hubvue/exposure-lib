@@ -6,15 +6,17 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { ref, defineComponent } from 'vue'
+export default defineComponent({
   name: 'App',
-  data() {
+  setup () {
+    const includeKeepAlive = ref('KeepaliveExposure')
     return {
-      includeKeepAlive: ['KeepaliveExposure']
+      includeKeepAlive
     }
   }
-}
+})
 </script>
 
 <style>
