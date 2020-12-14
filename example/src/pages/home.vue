@@ -12,8 +12,9 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   setup () {
-    const openPage = (path: string) => {
-      const router = useRouter()
+    const router = useRouter()
+    const openPage = function (path: string) {
+      console.log('router', router)
       router.push({ path })
     }
     return {

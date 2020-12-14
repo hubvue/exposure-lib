@@ -15,7 +15,7 @@
 <script>
 import { defineComponent, onDeactivated } from 'vue'
 import { useRouter } from 'vue-router'
-import { useResetExposure } from '../../../src/index'
+import { useResetExposure } from '@vue-exposure/next'
 export default defineComponent({
   name: 'KeepaliveExposure',
   setup (props, context) {
@@ -23,8 +23,9 @@ export default defineComponent({
     onDeactivated(() => {
       useResetExposure()
     })
+    const router = useRouter()
     const openPage = () => {
-      const router = useRouter()
+      console.log('router', router)
       router.push({
         path: '/base'
       })

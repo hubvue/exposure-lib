@@ -341,10 +341,10 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@vue-exposure/next@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/@vue-exposure/next/-/next-0.0.3.tgz#4bcdc8e14f2af99802690118b20d393dd46bd373"
-  integrity sha512-qDwAyQHfKTb74vWC/yHWCw1A0r7/x1N9mbDROJOixKRBB2JI1l+KCJl3P4l2lUuIJa5zeYyiS7Dg372aesfEKA==
+"@vue-exposure/next@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.npmjs.org/@vue-exposure/next/-/next-0.0.4.tgz#293661467247d455aa20d59248e232792804c880"
+  integrity sha512-zVmu94LwDok9ephVfKUls3m72KyYa602MfgMCnXpe26MkFyV7naCNNqKa071WbhP4GvulSk7dkCfG+K/qgAm7w==
 
 "@vue/cli-overlay@^4.5.9":
   version "4.5.9"
@@ -7726,10 +7726,10 @@ vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@^4.0.0-0:
-  version "4.0.0-rc.6"
-  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.0-rc.6.tgz?cache=0&sync_timestamp=1606723684983&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-4.0.0-rc.6.tgz#8fa9e2d612c28ccf9b2bfa9421052932808ce24b"
-  integrity sha1-j6ni1hLCjM+bK/qUIQUpMoCM4ks=
+vue-router@4.0:
+  version "4.0.1"
+  resolved "https://registry.npmjs.org/vue-router/-/vue-router-4.0.1.tgz#309240e50524b1e7d4e82e27f0a0fa25fe3d1d71"
+  integrity sha512-2C2nRxA2nCusgJyUpvcbd9Bnc9kACp/VLUCK4drXtgeRXHjQliZJcgjjP268vkGvvEKun9jjp8Ic1PpzUgbYKg==
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"
