@@ -4,6 +4,8 @@
 
 [中文简体](./README.zh-CN.md)
 
+[Support Vue 3.x Document](https://github.com/hubvue/vue-exposure/tree/vue-exposure-next#vue-exposure)
+
 Based on the `InterfaceObserver` API, the vue directive is used to bind the element and execute callback functions when the element appears in the viewport.
 
 ## Quick Start
