@@ -1,31 +1,51 @@
 <template>
   <div class="keepalive-exposure">
-    <p @click="openPage" class="btn" >open base-exposure page</p>
+    <p
+      @click="openPage"
+      class="btn"
+    >open base-exposure page</p>
     <p class="tip">
       The execution of the exposure callback is singleton, that is it will not be executed after it is executed once.
       When there is a keep-alive page in the project, after the exposure callback is executed,
       the page will not be executed after the page is switched back and the data will be lost,
       so you need to use the useResetExposure method to reset the exposure during the onDeactivated life cycle.
     </p>
-    <div class="box" ref="box" v-exposure="handler1" ></div>
-    <div class="box1" v-exposure="handler2"></div>
+    <div
+      :ref="refHandler"
+      class="box"
+      v-exposure="handler1"
+    ></div>
+    <div
+      class="box1"
+      v-exposure="handler2"
+    ></div>
   </div>
 </template>
 
-<script>
-import { defineComponent, onDeactivated } from 'vue'
+<script lang="ts">
+import { defineComponent, nextTick, onActivated } from 'vue'
 import { useRouter } from 'vue-router'
 import { useResetExposure } from '@vue-exposure/next'
 export default defineComponent({
   name: 'KeepaliveExposure',
-  setup (props, context) {
-    console.log('props', props, context)
-    onDeactivated(() => {
-      useResetExposure()
+  setup () {
+    let boxElem: HTMLElement
+    const refHandler = (el: HTMLElement) => {
+      if (!el) {
+        return
+      }
+      nextTick(() => {
+        if (!boxElem) {
+          boxElem = el
+        }
+      })
+    }
+    onActivated(() => {
+      console.log('222')
+      useResetExposure(boxElem)
     })
     const router = useRouter()
     const openPage = () => {
-      console.log('router', router)
       router.push({
         path: '/base'
       })
@@ -42,7 +62,8 @@ export default defineComponent({
     return {
       openPage,
       handler1,
-      handler2
+      handler2,
+      refHandler
     }
   }
 })
