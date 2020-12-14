@@ -4,6 +4,8 @@
 
 [中文简体](./README.zh-CN.md)
 
+[Support Vue 2.x Document](https://github.com/hubvue/vue-exposure)
+
 Based on the `InterfaceObserver` API, the vue directive is used to bind the element and execute callback functions when the element appears in the viewport.
 
 ## Quick Start
@@ -17,13 +19,13 @@ Since `InterfaceObserver` API compatibility is still not well supported in some 
 **import normal package**
 
 ```js
-import Exposure from 'vue-exposure'
+import Exposure from '@vue-exposure/next'
 ```
 
 **import polyfill package**
 
 ```js
-import Exposure from 'vue-exposure/dist/exposure-polyfill'
+import Exposure from '@vue-exposure/polyfill'
 ```
 
 ### Use Plugin
@@ -31,7 +33,7 @@ import Exposure from 'vue-exposure/dist/exposure-polyfill'
 By default, vue-exposure executes the callback function only when all areas of the element are displayed in the viewport.
 
 ```js
-Vue.use(Exposure)
+createApp(App).use(Exposure).mount('#app')
 ```
 
 ### Use in component
@@ -48,35 +50,27 @@ vue-exposure is based on the vue directive wrapper, making it easier to develop,
 </template>
 
 <script>
-export default {
-  name: 'ExposureText',
-  methods: {
-    handlerMiddle() {
-      alert('middle')
-    },
-    handlerBottom() {
-      alert('bottom')
-    },
-    handlerTop() {
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: 'BaseExposure',
+  setup() {
+    const handlerTop = () => {
       alert('top')
-    },
+    }
+    const handlerMiddle = () => {
+      alert('middle')
+    }
+    const handlerBottom = () => {
+      alert('bottom')
+    }
+    return {
+      handlerTop,
+      handlerMiddle,
+      handlerBottom,
+    }
   },
-}
+})
 </script>
-
-<style scoped>
-.top {
-  background-color: red;
-  margin-bottom: 1000px;
-}
-.middle {
-  background-color: yellowgreen;
-}
-.bottom {
-  background-color: blue;
-  margin-top: 1000px;
-}
-</style>
 ```
 
 Scroll through the interface, triggering the callback function when the element appears in the viewport.
@@ -90,9 +84,11 @@ By default, exposure callbacks are not executed until the entire bound element i
 vue-exposure supports global threshold setting.
 
 ```js
-Vue.use(Exposure, {
-  threshold: 0.2,
-})
+createApp(App)
+  .use(Exposure, {
+    threshold: 0.2,
+  })
+  .mount('#app')
 ```
 
 As shown in the above code, the callback function is executed when the exposure ratio of the element reaches 0.2.
@@ -111,14 +107,28 @@ If you want an element to have a different exposure ratio than other elements, y
 </template>
 
 <script>
-export default {
-  name: 'ExposureText',
-  data() {
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: 'BaseExposure',
+  setup() {
+    const threshold = ref(0.8)
+    const handlerTop = () => {
+      alert('top')
+    }
+    const handlerMiddle = () => {
+      alert('middle')
+    }
+    const handlerBottom = () => {
+      alert('bottom')
+    }
     return {
-      threshold: 0.8,
+      threshold,
+      handlerTop,
+      handlerMiddle,
+      handlerBottom,
     }
   },
-}
+})
 </script>
 ```
 
@@ -126,24 +136,35 @@ The directive is parameterized using Vue's dynamic directive parameters, which m
 
 > Note: Element threshold > Global threshold.
 
-### \$resetExposure
+### useResetExposure
 
 The execution of the exposure callback is single-case, which means that when exposed once and the callback is executed, the callback function is not executed when exposed again.
 
-In the case of a KeepAlive scenario in a Vue component, the exposure callback is not re-executed when the KeepAlive component is switched. In this case, you need to use the `$resetExposure` API to reset the element state if you want to re-execute it.
+In the case of a KeepAlive scenario in a Vue component, the exposure callback is not re-executed when the KeepAlive component is switched. In this case, you need to use the `useResetExposure` API to reset the element state if you want to re-execute it.
 
 ```js
-deactivated() {
-  this.$resetExposure()
-}
+export default defineComponent({
+  name: 'KeepaliveExposure',
+  setup (props, context) {
+    onDeactivated(() => {
+      useResetExposure()
+    })
+  }
+})
+</script>
 ```
 
-When `this.$resetExposure()` is called without any arguments, it resets the execution state of all listener elements in the current instance. If you need to reset the execution state of just one element, you need to pass in the current element.
+When `useResetExposure()` is called without any arguments, it resets the execution state of all listener elements in the current instance. If you need to reset the execution state of just one element, you need to pass in the current element.
 
 ```js
-deactivated() {
-  this.$resetExposure(this.$refs.el)
-}
+export default defineComponent({
+  name: 'KeepaliveExposure',
+  setup(props, context) {
+    onDeactivated(() => {
+      useResetExposure(element)
+    })
+  },
+})
 ```
 
 #### Caution

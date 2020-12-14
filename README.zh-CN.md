@@ -2,6 +2,8 @@
 
 ![npm](https://img.shields.io/npm/v/vue-exposure) ![npm bundle size](https://img.shields.io/bundlephobia/min/vue-exposure) ![npm](https://img.shields.io/npm/dm/vue-exposure) ![NPM](https://img.shields.io/npm/l/vue-exposure)
 
+[支持 Vue 2.x 文档](https://github.com/hubvue/vue-exposure)
+
 基于 InterfaceObserver API，采用 vue 指令的方式绑定元素，当元素出现在视窗内的时候执行回调函数。
 
 ## Quick Start
@@ -15,13 +17,13 @@
 **引入正常包**
 
 ```js
-import Exposure from 'vue-exposure'
+import Exposure from '@vue-exposure/next'
 ```
 
 **引入带有 polyfill 包**
 
 ```js
-import Exposure from 'vue-exposure/dist/exposure-polyfill'
+import Exposure from '@vue-exposure/polyfill'
 ```
 
 ### 使用插件
@@ -29,7 +31,7 @@ import Exposure from 'vue-exposure/dist/exposure-polyfill'
 vue-exposure 默认当元素全部区域都展示在视窗时才会执行回调函数。
 
 ```js
-Vue.use(Exposure)
+createApp(App).use(Exposure).mount('#app')
 ```
 
 ### 在组件中使用
@@ -46,35 +48,27 @@ vue-exposure 基于 vue 指令封装，使得在开发过程中更加方便，�
 </template>
 
 <script>
-export default {
-  name: 'ExposureText',
-  methods: {
-    handlerMiddle() {
-      alert('middle')
-    },
-    handlerBottom() {
-      alert('bottom')
-    },
-    handlerTop() {
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: 'BaseExposure',
+  setup() {
+    const handlerTop = () => {
       alert('top')
-    },
+    }
+    const handlerMiddle = () => {
+      alert('middle')
+    }
+    const handlerBottom = () => {
+      alert('bottom')
+    }
+    return {
+      handlerTop,
+      handlerMiddle,
+      handlerBottom,
+    }
   },
-}
+})
 </script>
-
-<style scoped>
-.top {
-  background-color: red;
-  margin-bottom: 1000px;
-}
-.middle {
-  background-color: yellowgreen;
-}
-.bottom {
-  background-color: blue;
-  margin-top: 1000px;
-}
-</style>
 ```
 
 滚动界面，当元素出现在视窗内的时候触发回调函数。
@@ -89,9 +83,11 @@ export default {
 vue-exposure 支持全局的 threshold 设置。
 
 ```js
-Vue.use(Exposure, {
-  threshold: 0.2,
-})
+createApp(App)
+  .use(Exposure, {
+    threshold: 0.2,
+  })
+  .mount('#app')
 ```
 
 如上面代码所示，当元素的曝光比例达到 0.2 的时候，就会执行回调函数。
@@ -110,14 +106,28 @@ Vue.use(Exposure, {
 </template>
 
 <script>
-export default {
-  name: 'ExposureText',
-  data() {
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: 'BaseExposure',
+  setup() {
+    const threshold = ref(0.8)
+    const handlerTop = () => {
+      alert('top')
+    }
+    const handlerMiddle = () => {
+      alert('middle')
+    }
+    const handlerBottom = () => {
+      alert('bottom')
+    }
     return {
-      threshold: 0.8,
+      threshold,
+      handlerTop,
+      handlerMiddle,
+      handlerBottom,
     }
   },
-}
+})
 </script>
 ```
 
@@ -125,24 +135,35 @@ export default {
 
 > 需要注意：元素级 threshold > 全局级 threshold
 
-### \$resetExposure
+### useResetExposure
 
 曝光回调的执行是单例的，也就是说当曝光过一次并且回调执行后，再次曝光就不会再执行回调函数。
 
-在 Vue 组件中存在 KeepAlive 的场景，当 KeepAlive 组件切换的时候曝光回调也不会重新执行。这种情况下如果想要重新执行就需要使用`$resetExposure`API 去重置元素状态。
+在 Vue 组件中存在 KeepAlive 的场景，当 KeepAlive 组件切换的时候曝光回调也不会重新执行。这种情况下如果想要重新执行就需要使用`useResetExposure`API 去重置元素状态。
 
 ```js
-deactivated() {
-  this.$resetExposure()
-}
+export default defineComponent({
+  name: 'KeepaliveExposure',
+  setup (props, context) {
+    onDeactivated(() => {
+      useResetExposure()
+    })
+  }
+})
+</script>
 ```
 
-当调用`this.$resetExposure()`不传入任何参数的时候讲会把当前实例中所有监听元素的执行状态全部重置。如果需要只重置某个元素的执行状态，需要传入当前元素。
+当调用`useResetExposure()`不传入任何参数的时候讲会把当前实例中所有监听元素的执行状态全部重置。如果需要只重置某个元素的执行状态，需要传入当前元素。
 
 ```js
-deactivated() {
-  this.$resetExposure(this.$refs.el)
-}
+export default defineComponent({
+  name: 'KeepaliveExposure',
+  setup(props, context) {
+    onDeactivated(() => {
+      useResetExposure(element)
+    })
+  },
+})
 ```
 
 #### 注意事项
