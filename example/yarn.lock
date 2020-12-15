@@ -346,6 +346,11 @@
   resolved "https://registry.npmjs.org/@vue-exposure/next/-/next-0.0.4.tgz#293661467247d455aa20d59248e232792804c880"
   integrity sha512-zVmu94LwDok9ephVfKUls3m72KyYa602MfgMCnXpe26MkFyV7naCNNqKa071WbhP4GvulSk7dkCfG+K/qgAm7w==
 
+"@vue-exposure/polyfill@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@vue-exposure/polyfill/-/polyfill-1.0.0.tgz#e18ccbdbc135eee6d6eb60d0308b9f349a4ecc8a"
+  integrity sha512-QSUj7ss012gKFcjqBLFg6a4s8wwyW6SWl2bZn/qToMQb0gPGAkuJuJAn4IM7aFE2TrMCLiYI84Ns5fJt5RPaaQ==
+
 "@vue/cli-overlay@^4.5.9":
   version "4.5.9"
   resolved "https://registry.npm.taobao.org/@vue/cli-overlay/download/@vue/cli-overlay-4.5.9.tgz#393418b6d5eaf8638f599c939cb425838257d37c"
