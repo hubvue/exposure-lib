@@ -1,6 +1,6 @@
 {
   "name": "vue-exposure",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "基于InterfaceObserver API，当绑定元素出现在视窗内的时候执行回调",
   "main": "./dist/exposure.js",
   "types": "./dist/index.d.ts",
