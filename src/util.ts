@@ -1,5 +1,10 @@
 import { ExposureHandler, FuncHandler, ObjectHandler } from './type'
 
+/**
+ * @description determines if the value is an ObjectHandler.
+ * @param value
+ * @returns
+ */
 export const isObjectHandler = (value: any): value is ObjectHandler => {
   if (
     value &&
@@ -12,6 +17,11 @@ export const isObjectHandler = (value: any): value is ObjectHandler => {
   return false
 }
 
+/**
+ * @description determines if the value is a FunctionHandler.
+ * @param value
+ * @returns
+ */
 export const isFuncHandler = (value: any): value is FuncHandler => {
   if (typeof value === 'function') {
     return true
@@ -19,6 +29,11 @@ export const isFuncHandler = (value: any): value is FuncHandler => {
   return false
 }
 
+/**
+ * @description determines if the value is an ExposureHandler.
+ * @param value
+ * @returns
+ */
 export const isExposureHandler = (value: any): value is ExposureHandler => {
   return isObjectHandler(value) || isFuncHandler(value)
 }
