@@ -8,7 +8,7 @@ export interface ObserverOptionsType {
 }
 
 export type FuncHandler = (el?: Element) => void
-export type ObjectHandler = { enter: FuncHandler; leave: FuncHandler }
+export type ObjectHandler = { enter?: FuncHandler; leave?: FuncHandler }
 export type ExposureHandler = FuncHandler | ObjectHandler
 
 export interface ElToMetaType {

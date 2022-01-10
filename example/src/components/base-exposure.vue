@@ -21,12 +21,12 @@ export default {
   data() {
     return {
       handler: {
-        enter() {
-          alert('enter')
-        },
-        leave() {
-          alert('leave')
-        }
+        // enter() {
+        //   alert('enter')
+        // },
+        // leave() {
+        //   alert('leave')
+        // }
       }
     }
   },

@@ -83,6 +83,22 @@ export default {
 
 Scroll through the interface, triggering the callback function when the element appears in the viewport.
 
+
+#### handler
+The handler is also the value of the instruction, similar to the value of the computed property, and is of two types: function or object.
+
+**function**
+
+The function type is the more common way of writing, and the function handler will only be triggered once if the element is exposed and the `threshold` is met.
+
+**object**
+
+Handlers of object type need to have one of the `enter` and `leave` attributes, and the values of the `enter` and `leave` attributes are function types.
+
+- enter: enter handler is triggered once if the element enters exposure and `threshold` is met
+- leave: leave handler is triggered once after the enter handler is triggered and the element leaves the visible area completely.
+
+
 #### threshold
 
 By default, exposure callbacks are not executed until the entire bound element is wrapped. If you have a need when a certain percentage of the element is exposed, the threshold can be set in the following two ways.

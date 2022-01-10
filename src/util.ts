@@ -6,15 +6,20 @@ import { ExposureHandler, FuncHandler, ObjectHandler } from './type'
  * @returns
  */
 export const isObjectHandler = (value: any): value is ObjectHandler => {
-  if (
-    value &&
-    typeof value === 'object' &&
-    typeof value.enter === 'function' &&
-    typeof value.leave === 'function'
-  ) {
-    return true
+  if (!value || typeof value !== 'object') {
+    return false
   }
-  return false
+  if (!value.enter && !value.leave) {
+    return false
+  }
+  if (value.enter && typeof value.enter !== 'function') {
+    return false
+  }
+  if (value.leave && typeof value.leave !== 'function') {
+    return false
+  }
+
+  return true
 }
 
 /**

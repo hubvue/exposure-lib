@@ -81,6 +81,22 @@ export default {
 
 滚动界面，当元素出现在视窗内的时候触发回调函数。
 
+
+#### handler
+handler 也就是指令的值，和计算属性(computed)的类似，有两种类型：函数或对象
+
+**函数**
+
+函数类型是比较普遍的写法, 函数handler只会在元素进入曝光且符合`threshold`情况下触发一次。
+
+**对象**
+
+对象类型的handler需要有`enter`和`leave`属性其一，且`enter`和`leave`属性的值为函数类型。
+
+- enter: enter handler 会在元素进入曝光且符合`threshold`情况下触发一次；
+- leave: leave handler 会在 enter handler 触发后，元素彻底离开可视区域后触发一次；
+
+
 #### threshold
 
 默认情况下，曝光回调的执行是等待整个绑定元素全部包裹后才会执行。如果您有需求当元素出现一定比例是曝光，

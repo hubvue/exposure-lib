@@ -115,7 +115,7 @@ const createObserver = () => {
             if (isFuncHandler(config.handler)) {
               config.handler(target)
             } else {
-              config.handler.enter(target)
+              config.handler.enter && config.handler.enter(target)
             }
             config.active.enter = true
           } else {
@@ -125,7 +125,7 @@ const createObserver = () => {
               config.active.enter &&
               intersectionRatio <= 0
             ) {
-              config.handler.leave(target)
+              config.handler.leave && config.handler.leave(target)
               config.active.leave = true
             }
           }
@@ -181,7 +181,7 @@ const bind: DirectiveHandlerType = (el, binding, vnode) => {
       `directive value is not ExposureHandler. 
        ExposureHandler type:
         - function: (el?: Element) => void
-        - object: {enter: (el?: Element) => void, leave: (el?: Element) => void}
+        - object: {enter?: (el?: Element) => void, leave?: (el?: Element) => void}
        `
     )
     return
