@@ -52,12 +52,21 @@ vue-exposure is based on the vue directive wrapper, making it easier to develop,
 <script>
 export default {
   name: 'ExposureText',
+  data() {
+    return {
+      handlerBottom: {
+        enter() {
+          console.log('bottom enter')
+        },
+        leave() {
+          console.log('bottom leave')
+        }
+      }
+    }
+  }
   methods: {
     handlerMiddle() {
       alert('middle')
-    },
-    handlerBottom() {
-      alert('bottom')
     },
     handlerTop() {
       alert('top')

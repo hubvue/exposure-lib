@@ -50,12 +50,21 @@ vue-exposure 基于 vue 指令封装，使得在开发过程中更加方便，�
 <script>
 export default {
   name: 'ExposureText',
+  data() {
+    return {
+      handlerBottom: {
+        enter() {
+          console.log('bottom enter')
+        },
+        leave() {
+          console.log('bottom leave')
+        }
+      }
+    }
+  }
   methods: {
     handlerMiddle() {
       alert('middle')
-    },
-    handlerBottom() {
-      alert('bottom')
     },
     handlerTop() {
       alert('top')
