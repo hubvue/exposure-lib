@@ -55,9 +55,16 @@ export default defineComponent({
     const handlerTop = () => {
       alert('top')
     }
-    const handlerMiddle = () => {
-      alert('middle')
+    
+    const handlerMiddle = {
+      enter() {
+        alert('middle enter')
+      },
+      leave() {
+        alert('middle leave')
+      }
     }
+
     const handlerBottom = () => {
       alert('bottom')
     }
@@ -72,6 +79,21 @@ export default defineComponent({
 ```
 
 滚动界面，当元素出现在视窗内的时候触发回调函数。
+
+
+#### handler
+handler 也就是指令的值，和计算属性(computed)的类似，有两种类型：函数或对象
+
+##### 函数
+
+函数类型是比较普遍的写法, 函数handler只会在元素进入曝光且符合threshold情况下触发一次。
+
+##### 对象
+
+对象类型的handler需要有enter和leave属性其一，且enter和leave属性的值为函数类型。
+
+enter: enter handler 会在元素进入曝光且符合threshold情况下触发一次；
+leave: leave handler 会在 enter handler 触发后，元素彻底离开可视区域后触发一次；
 
 #### threshold
 

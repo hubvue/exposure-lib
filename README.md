@@ -57,8 +57,13 @@ export default defineComponent({
     const handlerTop = () => {
       alert('top')
     }
-    const handlerMiddle = () => {
-      alert('middle')
+    const handlerMiddle = {
+      enter() {
+        alert('middle enter')
+      },
+      leave() {
+        alert('middle leave')
+      }
     }
     const handlerBottom = () => {
       alert('bottom')
@@ -74,6 +79,21 @@ export default defineComponent({
 ```
 
 Scroll through the interface, triggering the callback function when the element appears in the viewport.
+
+#### handler
+The handler is also the value of the instruction, similar to the value of the computed property, and is of two types: function or object.
+
+##### function
+
+The function type is the more common way of writing, and the function handler will only be triggered once if the element is exposed and the threshold is met.
+
+##### object
+
+Handlers of object type need to have one of the enter and leave attributes, and the values of the enter and leave attributes are function types.
+
+enter: enter handler is triggered once if the element enters exposure and threshold is met
+leave: leave handler is triggered once after the enter handler is triggered and the element leaves the visible area completely.
+
 
 #### threshold
 
