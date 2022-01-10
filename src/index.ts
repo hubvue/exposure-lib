@@ -1,5 +1,17 @@
-import VueType, { VNode } from 'vue'
-import { DirectiveBinding } from 'vue/types/options'
+import VueType from 'vue'
+import {
+  DirectiveHandlerType,
+  ElToMetaType,
+  ExposureHandler,
+  InstallHandlerType,
+  ObserverOptionsType,
+} from './type'
+import {
+  isExposureHandler,
+  isFuncHandler,
+  isObjectHandler,
+  isVisibleElement,
+} from './util'
 const Logger = console
 declare var __POLYFILL_PLACEHOLDER__: String
 /**
@@ -11,33 +23,7 @@ declare var __POLYFILL_PLACEHOLDER__: String
  *          Note: The handler must be a method, and the current component instance
  *                cannot have a $resetExposure attribute or method on it.
  */
-interface ObserverOptionsType {
-  delay?: number
-  threshold?: number[]
-  trackVisibility?: boolean
-}
 
-interface ElToMetaType {
-  active: boolean
-  callback: (el?: Element) => void
-  context: VueType | undefined
-  threshold: number
-}
-interface addElToObserveType {
-  (
-    el: Element,
-    arg: number,
-    callback: (el?: Element) => void,
-    context: VueType
-  ): void
-}
-
-interface DirectiveHandlerType {
-  (el: Element, binding: DirectiveBinding, vnode: VNode): void
-}
-interface InstallHandlerType {
-  (_Vue: typeof VueType, options?: { threshold?: number }): void
-}
 // Dynamic Substitution，import polyfill
 __POLYFILL_PLACEHOLDER__
 
@@ -68,12 +54,23 @@ const $resetExposure = function (this: VueType, el: Element) {
   if (el && elToMeta.has(el)) {
     const config = elToMeta.get(el) as ElToMetaType
     if (config.context === this && config.active) {
-      elToMeta.set(el, Object.assign(config, { active: false }))
+      elToMeta.set(
+        el,
+        Object.assign(config, {
+          active: {
+            enter: false,
+            leave: false,
+          },
+        })
+      )
     }
   } else {
     for (let [key, config] of elToMeta.entries()) {
       if (config.context === this && config.active) {
-        elToMeta.set(key, Object.assign(config, { active: false }))
+        elToMeta.set(
+          key,
+          Object.assign(config, { active: { enter: false, leave: false } })
+        )
       }
     }
   }
@@ -84,6 +81,7 @@ declare module 'vue/types/vue' {
     $resetExposure: typeof $resetExposure
   }
 }
+
 /**
  * @description Create an instance of IntersectionObserver, single instance mode.
  */
@@ -92,27 +90,46 @@ const createObserver = () => {
     observer = new window.IntersectionObserver((list, observer) => {
       for (let entry of list) {
         const { isIntersecting, target, intersectionRatio } = entry
-        if (isIntersecting) {
-          const config = elToMeta.get(target)
+        const config = elToMeta.get(target)
+        if (config) {
+          // Skip when handler is a function and callback has been triggered
+          if (isFuncHandler(config.handler) && config.active.enter) {
+            break
+          }
+          // Skip when handler is a object and callback has been triggered
           if (
-            config &&
-            !config.active &&
+            isObjectHandler(config.handler) &&
+            config.active.enter &&
+            config.active.leave
+          ) {
+            break
+          }
+          if (!isVisibleElement(target)) {
+            break
+          }
+          if (
+            isIntersecting &&
+            !config.active.enter &&
             intersectionRatio >= config.threshold
           ) {
-            const { visibility, height, width } = window.getComputedStyle(
-              target,
-              null
-            )
-            if (
-              visibility === 'hidden' ||
-              parseInt(height) === 0 ||
-              parseInt(width) === 0
-            ) {
-              break
+            if (isFuncHandler(config.handler)) {
+              config.handler(target)
+            } else {
+              config.handler.enter(target)
             }
-            typeof config.callback === 'function' && config.callback(target)
-            elToMeta.set(target, Object.assign(config, { active: true }))
+            config.active.enter = true
+          } else {
+            if (
+              isObjectHandler(config.handler) &&
+              !config.active.leave &&
+              config.active.enter &&
+              intersectionRatio <= 0
+            ) {
+              config.handler.leave(target)
+              config.active.leave = true
+            }
           }
+          elToMeta.set(target, config)
         }
       }
     }, OBSERVER_OPTIONS)
@@ -128,16 +145,19 @@ const createObserver = () => {
  * @description listens to the element and maps the element to Mate.
  */
 
-const addElToObserve: addElToObserveType = (
-  el,
-  threshold,
-  callback,
-  context
+const addElToObserve = (
+  el: Element,
+  threshold: number,
+  handler: ExposureHandler,
+  context: VueType
 ) => {
   if (!elToMeta.has(el)) {
     elToMeta.set(el, {
-      active: false,
-      callback,
+      active: {
+        enter: false,
+        leave: false,
+      },
+      handler,
       context,
       threshold,
     })
@@ -152,13 +172,18 @@ const addElToObserve: addElToObserveType = (
  *              bind the $resetExposure method to a Vue instance,
  *              execute addElToObserve to listen to the el.
  */
-
 const bind: DirectiveHandlerType = (el, binding, vnode) => {
   let { value, arg } = binding
   let threshold: number
   const { context } = vnode
-  if (typeof value !== 'function') {
-    Logger.error('directive value is not function ')
+  if (!isExposureHandler(value)) {
+    Logger.error(
+      `directive value is not ExposureHandler. 
+       ExposureHandler type:
+        - function: (el?: Element) => void
+        - object: {enter: (el?: Element) => void, leave: (el?: Element) => void}
+       `
+    )
     return
   }
   if (!context) {

@@ -6,11 +6,11 @@
     ></div>
     <div
       class="middle"
-      v-exposure="handlerMiddle"
+      v-exposure="handler"
     ></div>
     <div
       class="bottom"
-      v-exposure="handlerBottom"
+      v-exposure:[1]="handler"
     ></div>
   </div>
 </template>
@@ -18,6 +18,18 @@
 <script>
 export default {
   name: 'BaseExposure',
+  data() {
+    return {
+      handler: {
+        enter() {
+          alert('enter')
+        },
+        leave() {
+          alert('leave')
+        }
+      }
+    }
+  },
   deactivated() {
     this.$resetExposure()
   },
