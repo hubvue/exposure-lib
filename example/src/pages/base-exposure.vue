@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'BaseExposure',
@@ -14,9 +14,17 @@ export default defineComponent({
     const handlerTop = () => {
       alert('top')
     }
-    const handlerMiddle = () => {
-      alert('middle')
+    const handlerMiddle = {
+      enter () {
+        alert('middle enter')
+      },
+      leave () {
+        alert('middle leave')
+      }
     }
+    // const handlerMiddle = () => {
+    //   alert('middle')
+    // }
     const handlerBottom = () => {
       alert('bottom')
     }
