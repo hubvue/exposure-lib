@@ -341,10 +341,10 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@vue-exposure/next@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/@vue-exposure/next/-/next-0.0.4.tgz#293661467247d455aa20d59248e232792804c880"
-  integrity sha512-zVmu94LwDok9ephVfKUls3m72KyYa602MfgMCnXpe26MkFyV7naCNNqKa071WbhP4GvulSk7dkCfG+K/qgAm7w==
+"@vue-exposure/next@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@vue-exposure/next/-/next-1.0.1.tgz#455e00271764cf13d720178ef4cf0915f04620af"
+  integrity sha512-Xvy0P10TaJC6CTUDGHI21N9UjE16MQ2wHUz+bdK3IfuJNKMRDGq0TtekgxxqZFVT5e0t/DS3FqrFhW2tkxKOVQ==
 
 "@vue-exposure/polyfill@^1.0.0":
   version "1.0.0"
