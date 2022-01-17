@@ -173,6 +173,20 @@ deactivated() {
 }
 ```
 
-#### Caution
+#### Vue 2 + composition-api
+If the project is built with Vue 2 + composition-api, useResetExposure to reset the exposure in order to follow the composition-api coding specification.
+
+```ts
+import { useResetExposure } from 'vue-exposure'
+import { defineComponent, onDeactivated } from '@vue/composition-api'
+export default defineComponent({
+  setup() {
+    onDeactivated(() => {
+      useResetExposure()
+    })
+  }
+})
+```
+### Caution
 
 vue-exposure listens on elements in strict mode, and does not listen on elements whose `visibility` is `hidden` or whose `width` is `0` or whose `height` is `0`.

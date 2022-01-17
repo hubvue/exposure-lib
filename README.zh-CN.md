@@ -171,6 +171,21 @@ deactivated() {
 }
 ```
 
-#### 注意事项
+#### Vue 2 + composition-api
+若项目使用Vue 2 + composition-api构建，为了遵循composition-api 编码规范，则可以使用useResetExposure 重置曝光。
+
+```ts
+import { useResetExposure } from 'vue-exposure'
+import { defineComponent, onDeactivated } from '@vue/composition-api'
+export default defineComponent({
+  setup() {
+    onDeactivated(() => {
+      useResetExposure()
+    })
+  }
+})
+```
+
+### 注意事项
 
 vue-exposure 监听元素是严格模式的，当一个元素的`visibility`为`hidden`或者`width`为`0`或者`height`为`0`都不会去监听。
