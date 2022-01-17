@@ -121,36 +121,33 @@ export const isVisibleElement = (el: Element) => {
  * @description Resets the callback of a listening element to an executable state.
  *              The purpose is to be compatible with keepAlive,
  *              Bind the $resetExposure method to a Vue instance and execute it in the deactivated lifecycle.
+ *              If the project is built with Vue 2 + composition-api, you can use useResetExposure to reset the exposure.
  */
-const $resetExposure = function (this: VueType, el: Element) {
+export const useResetExposure = function (el: Element) {
   if (el && elToMeta.has(el)) {
     const config = elToMeta.get(el) as ElToMetaType
-    if (config.context === this && config.active) {
-      elToMeta.set(
-        el,
-        Object.assign(config, {
-          active: {
-            enter: false,
-            leave: false,
-          },
-        })
-      )
-    }
+    elToMeta.set(
+      el,
+      Object.assign(config, {
+        active: {
+          enter: false,
+          leave: false,
+        },
+      })
+    )
   } else {
     for (let [key, config] of elToMeta.entries()) {
-      if (config.context === this && config.active) {
-        elToMeta.set(
-          key,
-          Object.assign(config, { active: { enter: false, leave: false } })
-        )
-      }
+      elToMeta.set(
+        key,
+        Object.assign(config, { active: { enter: false, leave: false } })
+      )
     }
   }
 }
 // statement Merging  $resetExposure method
 declare module 'vue/types/vue' {
   interface Vue {
-    $resetExposure: typeof $resetExposure
+    $resetExposure: typeof useResetExposure
   }
 }
 
@@ -266,11 +263,11 @@ const bind: DirectiveHandlerType = (el, binding, vnode) => {
     arg && Logger.error('element arguments  must be number type')
     threshold = GLOBAL_THERSHOLD || 1
   }
-  if (context.$resetExposure && context.$resetExposure !== $resetExposure) {
+  if (context.$resetExposure && context.$resetExposure !== useResetExposure) {
     Logger.error('context bind $resetExposure propertyKey')
     return
   }
-  !context.$resetExposure && (context.$resetExposure = $resetExposure)
+  !context.$resetExposure && (context.$resetExposure = useResetExposure)
   addElToObserve(el, threshold, value, context)
 }
 /**
