@@ -123,11 +123,17 @@ export const isVisibleElement = (el: Element) => {
 export const useResetExposure = function (el?: Element) {
   if (el && elToMeta.has(el)) {
     const config = elToMeta.get(el) as ElToMetaType
-    elToMeta.set(el, Object.assign(config, { active: false }))
+    elToMeta.set(
+      el,
+      Object.assign(config, { active: { enter: false, leave: false } })
+    )
   } else {
     for (let [key, config] of elToMeta.entries()) {
       if (config.active) {
-        elToMeta.set(key, Object.assign(config, { active: false }))
+        elToMeta.set(
+          key,
+          Object.assign(config, { active: { enter: false, leave: false } })
+        )
       }
     }
   }
