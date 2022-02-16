@@ -5,6 +5,10 @@
       class="btn"
     >基础曝光</p>
     <p
+      @click="openPage('/api')"
+      class="btn"
+    >通过API调用</p>
+    <p
       @click="openPage('/threshold')"
       class="btn"
     >设置threshold的曝光</p>

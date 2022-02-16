@@ -67,7 +67,7 @@ const elToMeta: Map<Element, ElToMetaType> = new Map()
  * @param value
  * @returns
  */
-export const isObjectHandler = (value: any): value is ObjectHandler => {
+const isObjectHandler = (value: any): value is ObjectHandler => {
   if (!value || typeof value !== 'object') {
     return false
   }
@@ -89,7 +89,7 @@ export const isObjectHandler = (value: any): value is ObjectHandler => {
  * @param value
  * @returns
  */
-export const isFuncHandler = (value: any): value is FuncHandler => {
+const isFuncHandler = (value: any): value is FuncHandler => {
   if (typeof value === 'function') {
     return true
   }
@@ -101,11 +101,11 @@ export const isFuncHandler = (value: any): value is FuncHandler => {
  * @param value
  * @returns
  */
-export const isExposureHandler = (value: any): value is ExposureHandler => {
+const isExposureHandler = (value: any): value is ExposureHandler => {
   return isObjectHandler(value) || isFuncHandler(value)
 }
 
-export const isVisibleElement = (el: Element) => {
+const isVisibleElement = (el: Element) => {
   const { visibility, height, width } = window.getComputedStyle(el, null)
   if (
     visibility === 'hidden' ||
@@ -233,6 +233,44 @@ const addElToObserve = (
     observer && observer.observe(el)
   }
 }
+interface ObserveOption {
+  context: VueType
+  threshold?: number
+}
+/**
+ * @description Create Observer to listen to element exposure by means of API
+ * @param option ObserveOption
+ * @returns observe(el: Element, handler: ExposureHandler): void
+ */
+export const createExposureObserver = (option: ObserveOption) => {
+  const threshold = option.threshold || GLOBAL_THERSHOLD
+
+  return function observe(el: Element, handler: ExposureHandler) {
+    if (!isExposureHandler(handler)) {
+      Logger.error(
+        `handler is not ExposureHandler. 
+         ExposureHandler type:
+          - function: (el?: Element) => void
+          - object: {enter?: (el?: Element) => void, leave?: (el?: Element) => void}
+         `
+      )
+      return
+    }
+    if (!elToMeta.has(el)) {
+      elToMeta.set(el, {
+        active: {
+          enter: false,
+          leave: false,
+        },
+        context: option.context,
+        handler,
+        threshold,
+      })
+      observer && observer.observe(el)
+    }
+  }
+}
+
 /**
  * @param {*} el
  * @param {*} binding
