@@ -10,9 +10,10 @@ interface ElementContext {
   threshold: number
 }
 
-interface Exposure {
+export interface Exposure {
   threshold: number
-  observe(el: Element, handler: ExposureHandler): void
+  observe(el: Element, handler: ExposureHandler, threshold?: number): void
+  unobserve(el: Element): void
 }
 
 const Logger = console
@@ -82,8 +83,15 @@ export const createExposure = (golablThreshold = 1): Exposure => {
       IntersectionObserver.observe(el)
     }
   }
+  function unobserve(el: Element) {
+    if (elementContextMap.has(el) && IntersectionObserver) {
+      elementContextMap.delete(el)
+      IntersectionObserver.unobserve(el)
+    }
+  }
   return {
     threshold: golablThreshold,
     observe,
+    unobserve,
   }
 }

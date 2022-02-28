@@ -107,6 +107,11 @@ const formatToSuffix = {
   esm: 'mjs',
   cjs: 'cjs',
 }
+const packageOtherConfig = {
+  vue2: {
+    external: ['@exposure-lib/core'],
+  },
+}
 const generateBuildConfigs = (packagesName) => {
   const packagesFormatConfig = packagesName.map((packageName) => {
     const formatConfigs = []
@@ -132,6 +137,7 @@ const generateBuildConfigs = (packagesName) => {
               },
             }),
           ],
+          ...packageOtherConfig[packageName],
         },
       })
     }

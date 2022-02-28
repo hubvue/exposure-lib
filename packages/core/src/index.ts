@@ -1,2 +1,2 @@
-export { createExposure, resetExposure } from './exposure'
+export { createExposure, resetExposure, Exposure } from './exposure'
 export * from './utils'

@@ -24,7 +24,6 @@ importers:
       rollup: ^2.16.1
       rollup-plugin-typescript2: ^0.27.1
       typescript: ^3.9.5
-      vue: ^2.6.11
     devDependencies:
       '@commitlint/cli': 8.3.6
       '@commitlint/config-conventional': 8.3.6
@@ -46,7 +45,18 @@ importers:
       rollup: 2.63.0
       rollup-plugin-typescript2: 0.27.3_rollup@2.63.0+typescript@3.9.10
       typescript: 3.9.10
-      vue: 2.6.14
+
+  packages/core:
+    specifiers: {}
+
+  packages/polyfill:
+    specifiers: {}
+
+  packages/vue2:
+    specifiers:
+      vue: ^2.6.11
+    devDependencies:
+      vue: artifactory.intra.xiaojukeji.com/vue/2.6.14
 
 packages:
 
@@ -2652,10 +2662,6 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vue/2.6.14:
-    resolution: {integrity: sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==}
-    dev: true
-
   /which-pm-runs/1.0.0:
     resolution: {integrity: sha1-Zws6+8VS4LVd9rd4DKdGFfI60cs=}
     dev: true
@@ -3924,6 +3930,12 @@ packages:
     name: validator
     version: 13.7.0
     engines: {node: '>= 0.10'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/vue/2.6.14:
+    resolution: {integrity: sha1-5RqlJQJQ1Wmj+606ilpofWA24jU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/vue/-/vue-2.6.14.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2F-%2Fvue-2.6.14.tgz}
+    name: vue
+    version: 2.6.14
     dev: true
 
   artifactory.intra.xiaojukeji.com/wcwidth/1.0.1:
