@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "dist",
     "sourceMap": false,
-    "target": "ESNext",
+    "target": "ES2016",
     "module": "ESNext",
     "moduleResolution": "node",
     "allowJs": false,
@@ -14,9 +15,13 @@
     "removeComments": true,
     "jsx": "preserve",
     "lib": ["esnext", "dom"],
+    "types": ["node"],
+    "rootDir": ".",
     "declaration": true,
-    "declarationDir": "./types/"
+    "paths": {
+      "@exposure-lib/*": ["packages/*/src"]
+    }
   },
-  "include": ["src/index.ts"],
-  "exclude": ["dist"]
+  "include": ["packages/*/src", "packages/*/__test__"],
+  "exclude": ["packages/*/dist"]
 }

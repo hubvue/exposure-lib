@@ -187,6 +187,9 @@ export default defineComponent({
   }
 })
 ```
+
+#### Call through API
+
 ### Caution
 
 vue-exposure listens on elements in strict mode, and does not listen on elements whose `visibility` is `hidden` or whose `width` is `0` or whose `height` is `0`.

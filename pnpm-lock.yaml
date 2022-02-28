@@ -1,42 +1,52 @@
 lockfileVersion: 5.3
 
-specifiers:
-  '@commitlint/cli': ^8.3.5
-  '@commitlint/config-conventional': ^8.3.4
-  '@rollup/plugin-replace': ^2.3.3
-  '@typescript-eslint/eslint-plugin': ^3.3.0
-  '@typescript-eslint/parser': ^3.3.0
-  chalk: ^4.1.0
-  conventional-changelog-cli: ^2.0.34
-  eslint: ^7.2.0
-  eslint-config-prettier: ^6.11.0
-  eslint-plugin-prettier: ^3.1.4
-  husky: ^4.2.5
-  lint-staged: ^10.2.10
-  prettier: ^2.0.5
-  rollup: ^2.16.1
-  rollup-plugin-typescript2: ^0.27.1
-  typescript: ^3.9.5
-  vue: ^2.6.11
+importers:
 
-devDependencies:
-  '@commitlint/cli': 8.3.6
-  '@commitlint/config-conventional': 8.3.6
-  '@rollup/plugin-replace': 2.4.2_rollup@2.63.0
-  '@typescript-eslint/eslint-plugin': 3.10.1_55e89c9edea86638a39c3ce508e0bae9
-  '@typescript-eslint/parser': 3.10.1_eslint@7.32.0+typescript@3.9.10
-  chalk: 4.1.2
-  conventional-changelog-cli: 2.2.2
-  eslint: 7.32.0
-  eslint-config-prettier: 6.15.0_eslint@7.32.0
-  eslint-plugin-prettier: 3.4.1_a90c626bbf8b44e0aad298faeac07fd7
-  husky: 4.3.8
-  lint-staged: 10.5.4
-  prettier: 2.5.1
-  rollup: 2.63.0
-  rollup-plugin-typescript2: 0.27.3_rollup@2.63.0+typescript@3.9.10
-  typescript: 3.9.10
-  vue: 2.6.14
+  .:
+    specifiers:
+      '@commitlint/cli': ^8.3.5
+      '@commitlint/config-conventional': ^8.3.4
+      '@microsoft/api-extractor': ^7.19.4
+      '@rollup/plugin-replace': ^2.3.3
+      '@types/node': ^17.0.21
+      '@typescript-eslint/eslint-plugin': ^3.3.0
+      '@typescript-eslint/parser': ^3.3.0
+      chalk: ^4.1.0
+      conventional-changelog-cli: ^2.0.34
+      eslint: ^7.2.0
+      eslint-config-prettier: ^6.11.0
+      eslint-plugin-prettier: ^3.1.4
+      esmo: ^0.14.1
+      husky: ^4.2.5
+      inquirer: ^8.2.0
+      lint-staged: ^10.2.10
+      prettier: ^2.0.5
+      rollup: ^2.16.1
+      rollup-plugin-typescript2: ^0.27.1
+      typescript: ^3.9.5
+      vue: ^2.6.11
+    devDependencies:
+      '@commitlint/cli': 8.3.6
+      '@commitlint/config-conventional': 8.3.6
+      '@microsoft/api-extractor': artifactory.intra.xiaojukeji.com/@microsoft/api-extractor/7.19.4
+      '@rollup/plugin-replace': 2.4.2_rollup@2.63.0
+      '@types/node': artifactory.intra.xiaojukeji.com/@types/node/17.0.21
+      '@typescript-eslint/eslint-plugin': 3.10.1_55e89c9edea86638a39c3ce508e0bae9
+      '@typescript-eslint/parser': 3.10.1_eslint@7.32.0+typescript@3.9.10
+      chalk: 4.1.2
+      conventional-changelog-cli: 2.2.2
+      eslint: 7.32.0
+      eslint-config-prettier: 6.15.0_eslint@7.32.0
+      eslint-plugin-prettier: 3.4.1_a90c626bbf8b44e0aad298faeac07fd7
+      esmo: artifactory.intra.xiaojukeji.com/esmo/0.14.1
+      husky: 4.3.8
+      inquirer: artifactory.intra.xiaojukeji.com/inquirer/8.2.0
+      lint-staged: 10.5.4
+      prettier: 2.5.1
+      rollup: 2.63.0
+      rollup-plugin-typescript2: 0.27.3_rollup@2.63.0+typescript@3.9.10
+      typescript: 3.9.10
+      vue: 2.6.14
 
 packages:
 
@@ -63,7 +73,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/helper-validator-identifier': 7.16.7
-      chalk: 2.4.2
+      chalk: artifactory.intra.xiaojukeji.com/chalk/2.4.2
       js-tokens: 4.0.0
     dev: true
 
@@ -95,7 +105,7 @@ packages:
     resolution: {integrity: sha512-UUipnA7sX3OSUW39pi4Etf7pKrG76uM33ybs5YTEOZbT6zb3aKUS+A1ygo52eX+tqpxCiV+6qSy5qEKG8c1aeA==}
     engines: {node: '>=4'}
     dependencies:
-      lodash: 4.17.21
+      lodash: artifactory.intra.xiaojukeji.com/lodash/4.17.21
     dev: true
 
   /@commitlint/execute-rule/8.3.6:
@@ -389,7 +399,7 @@ packages:
     hasBin: true
     dependencies:
       jsonparse: 1.3.1
-      through: 2.3.8
+      through: artifactory.intra.xiaojukeji.com/through/2.3.8
     dev: true
 
   /acorn-jsx/5.3.2_acorn@7.4.1:
@@ -439,13 +449,6 @@ packages:
   /ansi-colors/4.1.1:
     resolution: {integrity: sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA==}
     engines: {node: '>=6'}
-    dev: true
-
-  /ansi-escapes/4.3.2:
-    resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}
-    engines: {node: '>=8'}
-    dependencies:
-      type-fest: 0.21.3
     dev: true
 
   /ansi-regex/5.0.1:
@@ -603,13 +606,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /cli-cursor/3.1.0:
-    resolution: {integrity: sha512-I/zHAwsKf9FqGoXM4WWRACob9+SNukZTd94DWF57E4toouRulbCxcUh6RKUEOQlYTHJnzkPMySvPNaaSLNfLZw==}
-    engines: {node: '>=8'}
-    dependencies:
-      restore-cursor: 3.1.0
-    dev: true
-
   /cli-truncate/2.1.0:
     resolution: {integrity: sha512-n8fOixwDD6b/ObinzTrp1ZKFzbgvKZvuz/TvejnLn1aQfC6r52XEx85FmuC+3HI+JM7coBRXUvNqEU2PHVrHpg==}
     engines: {node: '>=8'}
@@ -621,15 +617,15 @@ packages:
   /cliui/7.0.4:
     resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
     dependencies:
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
+      string-width: artifactory.intra.xiaojukeji.com/string-width/4.2.3
+      strip-ansi: artifactory.intra.xiaojukeji.com/strip-ansi/6.0.1
       wrap-ansi: 7.0.0
     dev: true
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
-      color-name: 1.1.3
+      color-name: artifactory.intra.xiaojukeji.com/color-name/1.1.3
     dev: true
 
   /color-convert/2.0.1:
@@ -637,10 +633,6 @@ packages:
     engines: {node: '>=7.0.0'}
     dependencies:
       color-name: 1.1.4
-    dev: true
-
-  /color-name/1.1.3:
-    resolution: {integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=}
     dev: true
 
   /color-name/1.1.4:
@@ -811,7 +803,7 @@ packages:
       dateformat: 3.0.3
       handlebars: 4.7.7
       json-stringify-safe: 5.0.1
-      lodash: 4.17.21
+      lodash: artifactory.intra.xiaojukeji.com/lodash/4.17.21
       meow: 8.1.2
       semver: 6.3.0
       split: 1.0.1
@@ -850,7 +842,7 @@ packages:
     dependencies:
       is-text-path: 1.0.1
       JSONStream: 1.3.5
-      lodash: 4.17.21
+      lodash: artifactory.intra.xiaojukeji.com/lodash/4.17.21
       meow: 8.1.2
       split2: 3.2.2
       through2: 4.0.2
@@ -1262,14 +1254,6 @@ packages:
     resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
     dev: true
 
-  /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
@@ -1396,7 +1380,7 @@ packages:
       source-map: 0.6.1
       wordwrap: 1.0.0
     optionalDependencies:
-      uglify-js: 3.14.5
+      uglify-js: artifactory.intra.xiaojukeji.com/uglify-js/3.14.5
     dev: true
 
   /hard-rejection/2.1.0:
@@ -1627,7 +1611,7 @@ packages:
   /jsonfile/4.0.0:
     resolution: {integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=}
     optionalDependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: artifactory.intra.xiaojukeji.com/graceful-fs/4.2.9
     dev: true
 
   /jsonparse/1.3.1:
@@ -1755,8 +1739,8 @@ packages:
     resolution: {integrity: sha512-9fkkDevMefjg0mmzWFBW8YkFP91OrizzkW3diF7CpG+S2EYdy4+TVfGwz1zeF8x7hCx1ovSPTOE9Ngib74qqUg==}
     engines: {node: '>=10'}
     dependencies:
-      ansi-escapes: 4.3.2
-      cli-cursor: 3.1.0
+      ansi-escapes: artifactory.intra.xiaojukeji.com/ansi-escapes/4.3.2
+      cli-cursor: artifactory.intra.xiaojukeji.com/cli-cursor/3.1.0
       slice-ansi: 4.0.0
       wrap-ansi: 6.2.0
     dev: true
@@ -2212,28 +2196,7 @@ packages:
       '@types/normalize-package-data': 2.4.1
       normalize-package-data: 2.5.0
       parse-json: 5.2.0
-      type-fest: 0.6.0
-    dev: true
-
-  /readable-stream/2.3.7:
-    resolution: {integrity: sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==}
-    dependencies:
-      core-util-is: 1.0.3
-      inherits: 2.0.4
-      isarray: 1.0.0
-      process-nextick-args: 2.0.1
-      safe-buffer: 5.1.2
-      string_decoder: 1.1.1
-      util-deprecate: 1.0.2
-    dev: true
-
-  /readable-stream/3.6.0:
-    resolution: {integrity: sha512-BViHy7LKeTz4oNnkcLJ+lVSL6vpiFeX6/d3oSH8zCW7UxP2onchk+vTGB143xuFjHS3deTgkKoXXymXqymiIdA==}
-    engines: {node: '>= 6'}
-    dependencies:
-      inherits: 2.0.4
-      string_decoder: 1.3.0
-      util-deprecate: 1.0.2
+      type-fest: artifactory.intra.xiaojukeji.com/type-fest/0.6.0
     dev: true
 
   /redent/2.0.0:
@@ -2312,14 +2275,6 @@ packages:
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
 
-  /restore-cursor/3.1.0:
-    resolution: {integrity: sha512-l+sSefzHpj5qimhFSE5a8nufZYAM3sBSVMAPtYkmC+4EH2anSGaEMXSD0izRQbu9nfyQ9y5JrVmp7E8oZrUjvA==}
-    engines: {node: '>=8'}
-    dependencies:
-      onetime: 5.1.2
-      signal-exit: 3.0.6
-    dev: true
-
   /rfdc/1.3.0:
     resolution: {integrity: sha512-V2hovdzFbOi77/WajaSMXk2OLm+xNIeQdMMuB7icj7bk6zi2F8GGAxigcnDFpJHbNyNcgyJDiP+8nOrY5cZGrA==}
     dev: true
@@ -2358,21 +2313,13 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: artifactory.intra.xiaojukeji.com/fsevents/2.3.2
     dev: true
 
   /rxjs/7.5.1:
     resolution: {integrity: sha512-KExVEeZWxMZnZhUZtsJcFwz8IvPvgu4G2Z2QyqjZQzUGr32KDYuSxrEYO4w3tFFNbfLozcrKUTvTPi+E9ywJkQ==}
     dependencies:
-      tslib: 2.3.1
-    dev: true
-
-  /safe-buffer/5.1.2:
-    resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
-    dev: true
-
-  /safe-buffer/5.2.1:
-    resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
+      tslib: artifactory.intra.xiaojukeji.com/tslib/2.3.1
     dev: true
 
   /semver-compare/1.0.0:
@@ -2475,13 +2422,13 @@ packages:
   /split/1.0.1:
     resolution: {integrity: sha512-mTyOoPbrivtXnwnIxZRFYRrPNtEFKlpB2fvjSnCQUiAA6qAZzqwna5envK4uk6OIeP17CsdF3rSBGYVBsU0Tkg==}
     dependencies:
-      through: 2.3.8
+      through: artifactory.intra.xiaojukeji.com/through/2.3.8
     dev: true
 
   /split2/3.2.2:
     resolution: {integrity: sha512-9NThjpgZnifTkJpzTZ7Eue85S49QwpNhZTq6GRJwObb6jnLFNGB7Qm73V5HewTROPyxD0C29xqmaI68bQtV+hg==}
     dependencies:
-      readable-stream: 3.6.0
+      readable-stream: artifactory.intra.xiaojukeji.com/readable-stream/3.6.0
     dev: true
 
   /sprintf-js/1.0.3:
@@ -2499,19 +2446,7 @@ packages:
     dependencies:
       emoji-regex: 8.0.0
       is-fullwidth-code-point: 3.0.0
-      strip-ansi: 6.0.1
-    dev: true
-
-  /string_decoder/1.1.1:
-    resolution: {integrity: sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==}
-    dependencies:
-      safe-buffer: 5.1.2
-    dev: true
-
-  /string_decoder/1.3.0:
-    resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==}
-    dependencies:
-      safe-buffer: 5.2.1
+      strip-ansi: artifactory.intra.xiaojukeji.com/strip-ansi/6.0.1
     dev: true
 
   /stringify-object/3.3.0:
@@ -2616,14 +2551,14 @@ packages:
   /through2/2.0.5:
     resolution: {integrity: sha512-/mrRod8xqpA+IHSLyGCQ2s8SPHiCDEeQJSep1jqLYeEUClOFG2Qsh+4FU6G9VeqpZnGW/Su8LQGc4YKni5rYSQ==}
     dependencies:
-      readable-stream: 2.3.7
+      readable-stream: artifactory.intra.xiaojukeji.com/readable-stream/2.3.7
       xtend: 4.0.2
     dev: true
 
   /through2/4.0.2:
     resolution: {integrity: sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==}
     dependencies:
-      readable-stream: 3.6.0
+      readable-stream: artifactory.intra.xiaojukeji.com/readable-stream/3.6.0
     dev: true
 
   /to-regex-range/5.0.1:
@@ -2649,10 +2584,6 @@ packages:
 
   /tslib/2.0.1:
     resolution: {integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==}
-    dev: true
-
-  /tslib/2.3.1:
-    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
     dev: true
 
   /tsutils/3.21.0_typescript@3.9.10:
@@ -2682,16 +2613,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /type-fest/0.21.3:
-    resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
-    engines: {node: '>=10'}
-    dev: true
-
-  /type-fest/0.6.0:
-    resolution: {integrity: sha512-q+MB8nYR1KDLrgr4G5yemftpMC7/QLqVndBmEEdqzmNj5dcFOO4Oo8qlwZE3ULT3+Zim1F8Kq4cBnikNhlCMlg==}
-    engines: {node: '>=8'}
-    dev: true
-
   /type-fest/0.8.1:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
@@ -2703,14 +2624,6 @@ packages:
     hasBin: true
     dev: true
 
-  /uglify-js/3.14.5:
-    resolution: {integrity: sha512-qZukoSxOG0urUTvjc2ERMTcAy+BiFh3weWAkeurLwjrCba73poHmG3E36XEjd/JGukMzwTL7uCxZiAexj8ppvQ==}
-    engines: {node: '>=0.8.0'}
-    hasBin: true
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /universalify/0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
@@ -2720,10 +2633,6 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.1.1
-    dev: true
-
-  /util-deprecate/1.0.2:
-    resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
     dev: true
 
   /uuid/3.4.0:
@@ -2772,9 +2681,9 @@ packages:
     resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}
     engines: {node: '>=8'}
     dependencies:
-      ansi-styles: 4.3.0
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
+      ansi-styles: artifactory.intra.xiaojukeji.com/ansi-styles/4.3.0
+      string-width: artifactory.intra.xiaojukeji.com/string-width/4.2.3
+      strip-ansi: artifactory.intra.xiaojukeji.com/strip-ansi/6.0.1
     dev: true
 
   /wrap-ansi/7.0.0:
@@ -2782,8 +2691,8 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       ansi-styles: 4.3.0
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
+      string-width: artifactory.intra.xiaojukeji.com/string-width/4.2.3
+      strip-ansi: artifactory.intra.xiaojukeji.com/strip-ansi/6.0.1
     dev: true
 
   /wrappy/1.0.2:
@@ -2828,7 +2737,7 @@ packages:
       escalade: 3.1.1
       get-caller-file: 2.0.5
       require-directory: 2.1.1
-      string-width: 4.2.3
+      string-width: artifactory.intra.xiaojukeji.com/string-width/4.2.3
       y18n: 5.0.8
       yargs-parser: 20.2.9
     dev: true
@@ -2836,4 +2745,1221 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@microsoft/api-extractor-model/7.15.3:
+    resolution: {integrity: sha1-z3be7rJzPZdNpnj1MMLbrOsYoGU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@microsoft/api-extractor-model/-/api-extractor-model-7.15.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40microsoft%2Fapi-extractor-model%2F-%2Fapi-extractor-model-7.15.3.tgz}
+    name: '@microsoft/api-extractor-model'
+    version: 7.15.3
+    dependencies:
+      '@microsoft/tsdoc': artifactory.intra.xiaojukeji.com/@microsoft/tsdoc/0.13.2
+      '@microsoft/tsdoc-config': artifactory.intra.xiaojukeji.com/@microsoft/tsdoc-config/0.15.2
+      '@rushstack/node-core-library': artifactory.intra.xiaojukeji.com/@rushstack/node-core-library/3.45.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@microsoft/api-extractor/7.19.4:
+    resolution: {integrity: sha1-ldQ9QQod+yigIGLEaTvLnFKv6es=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@microsoft/api-extractor/-/api-extractor-7.19.4.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40microsoft%2Fapi-extractor%2F-%2Fapi-extractor-7.19.4.tgz}
+    name: '@microsoft/api-extractor'
+    version: 7.19.4
+    hasBin: true
+    dependencies:
+      '@microsoft/api-extractor-model': artifactory.intra.xiaojukeji.com/@microsoft/api-extractor-model/7.15.3
+      '@microsoft/tsdoc': artifactory.intra.xiaojukeji.com/@microsoft/tsdoc/0.13.2
+      '@microsoft/tsdoc-config': artifactory.intra.xiaojukeji.com/@microsoft/tsdoc-config/0.15.2
+      '@rushstack/node-core-library': artifactory.intra.xiaojukeji.com/@rushstack/node-core-library/3.45.0
+      '@rushstack/rig-package': artifactory.intra.xiaojukeji.com/@rushstack/rig-package/0.3.7
+      '@rushstack/ts-command-line': artifactory.intra.xiaojukeji.com/@rushstack/ts-command-line/4.10.6
+      colors: artifactory.intra.xiaojukeji.com/colors/1.2.5
+      lodash: artifactory.intra.xiaojukeji.com/lodash/4.17.21
+      resolve: artifactory.intra.xiaojukeji.com/resolve/1.17.0
+      semver: artifactory.intra.xiaojukeji.com/semver/7.3.5
+      source-map: artifactory.intra.xiaojukeji.com/source-map/0.6.1
+      typescript: artifactory.intra.xiaojukeji.com/typescript/4.5.5
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@microsoft/tsdoc-config/0.15.2:
+    resolution: {integrity: sha1-6zU8k/O2KrdL3Jq29Kgrz4AUDxQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@microsoft/tsdoc-config/-/tsdoc-config-0.15.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40microsoft%2Ftsdoc-config%2F-%2Ftsdoc-config-0.15.2.tgz}
+    name: '@microsoft/tsdoc-config'
+    version: 0.15.2
+    dependencies:
+      '@microsoft/tsdoc': artifactory.intra.xiaojukeji.com/@microsoft/tsdoc/0.13.2
+      ajv: artifactory.intra.xiaojukeji.com/ajv/6.12.6
+      jju: artifactory.intra.xiaojukeji.com/jju/1.4.0
+      resolve: artifactory.intra.xiaojukeji.com/resolve/1.19.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@microsoft/tsdoc/0.13.2:
+    resolution: {integrity: sha1-Ow77bTkDvUntsHNpb2DpDfCO+yY=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@microsoft/tsdoc/-/tsdoc-0.13.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40microsoft%2Ftsdoc%2F-%2Ftsdoc-0.13.2.tgz}
+    name: '@microsoft/tsdoc'
+    version: 0.13.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@rushstack/node-core-library/3.45.0:
+    resolution: {integrity: sha1-jIazknG22EJgsecNuH4eJltU9iA=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@rushstack/node-core-library/-/node-core-library-3.45.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40rushstack%2Fnode-core-library%2F-%2Fnode-core-library-3.45.0.tgz}
+    name: '@rushstack/node-core-library'
+    version: 3.45.0
+    dependencies:
+      '@types/node': artifactory.intra.xiaojukeji.com/@types/node/12.20.24
+      colors: artifactory.intra.xiaojukeji.com/colors/1.2.5
+      fs-extra: artifactory.intra.xiaojukeji.com/fs-extra/7.0.1
+      import-lazy: artifactory.intra.xiaojukeji.com/import-lazy/4.0.0
+      jju: artifactory.intra.xiaojukeji.com/jju/1.4.0
+      resolve: artifactory.intra.xiaojukeji.com/resolve/1.17.0
+      semver: artifactory.intra.xiaojukeji.com/semver/7.3.5
+      timsort: artifactory.intra.xiaojukeji.com/timsort/0.3.0
+      z-schema: artifactory.intra.xiaojukeji.com/z-schema/5.0.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@rushstack/rig-package/0.3.7:
+    resolution: {integrity: sha1-P6VksdEp0oaJ3UMJUCeSsV6Ev4E=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@rushstack/rig-package/-/rig-package-0.3.7.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40rushstack%2Frig-package%2F-%2Frig-package-0.3.7.tgz}
+    name: '@rushstack/rig-package'
+    version: 0.3.7
+    dependencies:
+      resolve: artifactory.intra.xiaojukeji.com/resolve/1.17.0
+      strip-json-comments: artifactory.intra.xiaojukeji.com/strip-json-comments/3.1.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@rushstack/ts-command-line/4.10.6:
+    resolution: {integrity: sha1-VmnkgeQznOtOFCgYPrCTfTvDhBs=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@rushstack/ts-command-line/-/ts-command-line-4.10.6.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40rushstack%2Fts-command-line%2F-%2Fts-command-line-4.10.6.tgz}
+    name: '@rushstack/ts-command-line'
+    version: 4.10.6
+    dependencies:
+      '@types/argparse': artifactory.intra.xiaojukeji.com/@types/argparse/1.0.38
+      argparse: artifactory.intra.xiaojukeji.com/argparse/1.0.10
+      colors: artifactory.intra.xiaojukeji.com/colors/1.2.5
+      string-argv: artifactory.intra.xiaojukeji.com/string-argv/0.3.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/argparse/1.0.38:
+    resolution: {integrity: sha1-qB/YYG1IH4c6OADG665PHXaKVqk=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/argparse/-/argparse-1.0.38.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fargparse%2F-%2Fargparse-1.0.38.tgz}
+    name: '@types/argparse'
+    version: 1.0.38
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/node/12.20.24:
+    resolution: {integrity: sha1-w3rGnLKUivtM75X0JPoAN5camlw=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/node/-/node-12.20.24.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fnode%2F-%2Fnode-12.20.24.tgz}
+    name: '@types/node'
+    version: 12.20.24
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/node/17.0.21:
+    resolution: {integrity: sha1-hkuYfAxo0HtDRYRcPmO3Xt0UNkQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/node/-/node-17.0.21.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fnode%2F-%2Fnode-17.0.21.tgz}
+    name: '@types/node'
+    version: 17.0.21
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/ajv/6.12.6:
+    resolution: {integrity: sha1-uvWmLoArB9l3A0WG+MO69a3ybfQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/ajv/-/ajv-6.12.6.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fajv%2F-%2Fajv-6.12.6.tgz}
+    name: ajv
+    version: 6.12.6
+    dependencies:
+      fast-deep-equal: artifactory.intra.xiaojukeji.com/fast-deep-equal/3.1.3
+      fast-json-stable-stringify: artifactory.intra.xiaojukeji.com/fast-json-stable-stringify/2.1.0
+      json-schema-traverse: artifactory.intra.xiaojukeji.com/json-schema-traverse/0.4.1
+      uri-js: artifactory.intra.xiaojukeji.com/uri-js/4.4.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/ansi-escapes/4.3.2:
+    resolution: {integrity: sha1-ayKR0dt9mLZSHV8e+kLQ86n+tl4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/ansi-escapes/-/ansi-escapes-4.3.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fansi-escapes%2F-%2Fansi-escapes-4.3.2.tgz}
+    name: ansi-escapes
+    version: 4.3.2
+    engines: {node: '>=8'}
+    dependencies:
+      type-fest: artifactory.intra.xiaojukeji.com/type-fest/0.21.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/ansi-regex/5.0.1:
+    resolution: {integrity: sha1-CCyyyJyf6GWaMRpTvWpNxTAdswQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/ansi-regex/-/ansi-regex-5.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fansi-regex%2F-%2Fansi-regex-5.0.1.tgz}
+    name: ansi-regex
+    version: 5.0.1
+    engines: {node: '>=8'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/ansi-styles/3.2.1:
+    resolution: {integrity: sha1-QfuyAkPlCxK+DwS43tvwdSDOhB0=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/ansi-styles/-/ansi-styles-3.2.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fansi-styles%2F-%2Fansi-styles-3.2.1.tgz}
+    name: ansi-styles
+    version: 3.2.1
+    engines: {node: '>=4'}
+    dependencies:
+      color-convert: artifactory.intra.xiaojukeji.com/color-convert/1.9.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/ansi-styles/4.3.0:
+    resolution: {integrity: sha1-7dgDYornHATIWuegkG7a00tkiTc=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/ansi-styles/-/ansi-styles-4.3.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fansi-styles%2F-%2Fansi-styles-4.3.0.tgz}
+    name: ansi-styles
+    version: 4.3.0
+    engines: {node: '>=8'}
+    dependencies:
+      color-convert: artifactory.intra.xiaojukeji.com/color-convert/2.0.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/argparse/1.0.10:
+    resolution: {integrity: sha1-vNZ5HqWuCXJeF+WtmIE0zUCz2RE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/argparse/-/argparse-1.0.10.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fargparse%2F-%2Fargparse-1.0.10.tgz}
+    name: argparse
+    version: 1.0.10
+    dependencies:
+      sprintf-js: artifactory.intra.xiaojukeji.com/sprintf-js/1.0.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/base64-js/1.5.1:
+    resolution: {integrity: sha1-GxtEAWClv3rUC2UPCVljSBkDkwo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/base64-js/-/base64-js-1.5.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fbase64-js%2F-%2Fbase64-js-1.5.1.tgz}
+    name: base64-js
+    version: 1.5.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/bl/4.1.0:
+    resolution: {integrity: sha1-RRU1JkGCvsL7vIOmKrmM8R2fezo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/bl/-/bl-4.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fbl%2F-%2Fbl-4.1.0.tgz}
+    name: bl
+    version: 4.1.0
+    dependencies:
+      buffer: artifactory.intra.xiaojukeji.com/buffer/5.7.1
+      inherits: artifactory.intra.xiaojukeji.com/inherits/2.0.4
+      readable-stream: artifactory.intra.xiaojukeji.com/readable-stream/3.6.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/buffer/5.7.1:
+    resolution: {integrity: sha1-umLnwTEzBTWCGXFghRqPZI6Z7tA=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/buffer/-/buffer-5.7.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fbuffer%2F-%2Fbuffer-5.7.1.tgz}
+    name: buffer
+    version: 5.7.1
+    dependencies:
+      base64-js: artifactory.intra.xiaojukeji.com/base64-js/1.5.1
+      ieee754: artifactory.intra.xiaojukeji.com/ieee754/1.2.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/builtins/4.0.0:
+    resolution: {integrity: sha1-qDRUIN6CBo/cTWVZ0EVkA6j7GQU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/builtins/-/builtins-4.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fbuiltins%2F-%2Fbuiltins-4.0.0.tgz}
+    name: builtins
+    version: 4.0.0
+    dependencies:
+      semver: artifactory.intra.xiaojukeji.com/semver/7.3.5
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/chalk/2.4.2:
+    resolution: {integrity: sha1-zUJUFnelQzPPVBpJEIwUMrRMlCQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/chalk/-/chalk-2.4.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fchalk%2F-%2Fchalk-2.4.2.tgz}
+    name: chalk
+    version: 2.4.2
+    engines: {node: '>=4'}
+    dependencies:
+      ansi-styles: artifactory.intra.xiaojukeji.com/ansi-styles/3.2.1
+      escape-string-regexp: artifactory.intra.xiaojukeji.com/escape-string-regexp/1.0.5
+      supports-color: artifactory.intra.xiaojukeji.com/supports-color/5.5.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/chalk/4.1.2:
+    resolution: {integrity: sha1-qsTit3NKdAhnrrFr8CqtVWoeegE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/chalk/-/chalk-4.1.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fchalk%2F-%2Fchalk-4.1.2.tgz}
+    name: chalk
+    version: 4.1.2
+    engines: {node: '>=10'}
+    dependencies:
+      ansi-styles: artifactory.intra.xiaojukeji.com/ansi-styles/4.3.0
+      supports-color: artifactory.intra.xiaojukeji.com/supports-color/7.2.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/chardet/0.7.0:
+    resolution: {integrity: sha1-kAlISfCTfy7twkJdDSip5fDLrZ4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/chardet/-/chardet-0.7.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fchardet%2F-%2Fchardet-0.7.0.tgz}
+    name: chardet
+    version: 0.7.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/cli-cursor/3.1.0:
+    resolution: {integrity: sha1-JkMFp65JDR0Dvwybp8kl0XU68wc=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/cli-cursor/-/cli-cursor-3.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcli-cursor%2F-%2Fcli-cursor-3.1.0.tgz}
+    name: cli-cursor
+    version: 3.1.0
+    engines: {node: '>=8'}
+    dependencies:
+      restore-cursor: artifactory.intra.xiaojukeji.com/restore-cursor/3.1.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/cli-spinners/2.6.1:
+    resolution: {integrity: sha1-rclU6+KBw3pjGb+kAebdJIj/tw0=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/cli-spinners/-/cli-spinners-2.6.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcli-spinners%2F-%2Fcli-spinners-2.6.1.tgz}
+    name: cli-spinners
+    version: 2.6.1
+    engines: {node: '>=6'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/cli-width/3.0.0:
+    resolution: {integrity: sha1-ovSEN6LKqaIkNueUvwceyeYc7fY=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/cli-width/-/cli-width-3.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcli-width%2F-%2Fcli-width-3.0.0.tgz}
+    name: cli-width
+    version: 3.0.0
+    engines: {node: '>= 10'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/clone/1.0.4:
+    resolution: {integrity: sha1-2jCcwmPfFZlMaIypAheco8fNfH4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/clone/-/clone-1.0.4.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fclone%2F-%2Fclone-1.0.4.tgz}
+    name: clone
+    version: 1.0.4
+    engines: {node: '>=0.8'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/color-convert/1.9.3:
+    resolution: {integrity: sha1-u3GFBpDh8TZWfeYp0tVHHe2kweg=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/color-convert/-/color-convert-1.9.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcolor-convert%2F-%2Fcolor-convert-1.9.3.tgz}
+    name: color-convert
+    version: 1.9.3
+    dependencies:
+      color-name: artifactory.intra.xiaojukeji.com/color-name/1.1.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/color-convert/2.0.1:
+    resolution: {integrity: sha1-ctOmjVmMm9s68q0ehPIdiWq9TeM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/color-convert/-/color-convert-2.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcolor-convert%2F-%2Fcolor-convert-2.0.1.tgz}
+    name: color-convert
+    version: 2.0.1
+    engines: {node: '>=7.0.0'}
+    dependencies:
+      color-name: artifactory.intra.xiaojukeji.com/color-name/1.1.4
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/color-name/1.1.3:
+    resolution: {integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/color-name/-/color-name-1.1.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcolor-name%2F-%2Fcolor-name-1.1.3.tgz}
+    name: color-name
+    version: 1.1.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/color-name/1.1.4:
+    resolution: {integrity: sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/color-name/-/color-name-1.1.4.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcolor-name%2F-%2Fcolor-name-1.1.4.tgz}
+    name: color-name
+    version: 1.1.4
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/colors/1.2.5:
+    resolution: {integrity: sha1-icetmjdLwDDfgBMkH2gTbtiDWvw=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/colors/-/colors-1.2.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcolors%2F-%2Fcolors-1.2.5.tgz}
+    name: colors
+    version: 1.2.5
+    engines: {node: '>=0.1.90'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/commander/2.20.3:
+    resolution: {integrity: sha1-/UhehMA+tIgcIHIrpIA16FMa6zM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/commander/-/commander-2.20.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcommander%2F-%2Fcommander-2.20.3.tgz}
+    name: commander
+    version: 2.20.3
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/cross-spawn/7.0.3:
+    resolution: {integrity: sha1-9zqFudXUHQRVUcF34ogtSshXKKY=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/cross-spawn/-/cross-spawn-7.0.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcross-spawn%2F-%2Fcross-spawn-7.0.3.tgz}
+    name: cross-spawn
+    version: 7.0.3
+    engines: {node: '>= 8'}
+    dependencies:
+      path-key: artifactory.intra.xiaojukeji.com/path-key/3.1.1
+      shebang-command: artifactory.intra.xiaojukeji.com/shebang-command/2.0.0
+      which: artifactory.intra.xiaojukeji.com/which/2.0.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/defaults/1.0.3:
+    resolution: {integrity: sha1-xlYFHpgX2f8I7YgUd/P+QBnz730=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/defaults/-/defaults-1.0.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fdefaults%2F-%2Fdefaults-1.0.3.tgz}
+    name: defaults
+    version: 1.0.3
+    dependencies:
+      clone: artifactory.intra.xiaojukeji.com/clone/1.0.4
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/emoji-regex/8.0.0:
+    resolution: {integrity: sha1-6Bj9ac5cz8tARZT4QpY79TFkzDc=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/emoji-regex/-/emoji-regex-8.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Femoji-regex%2F-%2Femoji-regex-8.0.0.tgz}
+    name: emoji-regex
+    version: 8.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-android-arm64/0.14.23:
+    resolution: {integrity: sha1-yJs8ULT0dmjcvrCzTuRhUliBjnE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-android-arm64/-/esbuild-android-arm64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-android-arm64%2F-%2Fesbuild-android-arm64-0.14.23.tgz}
+    name: esbuild-android-arm64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-darwin-64/0.14.23:
+    resolution: {integrity: sha1-HBMejLEz7ZNcoy+CQ0mhF8iWoVs=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-darwin-64/-/esbuild-darwin-64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-darwin-64%2F-%2Fesbuild-darwin-64-0.14.23.tgz}
+    name: esbuild-darwin-64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-darwin-arm64/0.14.23:
+    resolution: {integrity: sha1-PGJFpQEJ3YSVP1PXgzvTtPDoxvo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-darwin-arm64%2F-%2Fesbuild-darwin-arm64-0.14.23.tgz}
+    name: esbuild-darwin-arm64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-freebsd-64/0.14.23:
+    resolution: {integrity: sha1-DNxU5y092c2ZL5wpYAVeaKf4ZQw=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-freebsd-64/-/esbuild-freebsd-64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-freebsd-64%2F-%2Fesbuild-freebsd-64-0.14.23.tgz}
+    name: esbuild-freebsd-64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-freebsd-arm64/0.14.23:
+    resolution: {integrity: sha1-HRH67ToMQp6Zt93e+EED61CXiLI=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-freebsd-arm64/-/esbuild-freebsd-arm64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-freebsd-arm64%2F-%2Fesbuild-freebsd-arm64-0.14.23.tgz}
+    name: esbuild-freebsd-arm64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-32/0.14.23:
+    resolution: {integrity: sha1-/Z8DP8J9yrYRAMsesck2iTpoyEE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-32/-/esbuild-linux-32-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-32%2F-%2Fesbuild-linux-32-0.14.23.tgz}
+    name: esbuild-linux-32
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [ia32]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-64/0.14.23:
+    resolution: {integrity: sha1-wExDhRTxNZ7LFSkgXQyDbUFl8Zg=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-64/-/esbuild-linux-64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-64%2F-%2Fesbuild-linux-64-0.14.23.tgz}
+    name: esbuild-linux-64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-arm/0.14.23:
+    resolution: {integrity: sha1-33VYtqUHb165/Th8hwT3aLYdl/s=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-arm/-/esbuild-linux-arm-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-arm%2F-%2Fesbuild-linux-arm-0.14.23.tgz}
+    name: esbuild-linux-arm
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-arm64/0.14.23:
+    resolution: {integrity: sha1-0bOrKYirBzSIbrnoEXJvfbCZq5Y=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-arm64/-/esbuild-linux-arm64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-arm64%2F-%2Fesbuild-linux-arm64-0.14.23.tgz}
+    name: esbuild-linux-arm64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-mips64le/0.14.23:
+    resolution: {integrity: sha1-u0xH/MyUk9Rg/+sfiOipepihT4s=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-mips64le/-/esbuild-linux-mips64le-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-mips64le%2F-%2Fesbuild-linux-mips64le-0.14.23.tgz}
+    name: esbuild-linux-mips64le
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [mips64el]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-ppc64le/0.14.23:
+    resolution: {integrity: sha1-ozLbyKG04wz+EmG/qlzvV8nIwCo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-ppc64le/-/esbuild-linux-ppc64le-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-ppc64le%2F-%2Fesbuild-linux-ppc64le-0.14.23.tgz}
+    name: esbuild-linux-ppc64le
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [ppc64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-riscv64/0.14.23:
+    resolution: {integrity: sha1-hWdfP5MfXNfPsjj9gvd6Yv/LbYY=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-riscv64/-/esbuild-linux-riscv64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-riscv64%2F-%2Fesbuild-linux-riscv64-0.14.23.tgz}
+    name: esbuild-linux-riscv64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [riscv64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-s390x/0.14.23:
+    resolution: {integrity: sha1-pSYoKmlubYRvTGKPUxVHVRjAwPA=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-s390x/-/esbuild-linux-s390x-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-s390x%2F-%2Fesbuild-linux-s390x-0.14.23.tgz}
+    name: esbuild-linux-s390x
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [s390x]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-netbsd-64/0.14.23:
+    resolution: {integrity: sha1-jkVmBWlHGaob5L4mbWzVacBt+vU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-netbsd-64/-/esbuild-netbsd-64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-netbsd-64%2F-%2Fesbuild-netbsd-64-0.14.23.tgz}
+    name: esbuild-netbsd-64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [netbsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-node-loader/0.6.5:
+    resolution: {integrity: sha1-wKrUNtAVQhUKgpe5natxqoKt2Bg=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-node-loader/-/esbuild-node-loader-0.6.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-node-loader%2F-%2Fesbuild-node-loader-0.6.5.tgz}
+    name: esbuild-node-loader
+    version: 0.6.5
+    dependencies:
+      esbuild: artifactory.intra.xiaojukeji.com/esbuild/0.14.23
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-openbsd-64/0.14.23:
+    resolution: {integrity: sha1-8vxRcUtN2ryG5OswyhAd0yXbL30=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-openbsd-64/-/esbuild-openbsd-64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-openbsd-64%2F-%2Fesbuild-openbsd-64-0.14.23.tgz}
+    name: esbuild-openbsd-64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [openbsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-register/3.3.2_esbuild@0.14.23:
+    resolution: {integrity: sha1-HD3HF5yrtMe9ZAo5PrkWsYsSoiM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-register/-/esbuild-register-3.3.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-register%2F-%2Fesbuild-register-3.3.2.tgz}
+    id: artifactory.intra.xiaojukeji.com/esbuild-register/3.3.2
+    name: esbuild-register
+    version: 3.3.2
+    peerDependencies:
+      esbuild: '>=0.12 <1'
+    dependencies:
+      esbuild: artifactory.intra.xiaojukeji.com/esbuild/0.14.23
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-sunos-64/0.14.23:
+    resolution: {integrity: sha1-pAjzPqIOIVkJ4gFzoP14saqtH44=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-sunos-64/-/esbuild-sunos-64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-sunos-64%2F-%2Fesbuild-sunos-64-0.14.23.tgz}
+    name: esbuild-sunos-64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [sunos]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-windows-32/0.14.23:
+    resolution: {integrity: sha1-uQBbv/VNrDl1/zVdXeK143Fl0Sg=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-windows-32/-/esbuild-windows-32-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-windows-32%2F-%2Fesbuild-windows-32-0.14.23.tgz}
+    name: esbuild-windows-32
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-windows-64/0.14.23:
+    resolution: {integrity: sha1-K1qZvv6spq79rTLXOLlFcwpgoGA=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-windows-64/-/esbuild-windows-64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-windows-64%2F-%2Fesbuild-windows-64-0.14.23.tgz}
+    name: esbuild-windows-64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-windows-arm64/0.14.23:
+    resolution: {integrity: sha1-7cVgu62wl+tF/CNa6suULLlKOMA=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-windows-arm64/-/esbuild-windows-arm64-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-windows-arm64%2F-%2Fesbuild-windows-arm64-0.14.23.tgz}
+    name: esbuild-windows-arm64
+    version: 0.14.23
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild/0.14.23:
+    resolution: {integrity: sha1-lehCyyK8DH2CwUCtwWeIqskUaf4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild/-/esbuild-0.14.23.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild%2F-%2Fesbuild-0.14.23.tgz}
+    name: esbuild
+    version: 0.14.23
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    optionalDependencies:
+      esbuild-android-arm64: artifactory.intra.xiaojukeji.com/esbuild-android-arm64/0.14.23
+      esbuild-darwin-64: artifactory.intra.xiaojukeji.com/esbuild-darwin-64/0.14.23
+      esbuild-darwin-arm64: artifactory.intra.xiaojukeji.com/esbuild-darwin-arm64/0.14.23
+      esbuild-freebsd-64: artifactory.intra.xiaojukeji.com/esbuild-freebsd-64/0.14.23
+      esbuild-freebsd-arm64: artifactory.intra.xiaojukeji.com/esbuild-freebsd-arm64/0.14.23
+      esbuild-linux-32: artifactory.intra.xiaojukeji.com/esbuild-linux-32/0.14.23
+      esbuild-linux-64: artifactory.intra.xiaojukeji.com/esbuild-linux-64/0.14.23
+      esbuild-linux-arm: artifactory.intra.xiaojukeji.com/esbuild-linux-arm/0.14.23
+      esbuild-linux-arm64: artifactory.intra.xiaojukeji.com/esbuild-linux-arm64/0.14.23
+      esbuild-linux-mips64le: artifactory.intra.xiaojukeji.com/esbuild-linux-mips64le/0.14.23
+      esbuild-linux-ppc64le: artifactory.intra.xiaojukeji.com/esbuild-linux-ppc64le/0.14.23
+      esbuild-linux-riscv64: artifactory.intra.xiaojukeji.com/esbuild-linux-riscv64/0.14.23
+      esbuild-linux-s390x: artifactory.intra.xiaojukeji.com/esbuild-linux-s390x/0.14.23
+      esbuild-netbsd-64: artifactory.intra.xiaojukeji.com/esbuild-netbsd-64/0.14.23
+      esbuild-openbsd-64: artifactory.intra.xiaojukeji.com/esbuild-openbsd-64/0.14.23
+      esbuild-sunos-64: artifactory.intra.xiaojukeji.com/esbuild-sunos-64/0.14.23
+      esbuild-windows-32: artifactory.intra.xiaojukeji.com/esbuild-windows-32/0.14.23
+      esbuild-windows-64: artifactory.intra.xiaojukeji.com/esbuild-windows-64/0.14.23
+      esbuild-windows-arm64: artifactory.intra.xiaojukeji.com/esbuild-windows-arm64/0.14.23
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/escape-string-regexp/1.0.5:
+    resolution: {integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fescape-string-regexp%2F-%2Fescape-string-regexp-1.0.5.tgz}
+    name: escape-string-regexp
+    version: 1.0.5
+    engines: {node: '>=0.8.0'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/esmo/0.14.1:
+    resolution: {integrity: sha1-h2K4OABkKQPeuJwYw0S3gLldZ6A=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esmo/-/esmo-0.14.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesmo%2F-%2Fesmo-0.14.1.tgz}
+    name: esmo
+    version: 0.14.1
+    hasBin: true
+    dependencies:
+      cross-spawn: artifactory.intra.xiaojukeji.com/cross-spawn/7.0.3
+      esbuild: artifactory.intra.xiaojukeji.com/esbuild/0.14.23
+      esbuild-node-loader: artifactory.intra.xiaojukeji.com/esbuild-node-loader/0.6.5
+      esbuild-register: artifactory.intra.xiaojukeji.com/esbuild-register/3.3.2_esbuild@0.14.23
+      import-meta-resolve: artifactory.intra.xiaojukeji.com/import-meta-resolve/1.1.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/external-editor/3.1.0:
+    resolution: {integrity: sha1-ywP3QL764D6k0oPK7SdBqD8zVJU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/external-editor/-/external-editor-3.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fexternal-editor%2F-%2Fexternal-editor-3.1.0.tgz}
+    name: external-editor
+    version: 3.1.0
+    engines: {node: '>=4'}
+    dependencies:
+      chardet: artifactory.intra.xiaojukeji.com/chardet/0.7.0
+      iconv-lite: artifactory.intra.xiaojukeji.com/iconv-lite/0.4.24
+      tmp: artifactory.intra.xiaojukeji.com/tmp/0.0.33
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/fast-deep-equal/3.1.3:
+    resolution: {integrity: sha1-On1WtVnWy8PrUSMlJE5hmmXGxSU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ffast-deep-equal%2F-%2Ffast-deep-equal-3.1.3.tgz}
+    name: fast-deep-equal
+    version: 3.1.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/fast-json-stable-stringify/2.1.0:
+    resolution: {integrity: sha1-h0v2nG9ATCtdmcSBNBOZ/VWJJjM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ffast-json-stable-stringify%2F-%2Ffast-json-stable-stringify-2.1.0.tgz}
+    name: fast-json-stable-stringify
+    version: 2.1.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/figures/3.2.0:
+    resolution: {integrity: sha1-YlwYvSk8YE3EqN2y/r8MiDQXRq8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/figures/-/figures-3.2.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ffigures%2F-%2Ffigures-3.2.0.tgz}
+    name: figures
+    version: 3.2.0
+    engines: {node: '>=8'}
+    dependencies:
+      escape-string-regexp: artifactory.intra.xiaojukeji.com/escape-string-regexp/1.0.5
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/fs-extra/7.0.1:
+    resolution: {integrity: sha1-TxicRKoSO4lfcigE9V6iPq3DSOk=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/fs-extra/-/fs-extra-7.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ffs-extra%2F-%2Ffs-extra-7.0.1.tgz}
+    name: fs-extra
+    version: 7.0.1
+    engines: {node: '>=6 <7 || >=8'}
+    dependencies:
+      graceful-fs: artifactory.intra.xiaojukeji.com/graceful-fs/4.2.9
+      jsonfile: artifactory.intra.xiaojukeji.com/jsonfile/4.0.0
+      universalify: artifactory.intra.xiaojukeji.com/universalify/0.1.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/fsevents/2.3.2:
+    resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/fsevents/-/fsevents-2.3.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ffsevents%2F-%2Ffsevents-2.3.2.tgz}
+    name: fsevents
+    version: 2.3.2
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/function-bind/1.1.1:
+    resolution: {integrity: sha1-pWiZ0+o8m6uHS7l3O3xe3pL0iV0=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/function-bind/-/function-bind-1.1.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ffunction-bind%2F-%2Ffunction-bind-1.1.1.tgz}
+    name: function-bind
+    version: 1.1.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/graceful-fs/4.2.9:
+    resolution: {integrity: sha1-BBsF30V1Xlh6JJQiebnRExRuHJY=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/graceful-fs/-/graceful-fs-4.2.9.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fgraceful-fs%2F-%2Fgraceful-fs-4.2.9.tgz}
+    name: graceful-fs
+    version: 4.2.9
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/has-flag/3.0.0:
+    resolution: {integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/has-flag/-/has-flag-3.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fhas-flag%2F-%2Fhas-flag-3.0.0.tgz}
+    name: has-flag
+    version: 3.0.0
+    engines: {node: '>=4'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/has-flag/4.0.0:
+    resolution: {integrity: sha1-lEdx/ZyByBJlxNaUGGDaBrtZR5s=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/has-flag/-/has-flag-4.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fhas-flag%2F-%2Fhas-flag-4.0.0.tgz}
+    name: has-flag
+    version: 4.0.0
+    engines: {node: '>=8'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/has/1.0.3:
+    resolution: {integrity: sha1-ci18v8H2qoJB8W3YFOAR4fQeh5Y=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/has/-/has-1.0.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fhas%2F-%2Fhas-1.0.3.tgz}
+    name: has
+    version: 1.0.3
+    engines: {node: '>= 0.4.0'}
+    dependencies:
+      function-bind: artifactory.intra.xiaojukeji.com/function-bind/1.1.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/iconv-lite/0.4.24:
+    resolution: {integrity: sha1-ICK0sl+93CHS9SSXSkdKr+czkIs=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/iconv-lite/-/iconv-lite-0.4.24.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ficonv-lite%2F-%2Ficonv-lite-0.4.24.tgz}
+    name: iconv-lite
+    version: 0.4.24
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      safer-buffer: artifactory.intra.xiaojukeji.com/safer-buffer/2.1.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/ieee754/1.2.1:
+    resolution: {integrity: sha1-jrehCmP/8l0VpXsAFYbRd9Gw01I=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/ieee754/-/ieee754-1.2.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fieee754%2F-%2Fieee754-1.2.1.tgz}
+    name: ieee754
+    version: 1.2.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/import-lazy/4.0.0:
+    resolution: {integrity: sha1-6OtidIOgpD2jwD8+NVSL5csMwVM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/import-lazy/-/import-lazy-4.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fimport-lazy%2F-%2Fimport-lazy-4.0.0.tgz}
+    name: import-lazy
+    version: 4.0.0
+    engines: {node: '>=8'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/import-meta-resolve/1.1.1:
+    resolution: {integrity: sha1-JE/VQv0frnNVDU+LPN47uh17Kxg=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/import-meta-resolve/-/import-meta-resolve-1.1.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fimport-meta-resolve%2F-%2Fimport-meta-resolve-1.1.1.tgz}
+    name: import-meta-resolve
+    version: 1.1.1
+    dependencies:
+      builtins: artifactory.intra.xiaojukeji.com/builtins/4.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/inherits/2.0.4:
+    resolution: {integrity: sha1-D6LGT5MpF8NDOg3tVTY6rjdBa3w=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/inherits/-/inherits-2.0.4.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Finherits%2F-%2Finherits-2.0.4.tgz}
+    name: inherits
+    version: 2.0.4
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/inquirer/8.2.0:
+    resolution: {integrity: sha1-9E8AjdNEu/xLMAMfRdmE4DSjrDo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/inquirer/-/inquirer-8.2.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Finquirer%2F-%2Finquirer-8.2.0.tgz}
+    name: inquirer
+    version: 8.2.0
+    engines: {node: '>=8.0.0'}
+    dependencies:
+      ansi-escapes: artifactory.intra.xiaojukeji.com/ansi-escapes/4.3.2
+      chalk: artifactory.intra.xiaojukeji.com/chalk/4.1.2
+      cli-cursor: artifactory.intra.xiaojukeji.com/cli-cursor/3.1.0
+      cli-width: artifactory.intra.xiaojukeji.com/cli-width/3.0.0
+      external-editor: artifactory.intra.xiaojukeji.com/external-editor/3.1.0
+      figures: artifactory.intra.xiaojukeji.com/figures/3.2.0
+      lodash: artifactory.intra.xiaojukeji.com/lodash/4.17.21
+      mute-stream: artifactory.intra.xiaojukeji.com/mute-stream/0.0.8
+      ora: artifactory.intra.xiaojukeji.com/ora/5.4.1
+      run-async: artifactory.intra.xiaojukeji.com/run-async/2.4.1
+      rxjs: artifactory.intra.xiaojukeji.com/rxjs/7.5.1
+      string-width: artifactory.intra.xiaojukeji.com/string-width/4.2.3
+      strip-ansi: artifactory.intra.xiaojukeji.com/strip-ansi/6.0.1
+      through: artifactory.intra.xiaojukeji.com/through/2.3.8
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/is-core-module/2.8.1:
+    resolution: {integrity: sha1-9Z/fynAdWHnQprEApAqhVgzichE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/is-core-module/-/is-core-module-2.8.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fis-core-module%2F-%2Fis-core-module-2.8.1.tgz}
+    name: is-core-module
+    version: 2.8.1
+    dependencies:
+      has: artifactory.intra.xiaojukeji.com/has/1.0.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/is-fullwidth-code-point/3.0.0:
+    resolution: {integrity: sha1-8Rb4Bk/pCz94RKOJl8C3UFEmnx0=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fis-fullwidth-code-point%2F-%2Fis-fullwidth-code-point-3.0.0.tgz}
+    name: is-fullwidth-code-point
+    version: 3.0.0
+    engines: {node: '>=8'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/is-interactive/1.0.0:
+    resolution: {integrity: sha1-zqbmrlyHCnsKAAQHC3tYfgJSkS4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/is-interactive/-/is-interactive-1.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fis-interactive%2F-%2Fis-interactive-1.0.0.tgz}
+    name: is-interactive
+    version: 1.0.0
+    engines: {node: '>=8'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/is-unicode-supported/0.1.0:
+    resolution: {integrity: sha1-PybHaoCVk7Ur+i7LVxDtJ3m1Iqc=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/is-unicode-supported/-/is-unicode-supported-0.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fis-unicode-supported%2F-%2Fis-unicode-supported-0.1.0.tgz}
+    name: is-unicode-supported
+    version: 0.1.0
+    engines: {node: '>=10'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/isexe/2.0.0:
+    resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/isexe/-/isexe-2.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fisexe%2F-%2Fisexe-2.0.0.tgz}
+    name: isexe
+    version: 2.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/jju/1.4.0:
+    resolution: {integrity: sha1-o6vicYryQaKykE+EpiWXDzia4yo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/jju/-/jju-1.4.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fjju%2F-%2Fjju-1.4.0.tgz}
+    name: jju
+    version: 1.4.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/json-schema-traverse/0.4.1:
+    resolution: {integrity: sha1-afaofZUTq4u4/mO9sJecRI5oRmA=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fjson-schema-traverse%2F-%2Fjson-schema-traverse-0.4.1.tgz}
+    name: json-schema-traverse
+    version: 0.4.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/jsonfile/4.0.0:
+    resolution: {integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/jsonfile/-/jsonfile-4.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fjsonfile%2F-%2Fjsonfile-4.0.0.tgz}
+    name: jsonfile
+    version: 4.0.0
+    optionalDependencies:
+      graceful-fs: artifactory.intra.xiaojukeji.com/graceful-fs/4.2.9
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/lodash.get/4.4.2:
+    resolution: {integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/lodash.get/-/lodash.get-4.4.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flodash.get%2F-%2Flodash.get-4.4.2.tgz}
+    name: lodash.get
+    version: 4.4.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/lodash.isequal/4.5.0:
+    resolution: {integrity: sha1-QVxEePK8wwEgwizhDtMib30+GOA=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/lodash.isequal/-/lodash.isequal-4.5.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flodash.isequal%2F-%2Flodash.isequal-4.5.0.tgz}
+    name: lodash.isequal
+    version: 4.5.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/lodash/4.17.21:
+    resolution: {integrity: sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/lodash/-/lodash-4.17.21.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flodash%2F-%2Flodash-4.17.21.tgz}
+    name: lodash
+    version: 4.17.21
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/log-symbols/4.1.0:
+    resolution: {integrity: sha1-P727lbRoOsn8eFER55LlWNSr1QM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/log-symbols/-/log-symbols-4.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flog-symbols%2F-%2Flog-symbols-4.1.0.tgz}
+    name: log-symbols
+    version: 4.1.0
+    engines: {node: '>=10'}
+    dependencies:
+      chalk: artifactory.intra.xiaojukeji.com/chalk/4.1.2
+      is-unicode-supported: artifactory.intra.xiaojukeji.com/is-unicode-supported/0.1.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/lru-cache/6.0.0:
+    resolution: {integrity: sha1-bW/mVw69lqr5D8rR2vo7JWbbOpQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/lru-cache/-/lru-cache-6.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flru-cache%2F-%2Flru-cache-6.0.0.tgz}
+    name: lru-cache
+    version: 6.0.0
+    engines: {node: '>=10'}
+    dependencies:
+      yallist: artifactory.intra.xiaojukeji.com/yallist/4.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/mimic-fn/2.1.0:
+    resolution: {integrity: sha1-ftLCzMyvhNP/y3pptXcR/CCDQBs=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/mimic-fn/-/mimic-fn-2.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fmimic-fn%2F-%2Fmimic-fn-2.1.0.tgz}
+    name: mimic-fn
+    version: 2.1.0
+    engines: {node: '>=6'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/mute-stream/0.0.8:
+    resolution: {integrity: sha1-FjDEKyJR/4HiooPelqVJfqkuXg0=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/mute-stream/download/mute-stream-0.0.8.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fmute-stream%2Fdownload%2Fmute-stream-0.0.8.tgz}
+    name: mute-stream
+    version: 0.0.8
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/onetime/5.1.2:
+    resolution: {integrity: sha1-0Oluu1awdHbfHdnEgG5SN5hcpF4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/onetime/-/onetime-5.1.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fonetime%2F-%2Fonetime-5.1.2.tgz}
+    name: onetime
+    version: 5.1.2
+    engines: {node: '>=6'}
+    dependencies:
+      mimic-fn: artifactory.intra.xiaojukeji.com/mimic-fn/2.1.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/ora/5.4.1:
+    resolution: {integrity: sha1-GyZ4Qmr0rEpQkAjl5KyemVnbnhg=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/ora/-/ora-5.4.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fora%2F-%2Fora-5.4.1.tgz}
+    name: ora
+    version: 5.4.1
+    engines: {node: '>=10'}
+    dependencies:
+      bl: artifactory.intra.xiaojukeji.com/bl/4.1.0
+      chalk: artifactory.intra.xiaojukeji.com/chalk/4.1.2
+      cli-cursor: artifactory.intra.xiaojukeji.com/cli-cursor/3.1.0
+      cli-spinners: artifactory.intra.xiaojukeji.com/cli-spinners/2.6.1
+      is-interactive: artifactory.intra.xiaojukeji.com/is-interactive/1.0.0
+      is-unicode-supported: artifactory.intra.xiaojukeji.com/is-unicode-supported/0.1.0
+      log-symbols: artifactory.intra.xiaojukeji.com/log-symbols/4.1.0
+      strip-ansi: artifactory.intra.xiaojukeji.com/strip-ansi/6.0.1
+      wcwidth: artifactory.intra.xiaojukeji.com/wcwidth/1.0.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/os-tmpdir/1.0.2:
+    resolution: {integrity: sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/os-tmpdir/-/os-tmpdir-1.0.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fos-tmpdir%2F-%2Fos-tmpdir-1.0.2.tgz}
+    name: os-tmpdir
+    version: 1.0.2
+    engines: {node: '>=0.10.0'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/path-key/3.1.1:
+    resolution: {integrity: sha1-WB9q3mWMu6ZaDTOA3ndTKVBU83U=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/path-key/-/path-key-3.1.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fpath-key%2F-%2Fpath-key-3.1.1.tgz}
+    name: path-key
+    version: 3.1.1
+    engines: {node: '>=8'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/path-parse/1.0.7:
+    resolution: {integrity: sha1-+8EUtgykKzDZ2vWFjkvWi77bZzU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/path-parse/-/path-parse-1.0.7.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fpath-parse%2F-%2Fpath-parse-1.0.7.tgz}
+    name: path-parse
+    version: 1.0.7
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/punycode/2.1.1:
+    resolution: {integrity: sha1-tYsBCsQMIsVldhbI0sLALHv0eew=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/punycode/-/punycode-2.1.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fpunycode%2F-%2Fpunycode-2.1.1.tgz}
+    name: punycode
+    version: 2.1.1
+    engines: {node: '>=6'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/readable-stream/2.3.7:
+    resolution: {integrity: sha1-Hsoc9xGu+BTAT2IlKjamL2yyO1c=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/readable-stream/-/readable-stream-2.3.7.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Freadable-stream%2F-%2Freadable-stream-2.3.7.tgz}
+    name: readable-stream
+    version: 2.3.7
+    dependencies:
+      core-util-is: 1.0.3
+      inherits: artifactory.intra.xiaojukeji.com/inherits/2.0.4
+      isarray: 1.0.0
+      process-nextick-args: 2.0.1
+      safe-buffer: artifactory.intra.xiaojukeji.com/safe-buffer/5.1.2
+      string_decoder: artifactory.intra.xiaojukeji.com/string_decoder/1.1.1
+      util-deprecate: artifactory.intra.xiaojukeji.com/util-deprecate/1.0.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/readable-stream/3.6.0:
+    resolution: {integrity: sha1-M3u9o63AcGvT4CRCaihtS0sskZg=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/readable-stream/-/readable-stream-3.6.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Freadable-stream%2F-%2Freadable-stream-3.6.0.tgz}
+    name: readable-stream
+    version: 3.6.0
+    engines: {node: '>= 6'}
+    dependencies:
+      inherits: artifactory.intra.xiaojukeji.com/inherits/2.0.4
+      string_decoder: artifactory.intra.xiaojukeji.com/string_decoder/1.3.0
+      util-deprecate: artifactory.intra.xiaojukeji.com/util-deprecate/1.0.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/resolve/1.17.0:
+    resolution: {integrity: sha1-sllBtUloIxzC0bt2p5y38sC/hEQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/resolve/-/resolve-1.17.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fresolve%2F-%2Fresolve-1.17.0.tgz}
+    name: resolve
+    version: 1.17.0
+    dependencies:
+      path-parse: artifactory.intra.xiaojukeji.com/path-parse/1.0.7
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/resolve/1.19.0:
+    resolution: {integrity: sha1-GvW/YwQJc0oGfK4pMYqsf6KaJnw=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/resolve/-/resolve-1.19.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fresolve%2F-%2Fresolve-1.19.0.tgz}
+    name: resolve
+    version: 1.19.0
+    dependencies:
+      is-core-module: artifactory.intra.xiaojukeji.com/is-core-module/2.8.1
+      path-parse: artifactory.intra.xiaojukeji.com/path-parse/1.0.7
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/restore-cursor/3.1.0:
+    resolution: {integrity: sha1-OfZ8VLOnpYzqUjbZXPADQjljH34=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/restore-cursor/-/restore-cursor-3.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Frestore-cursor%2F-%2Frestore-cursor-3.1.0.tgz}
+    name: restore-cursor
+    version: 3.1.0
+    engines: {node: '>=8'}
+    dependencies:
+      onetime: artifactory.intra.xiaojukeji.com/onetime/5.1.2
+      signal-exit: artifactory.intra.xiaojukeji.com/signal-exit/3.0.6
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/run-async/2.4.1:
+    resolution: {integrity: sha1-hEDsz5nqPnC9QJ1JqriOEMGJpFU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/run-async/-/run-async-2.4.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Frun-async%2F-%2Frun-async-2.4.1.tgz}
+    name: run-async
+    version: 2.4.1
+    engines: {node: '>=0.12.0'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/rxjs/7.5.1:
+    resolution: {integrity: sha1-r3PfNDy8qzdigZf0PqDIJW9UsVc=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/rxjs/-/rxjs-7.5.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Frxjs%2F-%2Frxjs-7.5.1.tgz}
+    name: rxjs
+    version: 7.5.1
+    dependencies:
+      tslib: artifactory.intra.xiaojukeji.com/tslib/2.3.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/safe-buffer/5.1.2:
+    resolution: {integrity: sha1-mR7GnSluAxN0fVm9/St0XDX4go0=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/safe-buffer/-/safe-buffer-5.1.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsafe-buffer%2F-%2Fsafe-buffer-5.1.2.tgz}
+    name: safe-buffer
+    version: 5.1.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/safe-buffer/5.2.1:
+    resolution: {integrity: sha1-Hq+fqb2x/dTsdfWPnNtOa3gn7sY=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/safe-buffer/-/safe-buffer-5.2.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsafe-buffer%2F-%2Fsafe-buffer-5.2.1.tgz}
+    name: safe-buffer
+    version: 5.2.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/safer-buffer/2.1.2:
+    resolution: {integrity: sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/safer-buffer/-/safer-buffer-2.1.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsafer-buffer%2F-%2Fsafer-buffer-2.1.2.tgz}
+    name: safer-buffer
+    version: 2.1.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/semver/7.3.5:
+    resolution: {integrity: sha1-C2Ich5NI2JmOSw5L6Us/EuYBjvc=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/semver/-/semver-7.3.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsemver%2F-%2Fsemver-7.3.5.tgz}
+    name: semver
+    version: 7.3.5
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: artifactory.intra.xiaojukeji.com/lru-cache/6.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/shebang-command/2.0.0:
+    resolution: {integrity: sha1-zNCvT4g1+9wmW4JGGq8MNmY/NOo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/shebang-command/-/shebang-command-2.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fshebang-command%2F-%2Fshebang-command-2.0.0.tgz}
+    name: shebang-command
+    version: 2.0.0
+    engines: {node: '>=8'}
+    dependencies:
+      shebang-regex: artifactory.intra.xiaojukeji.com/shebang-regex/3.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/shebang-regex/3.0.0:
+    resolution: {integrity: sha1-rhbxZE2HPsrYQ7AwexQzYtTEIXI=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/shebang-regex/-/shebang-regex-3.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fshebang-regex%2F-%2Fshebang-regex-3.0.0.tgz}
+    name: shebang-regex
+    version: 3.0.0
+    engines: {node: '>=8'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/signal-exit/3.0.6:
+    resolution: {integrity: sha1-JOYwxLDwP+pEaivSmeYrSmyo0K8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/signal-exit/-/signal-exit-3.0.6.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsignal-exit%2F-%2Fsignal-exit-3.0.6.tgz}
+    name: signal-exit
+    version: 3.0.6
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/source-map/0.6.1:
+    resolution: {integrity: sha1-dHIq8y6WFOnCh6jQu95IteLxomM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/source-map/-/source-map-0.6.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsource-map%2F-%2Fsource-map-0.6.1.tgz}
+    name: source-map
+    version: 0.6.1
+    engines: {node: '>=0.10.0'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/sprintf-js/1.0.3:
+    resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/sprintf-js/-/sprintf-js-1.0.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsprintf-js%2F-%2Fsprintf-js-1.0.3.tgz}
+    name: sprintf-js
+    version: 1.0.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/string-argv/0.3.1:
+    resolution: {integrity: sha1-leL77AQnrhkYSTX4FtdKqkxcGdo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/string-argv/-/string-argv-0.3.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fstring-argv%2F-%2Fstring-argv-0.3.1.tgz}
+    name: string-argv
+    version: 0.3.1
+    engines: {node: '>=0.6.19'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/string-width/4.2.3:
+    resolution: {integrity: sha1-JpxxF9J7Ba0uU2gwqOyJXvnG0BA=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/string-width/-/string-width-4.2.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fstring-width%2F-%2Fstring-width-4.2.3.tgz}
+    name: string-width
+    version: 4.2.3
+    engines: {node: '>=8'}
+    dependencies:
+      emoji-regex: artifactory.intra.xiaojukeji.com/emoji-regex/8.0.0
+      is-fullwidth-code-point: artifactory.intra.xiaojukeji.com/is-fullwidth-code-point/3.0.0
+      strip-ansi: artifactory.intra.xiaojukeji.com/strip-ansi/6.0.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/string_decoder/1.1.1:
+    resolution: {integrity: sha1-nPFhG6YmhdcDCunkujQUnDrwP8g=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/string_decoder/-/string_decoder-1.1.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fstring_decoder%2F-%2Fstring_decoder-1.1.1.tgz}
+    name: string_decoder
+    version: 1.1.1
+    dependencies:
+      safe-buffer: artifactory.intra.xiaojukeji.com/safe-buffer/5.1.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/string_decoder/1.3.0:
+    resolution: {integrity: sha1-QvEUWUpGzxqOMLCoT1bHjD7awh4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/string_decoder/-/string_decoder-1.3.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fstring_decoder%2F-%2Fstring_decoder-1.3.0.tgz}
+    name: string_decoder
+    version: 1.3.0
+    dependencies:
+      safe-buffer: artifactory.intra.xiaojukeji.com/safe-buffer/5.2.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/strip-ansi/6.0.1:
+    resolution: {integrity: sha1-nibGPTD1NEPpSJSVshBdN7Z6hdk=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/strip-ansi/-/strip-ansi-6.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fstrip-ansi%2F-%2Fstrip-ansi-6.0.1.tgz}
+    name: strip-ansi
+    version: 6.0.1
+    engines: {node: '>=8'}
+    dependencies:
+      ansi-regex: artifactory.intra.xiaojukeji.com/ansi-regex/5.0.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/strip-json-comments/3.1.1:
+    resolution: {integrity: sha1-MfEoGzgyYwQ0gxwxDAHMzajL4AY=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/strip-json-comments/-/strip-json-comments-3.1.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fstrip-json-comments%2F-%2Fstrip-json-comments-3.1.1.tgz}
+    name: strip-json-comments
+    version: 3.1.1
+    engines: {node: '>=8'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/supports-color/5.5.0:
+    resolution: {integrity: sha1-4uaaRKyHcveKHsCzW2id9lMO/I8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/supports-color/-/supports-color-5.5.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsupports-color%2F-%2Fsupports-color-5.5.0.tgz}
+    name: supports-color
+    version: 5.5.0
+    engines: {node: '>=4'}
+    dependencies:
+      has-flag: artifactory.intra.xiaojukeji.com/has-flag/3.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/supports-color/7.2.0:
+    resolution: {integrity: sha1-G33NyzK4E4gBs+R4umpRyqiWSNo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/supports-color/-/supports-color-7.2.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsupports-color%2F-%2Fsupports-color-7.2.0.tgz}
+    name: supports-color
+    version: 7.2.0
+    engines: {node: '>=8'}
+    dependencies:
+      has-flag: artifactory.intra.xiaojukeji.com/has-flag/4.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/through/2.3.8:
+    resolution: {integrity: sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/through/-/through-2.3.8.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fthrough%2F-%2Fthrough-2.3.8.tgz}
+    name: through
+    version: 2.3.8
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/timsort/0.3.0:
+    resolution: {integrity: sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/timsort/-/timsort-0.3.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ftimsort%2F-%2Ftimsort-0.3.0.tgz}
+    name: timsort
+    version: 0.3.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/tmp/0.0.33:
+    resolution: {integrity: sha1-bTQzWIl2jSGyvNoKonfO07G/rfk=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/tmp/-/tmp-0.0.33.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ftmp%2F-%2Ftmp-0.0.33.tgz}
+    name: tmp
+    version: 0.0.33
+    engines: {node: '>=0.6.0'}
+    dependencies:
+      os-tmpdir: artifactory.intra.xiaojukeji.com/os-tmpdir/1.0.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/tslib/2.3.1:
+    resolution: {integrity: sha1-6KM1rdXOrlGqJh0ypJAVjvBC7wE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/tslib/-/tslib-2.3.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ftslib%2F-%2Ftslib-2.3.1.tgz}
+    name: tslib
+    version: 2.3.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/type-fest/0.21.3:
+    resolution: {integrity: sha1-0mCiSwGYQ24TP6JqUkptZfo7Ljc=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/type-fest/-/type-fest-0.21.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ftype-fest%2F-%2Ftype-fest-0.21.3.tgz}
+    name: type-fest
+    version: 0.21.3
+    engines: {node: '>=10'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/type-fest/0.6.0:
+    resolution: {integrity: sha1-jSojcNPfiG61yQraHFv2GIrPg4s=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/type-fest/-/type-fest-0.6.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ftype-fest%2F-%2Ftype-fest-0.6.0.tgz}
+    name: type-fest
+    version: 0.6.0
+    engines: {node: '>=8'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/typescript/4.5.5:
+    resolution: {integrity: sha1-2MlTgy0okkqePTfHPXKchGxYlvM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/typescript/-/typescript-4.5.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ftypescript%2F-%2Ftypescript-4.5.5.tgz}
+    name: typescript
+    version: 4.5.5
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/uglify-js/3.14.5:
+    resolution: {integrity: sha1-zau31JVCMdgMtKknZUxGVeUfSFk=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/uglify-js/-/uglify-js-3.14.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fuglify-js%2F-%2Fuglify-js-3.14.5.tgz}
+    name: uglify-js
+    version: 3.14.5
+    engines: {node: '>=0.8.0'}
+    hasBin: true
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/universalify/0.1.2:
+    resolution: {integrity: sha1-tkb2m+OULavOzJ1mOcgNwQXvqmY=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/universalify/-/universalify-0.1.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Funiversalify%2F-%2Funiversalify-0.1.2.tgz}
+    name: universalify
+    version: 0.1.2
+    engines: {node: '>= 4.0.0'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/uri-js/4.4.1:
+    resolution: {integrity: sha1-mxpSWVIlhZ5V9mnZKPiMbFfyp34=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/uri-js/-/uri-js-4.4.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Furi-js%2F-%2Furi-js-4.4.1.tgz}
+    name: uri-js
+    version: 4.4.1
+    dependencies:
+      punycode: artifactory.intra.xiaojukeji.com/punycode/2.1.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/util-deprecate/1.0.2:
+    resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/util-deprecate/-/util-deprecate-1.0.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Futil-deprecate%2F-%2Futil-deprecate-1.0.2.tgz}
+    name: util-deprecate
+    version: 1.0.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/validator/13.7.0:
+    resolution: {integrity: sha1-T5ZYuhO6jz2C7ogdNRZInqhcCFc=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/validator/-/validator-13.7.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fvalidator%2F-%2Fvalidator-13.7.0.tgz}
+    name: validator
+    version: 13.7.0
+    engines: {node: '>= 0.10'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/wcwidth/1.0.1:
+    resolution: {integrity: sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/wcwidth/-/wcwidth-1.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fwcwidth%2F-%2Fwcwidth-1.0.1.tgz}
+    name: wcwidth
+    version: 1.0.1
+    dependencies:
+      defaults: artifactory.intra.xiaojukeji.com/defaults/1.0.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/which/2.0.2:
+    resolution: {integrity: sha1-fGqN0KY2oDJ+ELWckobu6T8/UbE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/which/-/which-2.0.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fwhich%2F-%2Fwhich-2.0.2.tgz}
+    name: which
+    version: 2.0.2
+    engines: {node: '>= 8'}
+    hasBin: true
+    dependencies:
+      isexe: artifactory.intra.xiaojukeji.com/isexe/2.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/yallist/4.0.0:
+    resolution: {integrity: sha1-m7knkNnA7/7GO+c1GeEaNQGaOnI=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/yallist/-/yallist-4.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fyallist%2F-%2Fyallist-4.0.0.tgz}
+    name: yallist
+    version: 4.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/z-schema/5.0.2:
+    resolution: {integrity: sha1-9BA5Syyfy57a9qdRFJHAu06JpQQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/z-schema/-/z-schema-5.0.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fz-schema%2F-%2Fz-schema-5.0.2.tgz}
+    name: z-schema
+    version: 5.0.2
+    engines: {node: '>=8.0.0'}
+    hasBin: true
+    dependencies:
+      lodash.get: artifactory.intra.xiaojukeji.com/lodash.get/4.4.2
+      lodash.isequal: artifactory.intra.xiaojukeji.com/lodash.isequal/4.5.0
+      validator: artifactory.intra.xiaojukeji.com/validator/13.7.0
+    optionalDependencies:
+      commander: artifactory.intra.xiaojukeji.com/commander/2.20.3
     dev: true

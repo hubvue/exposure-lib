@@ -1,35 +1,21 @@
 {
-  "name": "vue-exposure",
+  "name": "@exposure-lib/monorepo",
   "version": "1.4.0",
+  "private": true,
   "description": "基于InterfaceObserver API，当绑定元素出现在视窗内的时候执行回调",
-  "main": "./dist/exposure.js",
-  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
+    "build-packages": "node ./scripts/build.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add ./CHANGELOG.md",
     "format": "eslint --fix . --ext .js,.ts",
     "test": "echo test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hubvue/vue-exposure.git"
-  },
-  "keywords": [
-    "Vue",
-    "InterfaceObserver",
-    "Exposure",
-    "vue-plugins"
-  ],
-  "author": "kim",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hubvue/vue-exposure/issues"
-  },
-  "homepage": "https://github.com/hubvue/vue-exposure#readme",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@microsoft/api-extractor": "^7.19.4",
     "@rollup/plugin-replace": "^2.3.3",
+    "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^3.3.0",
     "@typescript-eslint/parser": "^3.3.0",
     "chalk": "^4.1.0",
@@ -37,7 +23,9 @@
     "eslint": "^7.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "esmo": "^0.14.1",
     "husky": "^4.2.5",
+    "inquirer": "^8.2.0",
     "lint-staged": "^10.2.10",
     "prettier": "^2.0.5",
     "rollup": "^2.16.1",
