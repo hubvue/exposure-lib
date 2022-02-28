@@ -2,13 +2,13 @@
   "name": "@exposure-lib/vue",
   "version": "2.0.0",
   "description": "@exposure-lib/vue",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js",
       "types": "./dist/index.d.ts"
     }
   },
@@ -34,5 +34,8 @@
   },
   "devDependencies": {
     "vue": "^3.2.31"
+  },
+  "dependencies": {
+    "@exposure-lib/core": "^2.0.0"
   }
 }

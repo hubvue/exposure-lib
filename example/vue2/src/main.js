@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Exposure from '../../dist/exposure'
-// import Exposure from 'vue-exposure/dist/exposure-polyfill'
+// import Exposure from '../../../packages/vue2/dist/index.mjs'
+import ExposurePlugin from '@exposure-lib/vue2'
 import router from './router/router'
 Vue.config.productionTip = false
 
-Vue.use(Exposure, {
+console.log('Exposure', ExposurePlugin)
+Vue.use(ExposurePlugin, {
   threshold: 0.2,
 })
 

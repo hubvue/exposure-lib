@@ -103,10 +103,6 @@ const pascalCase = (str) => {
 }
 
 const formats = ['esm', 'cjs']
-const formatToSuffix = {
-  esm: 'mjs',
-  cjs: 'cjs',
-}
 const packageOtherConfig = {
   vue2: {
     external: ['@exposure-lib/core'],
@@ -127,7 +123,7 @@ const generateBuildConfigs = (packagesName) => {
             name: pascalCase(packageName),
             file: resolve(
               __dirname,
-              `../packages/${packageName}/dist/index.${formatToSuffix[format]}`
+              `../packages/${packageName}/dist/index.${format}.js`
             ),
             format,
           },
