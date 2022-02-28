@@ -1,6 +1,8 @@
 # @exposure-lib/vue2
 
-[中文文档](./README.zh-CN.md)
+[@exposure-lib/vue2 中文文档](./README.zh-CN.md)
+
+[@exposure-lib/core](../../README.md)
 
 Based on @exposure-lib/core, using vue directives to bind elements and execute callbacks when they appear in the viewport, supporting `Vue 2.x`.
 
