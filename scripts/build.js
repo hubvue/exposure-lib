@@ -111,6 +111,9 @@ const packageOtherConfig = {
   vue2: {
     external: ['@exposure-lib/core'],
   },
+  vue: {
+    external: ['@exposure-lib/core'],
+  },
 }
 const generateBuildConfigs = (packagesName) => {
   const packagesFormatConfig = packagesName.map((packageName) => {

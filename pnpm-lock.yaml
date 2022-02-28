@@ -52,6 +52,12 @@ importers:
   packages/polyfill:
     specifiers: {}
 
+  packages/vue:
+    specifiers:
+      vue: ^3.2.31
+    devDependencies:
+      vue: artifactory.intra.xiaojukeji.com/vue/3.2.31
+
   packages/vue2:
     specifiers:
       vue: ^2.6.11
@@ -2753,6 +2759,14 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  artifactory.intra.xiaojukeji.com/@babel/parser/7.17.3:
+    resolution: {integrity: sha1-sHcCuYKZC/b9wdpQSaI/7OTFw9A=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@babel/parser/-/parser-7.17.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fparser%2F-%2Fparser-7.17.3.tgz}
+    name: '@babel/parser'
+    version: 7.17.3
+    engines: {node: '>=6.0.0'}
+    hasBin: true
+    dev: true
+
   artifactory.intra.xiaojukeji.com/@microsoft/api-extractor-model/7.15.3:
     resolution: {integrity: sha1-z3be7rJzPZdNpnj1MMLbrOsYoGU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@microsoft/api-extractor-model/-/api-extractor-model-7.15.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40microsoft%2Fapi-extractor-model%2F-%2Fapi-extractor-model-7.15.3.tgz}
     name: '@microsoft/api-extractor-model'
@@ -2852,6 +2866,110 @@ packages:
     resolution: {integrity: sha1-hkuYfAxo0HtDRYRcPmO3Xt0UNkQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/node/-/node-17.0.21.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fnode%2F-%2Fnode-17.0.21.tgz}
     name: '@types/node'
     version: 17.0.21
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@vue/compiler-core/3.2.31:
+    resolution: {integrity: sha1-048Gws+EV0JAO1I6tFlqP9oVLok=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@vue/compiler-core/-/compiler-core-3.2.31.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-core%2F-%2Fcompiler-core-3.2.31.tgz}
+    name: '@vue/compiler-core'
+    version: 3.2.31
+    dependencies:
+      '@babel/parser': artifactory.intra.xiaojukeji.com/@babel/parser/7.17.3
+      '@vue/shared': artifactory.intra.xiaojukeji.com/@vue/shared/3.2.31
+      estree-walker: artifactory.intra.xiaojukeji.com/estree-walker/2.0.2
+      source-map: artifactory.intra.xiaojukeji.com/source-map/0.6.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@vue/compiler-dom/3.2.31:
+    resolution: {integrity: sha1-sbffrVXJbIzCuRnNfrX9fk3b8A4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@vue/compiler-dom/-/compiler-dom-3.2.31.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-dom%2F-%2Fcompiler-dom-3.2.31.tgz}
+    name: '@vue/compiler-dom'
+    version: 3.2.31
+    dependencies:
+      '@vue/compiler-core': artifactory.intra.xiaojukeji.com/@vue/compiler-core/3.2.31
+      '@vue/shared': artifactory.intra.xiaojukeji.com/@vue/shared/3.2.31
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@vue/compiler-sfc/3.2.31:
+    resolution: {integrity: sha1-0Cspw/401ZmlLFrhxpN7TWnxHC8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@vue/compiler-sfc/-/compiler-sfc-3.2.31.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-sfc%2F-%2Fcompiler-sfc-3.2.31.tgz}
+    name: '@vue/compiler-sfc'
+    version: 3.2.31
+    dependencies:
+      '@babel/parser': artifactory.intra.xiaojukeji.com/@babel/parser/7.17.3
+      '@vue/compiler-core': artifactory.intra.xiaojukeji.com/@vue/compiler-core/3.2.31
+      '@vue/compiler-dom': artifactory.intra.xiaojukeji.com/@vue/compiler-dom/3.2.31
+      '@vue/compiler-ssr': artifactory.intra.xiaojukeji.com/@vue/compiler-ssr/3.2.31
+      '@vue/reactivity-transform': artifactory.intra.xiaojukeji.com/@vue/reactivity-transform/3.2.31
+      '@vue/shared': artifactory.intra.xiaojukeji.com/@vue/shared/3.2.31
+      estree-walker: artifactory.intra.xiaojukeji.com/estree-walker/2.0.2
+      magic-string: artifactory.intra.xiaojukeji.com/magic-string/0.25.7
+      postcss: artifactory.intra.xiaojukeji.com/postcss/8.4.7
+      source-map: artifactory.intra.xiaojukeji.com/source-map/0.6.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@vue/compiler-ssr/3.2.31:
+    resolution: {integrity: sha1-T6APSGycRYC0CkF3hx671lDsuZw=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@vue/compiler-ssr/-/compiler-ssr-3.2.31.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-ssr%2F-%2Fcompiler-ssr-3.2.31.tgz}
+    name: '@vue/compiler-ssr'
+    version: 3.2.31
+    dependencies:
+      '@vue/compiler-dom': artifactory.intra.xiaojukeji.com/@vue/compiler-dom/3.2.31
+      '@vue/shared': artifactory.intra.xiaojukeji.com/@vue/shared/3.2.31
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@vue/reactivity-transform/3.2.31:
+    resolution: {integrity: sha1-D1slwk5w7asrYT1TBcRltQ/ACRE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@vue/reactivity-transform/-/reactivity-transform-3.2.31.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Freactivity-transform%2F-%2Freactivity-transform-3.2.31.tgz}
+    name: '@vue/reactivity-transform'
+    version: 3.2.31
+    dependencies:
+      '@babel/parser': artifactory.intra.xiaojukeji.com/@babel/parser/7.17.3
+      '@vue/compiler-core': artifactory.intra.xiaojukeji.com/@vue/compiler-core/3.2.31
+      '@vue/shared': artifactory.intra.xiaojukeji.com/@vue/shared/3.2.31
+      estree-walker: artifactory.intra.xiaojukeji.com/estree-walker/2.0.2
+      magic-string: artifactory.intra.xiaojukeji.com/magic-string/0.25.7
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@vue/reactivity/3.2.31:
+    resolution: {integrity: sha1-/JCqLN9pVBi3nlNHg6ypDWOka70=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@vue/reactivity/-/reactivity-3.2.31.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Freactivity%2F-%2Freactivity-3.2.31.tgz}
+    name: '@vue/reactivity'
+    version: 3.2.31
+    dependencies:
+      '@vue/shared': artifactory.intra.xiaojukeji.com/@vue/shared/3.2.31
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@vue/runtime-core/3.2.31:
+    resolution: {integrity: sha1-nShMOC9fmBt6e1lxBSodxO85rHo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@vue/runtime-core/-/runtime-core-3.2.31.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fruntime-core%2F-%2Fruntime-core-3.2.31.tgz}
+    name: '@vue/runtime-core'
+    version: 3.2.31
+    dependencies:
+      '@vue/reactivity': artifactory.intra.xiaojukeji.com/@vue/reactivity/3.2.31
+      '@vue/shared': artifactory.intra.xiaojukeji.com/@vue/shared/3.2.31
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@vue/runtime-dom/3.2.31:
+    resolution: {integrity: sha1-ec4BgXyzyvLJ2SP2abc40teVPv8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@vue/runtime-dom/-/runtime-dom-3.2.31.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fruntime-dom%2F-%2Fruntime-dom-3.2.31.tgz}
+    name: '@vue/runtime-dom'
+    version: 3.2.31
+    dependencies:
+      '@vue/runtime-core': artifactory.intra.xiaojukeji.com/@vue/runtime-core/3.2.31
+      '@vue/shared': artifactory.intra.xiaojukeji.com/@vue/shared/3.2.31
+      csstype: artifactory.intra.xiaojukeji.com/csstype/2.6.19
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@vue/server-renderer/3.2.31_vue@3.2.31:
+    resolution: {integrity: sha1-IB6dbOc1hH1ZiUA6+B74CWDacUE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@vue/server-renderer/-/server-renderer-3.2.31.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fserver-renderer%2F-%2Fserver-renderer-3.2.31.tgz}
+    id: artifactory.intra.xiaojukeji.com/@vue/server-renderer/3.2.31
+    name: '@vue/server-renderer'
+    version: 3.2.31
+    peerDependencies:
+      vue: 3.2.31
+    dependencies:
+      '@vue/compiler-ssr': artifactory.intra.xiaojukeji.com/@vue/compiler-ssr/3.2.31
+      '@vue/shared': artifactory.intra.xiaojukeji.com/@vue/shared/3.2.31
+      vue: artifactory.intra.xiaojukeji.com/vue/3.2.31
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@vue/shared/3.2.31:
+    resolution: {integrity: sha1-yQ3nEm2DPc06THU01TS+L7Qfqk4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@vue/shared/-/shared-3.2.31.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fshared%2F-%2Fshared-3.2.31.tgz}
+    name: '@vue/shared'
+    version: 3.2.31
     dev: true
 
   artifactory.intra.xiaojukeji.com/ajv/6.12.6:
@@ -3050,6 +3168,12 @@ packages:
       path-key: artifactory.intra.xiaojukeji.com/path-key/3.1.1
       shebang-command: artifactory.intra.xiaojukeji.com/shebang-command/2.0.0
       which: artifactory.intra.xiaojukeji.com/which/2.0.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/csstype/2.6.19:
+    resolution: {integrity: sha1-/utarokCC7OJ4fY2aaXtSQ45HKo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/csstype/-/csstype-2.6.19.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcsstype%2F-%2Fcsstype-2.6.19.tgz}
+    name: csstype
+    version: 2.6.19
     dev: true
 
   artifactory.intra.xiaojukeji.com/defaults/1.0.3:
@@ -3343,6 +3467,12 @@ packages:
       import-meta-resolve: artifactory.intra.xiaojukeji.com/import-meta-resolve/1.1.1
     dev: true
 
+  artifactory.intra.xiaojukeji.com/estree-walker/2.0.2:
+    resolution: {integrity: sha1-UvAQF4wqTBF6d1fP6UKtt9LaTKw=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/estree-walker/-/estree-walker-2.0.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Festree-walker%2F-%2Festree-walker-2.0.2.tgz}
+    name: estree-walker
+    version: 2.0.2
+    dev: true
+
   artifactory.intra.xiaojukeji.com/external-editor/3.1.0:
     resolution: {integrity: sha1-ywP3QL764D6k0oPK7SdBqD8zVJU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/external-editor/-/external-editor-3.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fexternal-editor%2F-%2Fexternal-editor-3.1.0.tgz}
     name: external-editor
@@ -3581,6 +3711,14 @@ packages:
       yallist: artifactory.intra.xiaojukeji.com/yallist/4.0.0
     dev: true
 
+  artifactory.intra.xiaojukeji.com/magic-string/0.25.7:
+    resolution: {integrity: sha1-P0l9b9NMZpxnmNy4IfLvMfVEUFE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/magic-string/-/magic-string-0.25.7.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fmagic-string%2F-%2Fmagic-string-0.25.7.tgz}
+    name: magic-string
+    version: 0.25.7
+    dependencies:
+      sourcemap-codec: artifactory.intra.xiaojukeji.com/sourcemap-codec/1.4.8
+    dev: true
+
   artifactory.intra.xiaojukeji.com/mimic-fn/2.1.0:
     resolution: {integrity: sha1-ftLCzMyvhNP/y3pptXcR/CCDQBs=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/mimic-fn/-/mimic-fn-2.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fmimic-fn%2F-%2Fmimic-fn-2.1.0.tgz}
     name: mimic-fn
@@ -3592,6 +3730,14 @@ packages:
     resolution: {integrity: sha1-FjDEKyJR/4HiooPelqVJfqkuXg0=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/mute-stream/download/mute-stream-0.0.8.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fmute-stream%2Fdownload%2Fmute-stream-0.0.8.tgz}
     name: mute-stream
     version: 0.0.8
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/nanoid/3.3.1:
+    resolution: {integrity: sha1-Y0ehjKyIr4j1ivCzWUtyPV6ZuzU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/nanoid/-/nanoid-3.3.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fnanoid%2F-%2Fnanoid-3.3.1.tgz}
+    name: nanoid
+    version: 3.3.1
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
     dev: true
 
   artifactory.intra.xiaojukeji.com/onetime/5.1.2:
@@ -3638,6 +3784,23 @@ packages:
     resolution: {integrity: sha1-+8EUtgykKzDZ2vWFjkvWi77bZzU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/path-parse/-/path-parse-1.0.7.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fpath-parse%2F-%2Fpath-parse-1.0.7.tgz}
     name: path-parse
     version: 1.0.7
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/picocolors/1.0.0:
+    resolution: {integrity: sha1-y1vcdP8/UYkiNur3nWi8RFZKuBw=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/picocolors/-/picocolors-1.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fpicocolors%2F-%2Fpicocolors-1.0.0.tgz}
+    name: picocolors
+    version: 1.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/postcss/8.4.7:
+    resolution: {integrity: sha1-+ZhiBp7EVB3jhr9X9WYKbHoIdag=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/postcss/-/postcss-8.4.7.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fpostcss%2F-%2Fpostcss-8.4.7.tgz}
+    name: postcss
+    version: 8.4.7
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: artifactory.intra.xiaojukeji.com/nanoid/3.3.1
+      picocolors: artifactory.intra.xiaojukeji.com/picocolors/1.0.0
+      source-map-js: artifactory.intra.xiaojukeji.com/source-map-js/1.0.2
     dev: true
 
   artifactory.intra.xiaojukeji.com/punycode/2.1.1:
@@ -3764,11 +3927,24 @@ packages:
     version: 3.0.6
     dev: true
 
+  artifactory.intra.xiaojukeji.com/source-map-js/1.0.2:
+    resolution: {integrity: sha1-rbw2HZxi3zgBJefxYfccgm8eSQw=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/source-map-js/-/source-map-js-1.0.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsource-map-js%2F-%2Fsource-map-js-1.0.2.tgz}
+    name: source-map-js
+    version: 1.0.2
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   artifactory.intra.xiaojukeji.com/source-map/0.6.1:
     resolution: {integrity: sha1-dHIq8y6WFOnCh6jQu95IteLxomM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/source-map/-/source-map-0.6.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsource-map%2F-%2Fsource-map-0.6.1.tgz}
     name: source-map
     version: 0.6.1
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/sourcemap-codec/1.4.8:
+    resolution: {integrity: sha1-6oBL2UhXQC5pktBaOO8a41qatMQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsourcemap-codec%2F-%2Fsourcemap-codec-1.4.8.tgz}
+    name: sourcemap-codec
+    version: 1.4.8
     dev: true
 
   artifactory.intra.xiaojukeji.com/sprintf-js/1.0.3:
@@ -3936,6 +4112,18 @@ packages:
     resolution: {integrity: sha1-5RqlJQJQ1Wmj+606ilpofWA24jU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/vue/-/vue-2.6.14.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2F-%2Fvue-2.6.14.tgz}
     name: vue
     version: 2.6.14
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/vue/3.2.31:
+    resolution: {integrity: sha1-4MSZJDNenxiDUoFniKTMoQ+BfOY=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/vue/-/vue-3.2.31.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2F-%2Fvue-3.2.31.tgz}
+    name: vue
+    version: 3.2.31
+    dependencies:
+      '@vue/compiler-dom': artifactory.intra.xiaojukeji.com/@vue/compiler-dom/3.2.31
+      '@vue/compiler-sfc': artifactory.intra.xiaojukeji.com/@vue/compiler-sfc/3.2.31
+      '@vue/runtime-dom': artifactory.intra.xiaojukeji.com/@vue/runtime-dom/3.2.31
+      '@vue/server-renderer': artifactory.intra.xiaojukeji.com/@vue/server-renderer/3.2.31_vue@3.2.31
+      '@vue/shared': artifactory.intra.xiaojukeji.com/@vue/shared/3.2.31
     dev: true
 
   artifactory.intra.xiaojukeji.com/wcwidth/1.0.1:

@@ -1,0 +1,38 @@
+{
+  "name": "@exposure-lib/vue",
+  "version": "2.0.0",
+  "description": "@exposure-lib/vue",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hubvue/exposure-lib.git",
+    "directory": "packages/vue"
+  },
+  "keywords": [
+    "InterfaceObserver",
+    "exposure",
+    "vue"
+  ],
+  "bugs": {
+    "url": "https://github.com/hubvue/exposure-lib/issues"
+  },
+  "homepage": "https://github.com/hubvue/exposure-lib/tree/main/packages/vue#readme",
+  "author": "hubvue",
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": ">=3.2.31",
+    "@exposure-lib/core": ">=2.0.0"
+  },
+  "devDependencies": {
+    "vue": "^3.2.31"
+  }
+}
