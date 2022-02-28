@@ -33,7 +33,7 @@ jobs:
         run: pnpm install
       
       - name: Build
-        run: pnpm run build
+        run: pnpm run build:all
         
       - name: Publish
         run: pnpm -r publish --access public --no-git-checks

@@ -5,6 +5,8 @@ const chalk = require('chalk')
 const rollup = require('rollup')
 const { resolve } = require('path')
 
+const args = require('minimist')(process.argv.slice(2))
+
 const getPackagesName = async () => {
   const allPackagesName = await fs.readdir(resolve(__dirname, '../packages'))
   return allPackagesName
@@ -183,13 +185,17 @@ const build = async (packagesConfig) => {
 
 const buildBootstrap = async () => {
   const packagesName = await getPackagesName()
-  packagesName.unshift('all')
-  const answers = await getAnswersFromInquirer(packagesName)
-  if (!answers) {
-    return
+  let buildPackagesName = packagesName
+  if (!args.all) {
+    packagesName.unshift('all')
+    const answers = await getAnswersFromInquirer(packagesName)
+    if (!answers) {
+      return
+    }
+    buildPackagesName = answers
   }
-  await cleanPackagesOldDist(answers)
-  const packagesBuildConfig = generateBuildConfigs(answers)
+  await cleanPackagesOldDist(buildPackagesName)
+  const packagesBuildConfig = generateBuildConfigs(buildPackagesName)
   await build(packagesBuildConfig)
 }
 
