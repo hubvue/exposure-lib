@@ -27,7 +27,6 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "esmo": "^0.14.1",
-    "husky": "^4.2.5",
     "inquirer": "^8.2.0",
     "lint-staged": "^10.2.10",
     "prettier": "^2.0.5",
