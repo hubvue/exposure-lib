@@ -1,6 +1,6 @@
 # @exposure-lib/vue2
 
-基于 @exposure-lib/core，采用vue指令的方式绑定元素，当元素出现在视窗内的时候执行回调，支持 `Vue 2.x`
+Based on @exposure-lib/core, using vue directives to bind elements and execute callbacks when they appear in the viewport, supporting `Vue 2.x`.
 
 ## Quick Start
 
@@ -10,31 +10,31 @@
 pnpm add @exposure-lib/core @exposure-lib/vue2
 ```
 
-如果需求浏览器环境不支持` InterfaceObserver API `，则可以引入`ployfill`以便于正常使用
+If the required browser environment does not support the `InterfaceObserver API`, then `ployfill` can be introduced for normal use
 
 ```shell
 pnpm add @exposure-lib/polyfill
 ```
 
-**引入包**
+**Introducing the package**
 
 ```js
 import '@exposure-lib/polyfill'
 import Exposure from '@exposure-lib/vue2'
 ```
 
-### 使用插件
+### Using Plugin
 
-@exposure-lib/vue2 默认当元素全部区域都展示在视窗时才会执行回调函数。
+The @exposure-lib/vue2 callback function is executed by default when all areas of the element are displayed in the viewport.
 
 ```js
 Vue.use(Exposure)
 ```
 
 
-### 在组件中使用
+### In Component
 
-@exposure-lib/vue2 基于 vue 指令封装，使得在开发过程中更加方便，例如下面这个组件。
+@exposure-lib/vue2 is based on the vue directive wrapper, making it easier to develop components such as the one below.
 
 ```vue
 <template>
@@ -86,19 +86,19 @@ export default {
 </style>
 ```
 
-滚动界面，当元素出现在视窗内的时候触发回调函数。
+Scrolls the interface and triggers the callback function when the element appears in the viewport.
 
 
 #### Handler
-详见[exposure-lib](../../README.md)
+For details, see[exposure-lib](../../README.md)
 #### threshold
 
-默认情况下，曝光回调的执行是等待整个绑定元素全部包裹后才会执行。如果您有需求当元素出现一定比例是曝光，
-可以设置 threshold，使用下面两种方式。
+By default, the execution of the exposure callback waits for the entire bound element to be fully wrapped before it is executed. If you have a need to expose an element when a certain percentage of it appears, the
+you can set the threshold, using the following two methods.
 
-##### 全局级 threshold
+##### Golbal threshold
 
-@exposure-lib/vue2 支持全局的 threshold 设置。
+@exposure-lib/vue2 supports global threshold settings.
 
 ```js
 Vue.use(Exposure, {
@@ -106,11 +106,11 @@ Vue.use(Exposure, {
 })
 ```
 
-如上面代码所示，当元素的曝光比例达到 0.2 的时候，就会执行回调函数。
+As shown in the code above, the callback function is executed when the exposure ratio of the element reaches 0.2.
 
-##### 元素级 threshold
+##### Element threshold
 
-如果你想要某个元素的曝光比例与其他元素的不同，可单独为元素设置 threshold，
+If you want the exposure ratio of an element to be different from that of other elements, you can set the threshold for the element separately.
 
 ```vue
 <template>
@@ -133,15 +133,15 @@ export default {
 </script>
 ```
 
-使用 Vue 动态指令参数的方式对指令传参，所传值必须是`[0,1]`之间的数值，这样在监听曝光的时候就会按照所传值的比例进行曝光。
+Using Vue dynamic directive parameters for directives, the value passed must be a value between `[0,1]` so that the exposure will be in proportion to the value passed when listening to the exposure.
 
-> 需要注意：元素级 threshold > 全局级 threshold
+> Needs attention: Golbal threshold > Element threshold
 
 ### \$resetExposure
 
-曝光回调的执行是单例的，也就是说当曝光过一次并且回调执行后，再次曝光就不会再执行回调函数。
+Exposure callbacks are executed in a single instance, which means that once an exposure has been made and the callback executed, the callback function will not be executed again after another exposure.
 
-在 Vue 组件中存在 KeepAlive 的场景，当 KeepAlive 组件切换的时候曝光回调也不会重新执行。这种情况下如果想要重新执行就需要使用`$resetExposure`API 去重置元素状态。
+There is a KeepAlive scenario in Vue components, where the exposure callback is not re-executed when the KeepAlive component is switched. In this case, if you want to re-execute it, you need to use the `$resetExposure` API to reset the element state.
 
 ```js
 deactivated() {
@@ -149,7 +149,7 @@ deactivated() {
 }
 ```
 
-当调用`this.$resetExposure()`不传入任何参数的时候讲会把当前实例中所有监听元素的执行状态全部重置。如果需要只重置某个元素的执行状态，需要传入当前元素。
+When calling `this.$resetExposure()` without passing any arguments, it will reset the execution state of all the listened elements in the current instance. If you need to reset the execution state of only one element, you need to pass in the current element.
 
 ```js
 deactivated() {
@@ -158,7 +158,7 @@ deactivated() {
 ```
 
 #### Vue 2 + composition-api
-若项目使用Vue 2 + composition-api构建，为了遵循composition-api 编码规范，则可以使用useResetExposure 重置曝光。
+If the project is built with Vue 2 + composition-api, you can use useResetExposure to reset the exposure in order to follow the composition-api coding specification.
 
 ```ts
 import { useResetExposure } from 'vue-exposure'
@@ -171,8 +171,3 @@ export default defineComponent({
   }
 })
 ```
-
-### 注意事项
-
-vue-exposure 监听元素是严格模式的，当一个元素的`visibility`为`hidden`或者`width`为`0`或者`height`为`0`都不会去监听。
-
