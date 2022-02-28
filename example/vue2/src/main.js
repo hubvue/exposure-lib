@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import Exposure from '../../../packages/vue2/dist/index.mjs'
-import ExposurePlugin from '@exposure-lib/vue'
+import ExposurePlugin from '@exposure-lib/vue2'
 import router from './router/router'
 Vue.config.productionTip = false
 

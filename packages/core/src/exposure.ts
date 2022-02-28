@@ -25,18 +25,18 @@ export const elementContextMap = new Map<Element, ElementContext>()
  * @param el? Element
  */
 export const resetExposure = (el?: Element) => {
-  const resetActiveContext = {
-    active: {
-      enter: false,
-      leave: false,
-    },
-  }
   if (el && elementContextMap.has(el)) {
     const context = elementContextMap.get(el)
-    elementContextMap.set(el, Object.assign(context, resetActiveContext))
+    if (context) {
+      context.active.enter = false
+      context.active.leave = false
+      elementContextMap.set(el, context)
+    }
   } else {
     for (let [el, context] of elementContextMap.entries()) {
-      elementContextMap.set(el, Object.assign(context, resetActiveContext))
+      context.active.enter = false
+      context.active.leave = false
+      elementContextMap.set(el, context)
     }
   }
 }

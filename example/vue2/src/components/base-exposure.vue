@@ -10,7 +10,7 @@
     ></div>
     <div
       class="bottom"
-      v-exposure:[1]="handler"
+      v-exposure:[1]="handlerBottom"
     ></div>
   </div>
 </template>
@@ -21,12 +21,12 @@ export default {
   data() {
     return {
       handler: {
-        // enter() {
-        //   alert('enter')
-        // },
-        // leave() {
-        //   alert('leave')
-        // }
+        enter() {
+          alert('enter')
+        },
+        leave() {
+          alert('leave')
+        }
       }
     }
   },
@@ -38,6 +38,7 @@ export default {
       alert('middle')
     },
     handlerBottom() {
+      this.$resetExposure()
       alert('bottom')
     },
     handlerTop() {

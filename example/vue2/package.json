@@ -8,8 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@exposure-lib/core": "workspace:*",
-    "@exposure-lib/vue2": "workspace:*",
+    "@exposure-lib/core": "2.0.1-beta.3",
+    "@exposure-lib/vue2": "2.0.1-beta.3",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.3.4"
