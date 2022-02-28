@@ -9,6 +9,9 @@
     "format": "eslint --fix . --ext .js,.ts,.cjs,.mjs",
     "release": "pnpm -r publish --access public"
   },
+  "publishConfig": {
+    "directory": "packages/*"
+  },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
