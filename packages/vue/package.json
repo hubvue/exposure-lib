@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/hubvue/exposure-lib/tree/main/packages/vue#readme",
   "author": "hubvue",
-  "license": "ISC",
+  "license": "MIT",
   "peerDependencies": {
     "vue": ">=3.2.31",
     "@exposure-lib/core": ">=2.0.0"

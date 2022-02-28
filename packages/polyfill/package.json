@@ -26,5 +26,5 @@
   },
   "homepage": "https://github.com/hubvue/exposure-lib/tree/main/packages/polyfill#readme",
   "author": "hubvue",
-  "license": "ISC"
+  "license": "MIT"
 }
