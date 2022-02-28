@@ -1,6 +1,6 @@
 {
   "name": "@exposure-lib/vue",
-  "version": "2.0.0",
+  "version": "2.0.1-beta.3",
   "description": "@exposure-lib/vue",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
