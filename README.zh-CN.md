@@ -6,11 +6,11 @@
 
 ### Install
 
-> npm install @exposure-lib/core --save
+> pnpm add @exposure-lib/core
 
 由于 InterfaceObserver API 的兼容性在一些低版本浏览器上支持的还是不怎么好，可以事先引入polyfill至于`@exposure-lib/core`正常使用。
 
-> npm install @exposure-lib/polyfill --save
+> pnpm add @exposure-lib/polyfill
 
 **引入包**
 

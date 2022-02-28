@@ -9,11 +9,11 @@ Based on the InterfaceObserver API, listens for elements to be visible or not, a
 
 ### Install
 
-> npm install @exposure-lib/core --save
+> pnpm add @exposure-lib/core
 
 Since the compatibility of the InterfaceObserver API is still not well supported on some low version browsers, you can introduce polyfill to `@exposure-lib/core` beforehand to use it normally.
 
-> npm install @exposure-lib/polyfill --save
+> pnpm add @exposure-lib/polyfill
 
 **Introducing the package**
 
