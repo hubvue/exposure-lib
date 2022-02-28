@@ -43,12 +43,12 @@ exposure.observe(el, () => {
 The `exposure.observe` method accepts at least two arguments, the first one is an element of type Element, the second one is a Handler, which is executed when the monitored element appears in the visible area, and the third one is a listening threshold (optional).
 
 
-#### threshold
+### threshold
 
 By default, the execution of the exposure callback waits for the entire bound element to be fully wrapped before it is executed. If you have a need to expose an element when a certain percentage of it appears, the
 you can set the threshold, using the following two methods.
 
-##### Exposure threshold
+#### Exposure threshold
 
 Each call to the `createExposure` method to create an `Exposure` supports passing in a threshold for use by elements under the current `Exposure` scope.
 
@@ -58,7 +58,7 @@ const exposure = createExposure(0.2)
 
 As shown in the code above, the callback function is executed when the exposure ratio of the element reaches 0.2.
 
-##### Element threshold
+#### Element threshold
 
 If you want the exposure ratio of an element to be different from that of other elements, you can set the threshold for the element separately
 
@@ -75,7 +75,7 @@ exposure.observe(el, () => {
 > Needs attention：Element threshold > Exposure threshold
 
 
-#### Handler
+### Handler
 Handler has two types: function or object
 
 **Function**
@@ -90,7 +90,7 @@ A Handler of object type needs to have one of the `enter` and `leave` attributes
 - leave: leave: the leave Handler is triggered once after the enter Handler is triggered and the element leaves the visible area completely.
 
 
-#### resetExposure
+### resetExposure
 
 Exposure callbacks are executed in a single instance, which means that once an exposure has been made and the callback executed, the callback function will not be executed again. If you need to expose again, you need to call `resetExposure` to reset it.
 
@@ -103,7 +103,7 @@ const el = document.getElementById('el')
 resetExposure(el)
 ```
 
-#### unobserve
+### unobserve
 
 When the page is destroyed and the listener element in the current page needs to be unobserved, call the `exposure.unobserve` method to unobserve the listener element.
 

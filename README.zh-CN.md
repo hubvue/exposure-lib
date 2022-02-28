@@ -43,12 +43,12 @@ exposure.observe(el, () => {
 `exposure.observe`方法至少接受两个参数，第一个参数为Element类型的元素，第二个参数为Handler，当监测元素出现在可视区内执行Handler，第三个参数为监听阈值(可选)。
 
 
-#### threshold
+### threshold
 
 默认情况下，曝光回调的执行是等待整个绑定元素全部包裹后才会执行。如果您有需求当元素出现一定比例是曝光，
 可以设置 threshold，使用下面两种方式。
 
-##### Exposure threshold
+#### Exposure threshold
 
 每次调用`createExposure`方法创建`Exposure`支持传入threshold用于当前`Exposure`作用域下的元素使用。
 
@@ -58,7 +58,7 @@ const exposure = createExposure(0.2)
 
 如上面代码所示，当元素的曝光比例达到 0.2 的时候，就会执行回调函数。
 
-##### Element threshold
+#### Element threshold
 
 如果你想要某个元素的曝光比例与其他元素的不同，可单独为元素设置 threshold，
 
@@ -75,7 +75,7 @@ exposure.observe(el, () => {
 > 需要注意：Element threshold > Exposure threshold
 
 
-#### Handler
+### Handler
 Handler 也就是指令的值，有两种类型：函数或对象
 
 **函数**
@@ -90,7 +90,7 @@ Handler 也就是指令的值，有两种类型：函数或对象
 - leave: leave Handler 会在 enter Handler 触发后，元素彻底离开可视区域后触发一次；
 
 
-#### resetExposure
+### resetExposure
 
 曝光回调的执行是单例的，也就是说当曝光过一次并且回调执行后，再次曝光就不会再执行回调函数。如果需要再次曝光则需要调用`resetExposure`来重置。
 
@@ -103,7 +103,7 @@ const el = document.getElementById('el')
 resetExposure(el)
 ```
 
-#### unobserve
+### unobserve
 
 当页面销毁需要将当前页面内监听元素取消，调用`exposure.unobserve`方法取消监听元素
 
