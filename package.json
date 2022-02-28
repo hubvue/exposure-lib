@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node ./scripts/build.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add ./CHANGELOG.md",
-    "format": "eslint --fix . --ext .js,.ts,.cjs,.mjs"
+    "format": "eslint --fix . --ext .js,.ts,.cjs,.mjs",
+    "release": "pnpm -r publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
