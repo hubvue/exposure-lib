@@ -16,7 +16,7 @@ interface Exposure {
 }
 
 const Logger = console
-let IntersectionObserver: IntersectionObserver
+let IntersectionObserver: IntersectionObserver | null
 export const elementContextMap = new Map<Element, ElementContext>()
 
 /**
@@ -66,7 +66,10 @@ export const createExposure = (golablThreshold = 1): Exposure => {
     if (!IntersectionObserver) {
       return
     }
-    const th = typeof threshold === undefined ? golablThreshold : threshold
+    let th = threshold
+    if (!th) {
+      th = golablThreshold
+    }
     if (!elementContextMap.has(el)) {
       elementContextMap.set(el, {
         active: {
