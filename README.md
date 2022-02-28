@@ -87,7 +87,7 @@ The function type is the more common way of writing, the function Handler will o
 A Handler of object type needs to have one of the `enter` and `leave` attributes, and the values of the `enter` and `leave` attributes are of function type.
 
 - enter: enter Handler is triggered once when an element enters exposure and `threshold` is met.
-- leave: leave: the leave Handler is triggered once after the enter Handler is triggered and the element leaves the visible area completely.
+- leave: the leave Handler is triggered once after the enter Handler is triggered and the element leaves the visible area completely.
 
 
 ### resetExposure
