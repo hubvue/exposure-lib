@@ -32,7 +32,7 @@ export const createObserver = () => {
       if (config) {
         // Skip when handler is a function and callback has been triggered
         if (isFuncHandler(config.handler) && config.active.enter) {
-          break
+          continue
         }
         // Skip when handler is a object and callback has been triggered
         if (
@@ -40,10 +40,10 @@ export const createObserver = () => {
           config.active.enter &&
           config.active.leave
         ) {
-          break
+          continue
         }
         if (!isVisibleElement(target)) {
-          break
+          continue
         }
         if (
           isIntersecting &&
