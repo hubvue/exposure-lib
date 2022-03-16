@@ -11,7 +11,7 @@ Based on @exposure-lib/core, using vue directives to bind elements and execute c
 ### Install
 
 ```shell
-pnpm add @exposure-lib/core @exposure-lib/vue2
+pnpm add @exposure-lib/vue2
 ```
 
 If the required browser environment does not support the `InterfaceObserver API`, then `ployfill` can be introduced for normal use
