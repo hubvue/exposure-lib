@@ -1,6 +1,8 @@
 # exposure-lib
 
 [中文文档](./README.zh-CN.md)
+[Support Vue 2.x Doc](./packages/vue2/README.md)
+[Support Vue 3.x Doc](./packages/vue/README.md)
 
 
 Based on the InterfaceObserver API, listens for elements to be visible or not, and executes a callback function when the element appears in the viewport.
