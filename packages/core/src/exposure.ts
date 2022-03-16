@@ -17,7 +17,7 @@ export interface Exposure {
 }
 
 const Logger = console
-let IntersectionObserver: IntersectionObserver | null
+let Observer: IntersectionObserver | null
 export const elementContextMap = new Map<Element, ElementContext>()
 
 /**
@@ -47,16 +47,18 @@ export const resetExposure = (el?: Element) => {
  * @returns Exposure
  */
 export const createExposure = (golablThreshold = 1): Exposure => {
-  if (!IntersectionObserver) {
-    IntersectionObserver = createObserver()
+  if (!Observer) {
+    Observer = createObserver()
   }
-  if (!IntersectionObserver) {
-    Logger.warn('current browser does not support IntersectionObserve API')
+  if (!Observer) {
+    Logger.warn(
+      '[WARN]:current browser does not support IntersectionObserve API'
+    )
   }
   function observe(el: Element, handler: ExposureHandler, threshold?: number) {
     if (!isExposureHandler(handler)) {
       Logger.error(
-        `handler is not ExposureHandler. 
+        `[ERROR]: handler is not ExposureHandler. 
          ExposureHandler type:
           - function: (el?: Element) => void
           - object: {enter?: (el?: Element) => void, leave?: (el?: Element) => void}
@@ -64,7 +66,8 @@ export const createExposure = (golablThreshold = 1): Exposure => {
       )
       return
     }
-    if (!IntersectionObserver) {
+    if (!Observer) {
+      Logger.warn('[WRAN]: IntersectionObserver not initialised')
       return
     }
     let th = threshold
@@ -80,13 +83,13 @@ export const createExposure = (golablThreshold = 1): Exposure => {
         handler,
         threshold: th,
       })
-      IntersectionObserver.observe(el)
+      Observer.observe(el)
     }
   }
   function unobserve(el: Element) {
-    if (elementContextMap.has(el) && IntersectionObserver) {
+    if (elementContextMap.has(el) && Observer) {
       elementContextMap.delete(el)
-      IntersectionObserver.unobserve(el)
+      Observer.unobserve(el)
     }
   }
   return {
