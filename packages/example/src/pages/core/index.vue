@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
 </script>
 <style>
 .container {
-  height: 2000px;
+  height: 2500px;
   position: relative;
   padding: 0 20px;
 }
@@ -93,13 +93,13 @@ onBeforeUnmount(() => {
 
 .middle {
   position: absolute;
-  top: 1000px;
+  top: 1200px;
   height: 100px;
 }
 
 .bottom {
   position: absolute;
-  top: 2000px;
+  top: 2500px;
   height: 100px;
 }
 </style>
