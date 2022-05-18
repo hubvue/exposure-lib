@@ -71,14 +71,20 @@ importers:
 
   packages/example:
     specifiers:
+      '@exposure-lib/core': workspace:*
+      '@exposure-lib/vue': workspace:*
       '@vitejs/plugin-vue': ^2.3.3
       typescript: ^4.5.4
       vite: ^2.9.9
       vue: ^3.2.25
+      vue-router: ^4.0.15
       vue-tsc: ^0.34.7
     dependencies:
       vue: 3.2.31
+      vue-router: 4.0.15_vue@3.2.31
     devDependencies:
+      '@exposure-lib/core': link:../core
+      '@exposure-lib/vue': link:../vue
       '@vitejs/plugin-vue': 2.3.3_vite@2.9.9+vue@3.2.31
       typescript: 4.6.4
       vite: 2.9.9
@@ -1429,6 +1435,10 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.2.31
       '@vue/shared': 3.2.31
+
+  /@vue/devtools-api/6.1.4:
+    resolution: {integrity: sha512-IiA0SvDrJEgXvVxjNkHPFfDx6SXw0b/TUkqMcDZWNg9fnCAHbTpoo59YfJ9QLFkwa3raau5vSlRVzMSLDnfdtQ==}
+    dev: false
 
   /@vue/reactivity-transform/3.2.31:
     resolution: {integrity: sha512-uS4l4z/W7wXdI+Va5pgVxBJ345wyGFKvpPYtdSgvfJfX/x2Ymm6ophQlXXB6acqGHtXuBqNyyO3zVp9b1r0MOA==}
@@ -6074,6 +6084,15 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /vue-router/4.0.15_vue@3.2.31:
+    resolution: {integrity: sha512-xa+pIN9ZqORdIW1MkN2+d9Ui2pCM1b/UMgwYUCZOiFYHAvz/slKKBDha8DLrh5aCG/RibtrpyhKjKOZ85tYyWg==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.1.4
+      vue: 3.2.31
+    dev: false
 
   /vue-tsc/0.34.15_typescript@4.6.4:
     resolution: {integrity: sha512-xRNaOpg/UCHnRcz9vOdbIjB7uCQ0mifHpqNaejAho7em4WLOzNdJx4R9HMJrqWek44keg7AblIiwM+86QfXx9g==}
