@@ -29,7 +29,6 @@ watch(middleEl, (el) => {
   if (el) {
     exposure.observe(el, () => {
       count.value++
-      exposure.unobserve(topEl.value)
     })
   }
 })
@@ -38,6 +37,7 @@ watch(bottomEl, (el) => {
   if (el) {
     exposure.observe(el, () => {
       count.value++
+      exposure.unobserve(topEl.value)
       resetExposure()
     })
   }
