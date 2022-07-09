@@ -21,7 +21,7 @@ jobs:
           version: 6.15.1
 
       - name: Use Node.js v16
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: v16
           registry-url: https://registry.npmjs.org/
