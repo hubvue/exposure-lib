@@ -29,7 +29,7 @@ importers:
       minimist: ^1.2.5
       npm-run-all: ^4.1.5
       prettier: ^2.0.5
-      puppeteer: 15.4.0
+      puppeteer: 15.5.0
       rollup: ^2.16.1
       rollup-plugin-typescript2: 0.32.1
       ts-jest: ^28.0.2
@@ -56,12 +56,12 @@ importers:
       esmo: 0.16.3
       inquirer: 8.2.0
       jest: 28.1.0_e1cbf0de838c9ff3973776c475c67696
-      jest-puppeteer: 6.1.0_puppeteer@15.4.0
+      jest-puppeteer: 6.1.0_puppeteer@15.5.0
       lint-staged: 10.5.4
       minimist: 1.2.5
       npm-run-all: 4.1.5
       prettier: 2.5.1
-      puppeteer: 15.4.0
+      puppeteer: 15.5.0
       rollup: 2.68.0
       rollup-plugin-typescript2: 0.32.1_rollup@2.68.0+typescript@4.6.4
       ts-jest: 28.0.2_19112a472d1d066c7a4616737f005501
@@ -2445,8 +2445,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /devtools-protocol/0.0.1011705:
-    resolution: {integrity: sha512-OKvTvu9n3swmgYshvsyVHYX0+aPzCoYUnyXUacfQMmFtBtBKewV/gT4I9jkAbpTqtTi2E4S9MXLlvzBDUlqg0Q==}
+  /devtools-protocol/0.0.1019158:
+    resolution: {integrity: sha512-wvq+KscQ7/6spEV7czhnZc9RM/woz1AY+/Vpd8/h2HFMwJSdTliu7f/yr1A6vDdJfKICZsShqsYpEQbdhg8AFQ==}
     dev: true
 
   /diff-sequences/28.0.2:
@@ -4106,14 +4106,14 @@ packages:
       jest-resolve: 28.1.0
     dev: true
 
-  /jest-puppeteer/6.1.0_puppeteer@15.4.0:
+  /jest-puppeteer/6.1.0_puppeteer@15.5.0:
     resolution: {integrity: sha512-mPNV3pKkGlwyq+7UyuDLjm8Ev4zJmkzH46jCwsOy+vsr0t+TvfPcwtVR4x+NIP2lPgYnjIlSPsnRjgkP9y95mQ==}
     peerDependencies:
       puppeteer: '>= 1.5.0'
     dependencies:
       expect-puppeteer: 6.1.0
       jest-environment-puppeteer: 6.0.3
-      puppeteer: 15.4.0
+      puppeteer: 15.5.0
     transitivePeerDependencies:
       - debug
       - supports-color
@@ -5138,14 +5138,14 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /puppeteer/15.4.0:
-    resolution: {integrity: sha512-wxJRbofjaycCaQ9fhABlToJobrjxlABiFi6NvdkOPVJMYFblxDlDTjkg+b6bZYi7xN+lEXn84GBZsA5DYb3wfw==}
+  /puppeteer/15.5.0:
+    resolution: {integrity: sha512-+vZPU8iBSdCx1Kn5hHas80fyo0TiVyMeqLGv/1dygX2HKhAZjO9YThadbRTCoTYq0yWw+w/CysldPsEekDtjDQ==}
     engines: {node: '>=14.1.0'}
     requiresBuild: true
     dependencies:
       cross-fetch: 3.1.5
       debug: 4.3.4
-      devtools-protocol: 0.0.1011705
+      devtools-protocol: 0.0.1019158
       extract-zip: 2.0.1
       https-proxy-agent: 5.0.1
       pkg-dir: 4.2.0
