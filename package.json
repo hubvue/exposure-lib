@@ -41,7 +41,7 @@
     "lint-staged": "^10.2.10",
     "minimist": "^1.2.5",
     "prettier": "^2.0.5",
-    "puppeteer": "15.4.0",
+    "puppeteer": "16.2.0",
     "rollup": "^2.16.1",
     "rollup-plugin-typescript2": "0.32.1",
     "ts-jest": "^28.0.2",
