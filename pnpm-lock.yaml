@@ -19,7 +19,7 @@ importers:
       chalk: 5.0.1
       conventional-changelog-cli: ^2.0.34
       eslint: ^7.2.0
-      eslint-config-prettier: ^6.11.0
+      eslint-config-prettier: ^8.0.0
       eslint-plugin-prettier: 4.2.1
       esmo: 0.16.3
       inquirer: ^8.2.0
@@ -51,8 +51,8 @@ importers:
       chalk: 5.0.1
       conventional-changelog-cli: 2.2.2
       eslint: 7.32.0
-      eslint-config-prettier: 6.15.0_eslint@7.32.0
-      eslint-plugin-prettier: 4.2.1_a90c626bbf8b44e0aad298faeac07fd7
+      eslint-config-prettier: 8.5.0_eslint@7.32.0
+      eslint-plugin-prettier: 4.2.1_cfc9253cc6cf8e63ed6f63a6b600e6b9
       esmo: 0.16.3
       inquirer: 8.2.0
       jest: 28.1.0_e1cbf0de838c9ff3973776c475c67696
@@ -2776,17 +2776,16 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-prettier/6.15.0_eslint@7.32.0:
-    resolution: {integrity: sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==}
+  /eslint-config-prettier/8.5.0_eslint@7.32.0:
+    resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
     hasBin: true
     peerDependencies:
-      eslint: '>=3.14.1'
+      eslint: '>=7.0.0'
     dependencies:
       eslint: 7.32.0
-      get-stdin: 6.0.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_a90c626bbf8b44e0aad298faeac07fd7:
+  /eslint-plugin-prettier/4.2.1_cfc9253cc6cf8e63ed6f63a6b600e6b9:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -2798,7 +2797,7 @@ packages:
         optional: true
     dependencies:
       eslint: 7.32.0
-      eslint-config-prettier: 6.15.0_eslint@7.32.0
+      eslint-config-prettier: 8.5.0_eslint@7.32.0
       prettier: 2.5.1
       prettier-linter-helpers: 1.0.0
     dev: true
@@ -3275,11 +3274,6 @@ packages:
       hosted-git-info: 4.1.0
       through2: 2.0.5
       yargs: 16.2.0
-    dev: true
-
-  /get-stdin/6.0.0:
-    resolution: {integrity: sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==}
-    engines: {node: '>=4'}
     dev: true
 
   /get-stream/5.2.0:
