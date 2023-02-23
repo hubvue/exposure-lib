@@ -1,0 +1,33 @@
+{
+  "name": "@exposure-lib/applet",
+  "version": "2.0.3",
+  "description": "@exposure-lib/applet",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hubvue/exposure-lib.git",
+    "directory": "packages/applet"
+  },
+  "keywords": [
+    "InterfaceObserver",
+    "exposure"
+  ],
+  "bugs": {
+    "url": "https://github.com/hubvue/exposure-lib/issues"
+  },
+  "homepage": "https://github.com/hubvue/exposure-lib/tree/main/packages/applet#readme",
+  "author": "hubvue",
+  "license": "MIT",
+  "devDependencies": {
+    
+  }
+}

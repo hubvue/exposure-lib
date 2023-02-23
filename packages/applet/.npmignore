@@ -1,0 +1,5 @@
+.npmignore
+__test__/
+src/
+node_modules/
+api-extractor.json

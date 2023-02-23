@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 importers:
 
@@ -13,6 +13,7 @@ importers:
       '@types/jest-environment-puppeteer': ^5.0.2
       '@types/node': ^17.0.21
       '@types/puppeteer': ^5.4.6
+      '@types/wechat-miniprogram': ^3.4.1
       '@typescript-eslint/eslint-plugin': ^3.3.0
       '@typescript-eslint/parser': ^3.3.0
       bumpp: 8.2.1
@@ -32,7 +33,7 @@ importers:
       puppeteer: 15.4.0
       rollup: ^2.16.1
       rollup-plugin-typescript2: 0.32.1
-      ts-jest: ^28.0.2
+      ts-jest: ^28.0.8
       ts-node: ^10.7.0
       typescript: ^4.6.4
     devDependencies:
@@ -45,17 +46,18 @@ importers:
       '@types/jest-environment-puppeteer': 5.0.2
       '@types/node': 17.0.21
       '@types/puppeteer': 5.4.6
-      '@typescript-eslint/eslint-plugin': 3.10.1_de7f57257bf938ebd6cb3f2868f21175
-      '@typescript-eslint/parser': 3.10.1_eslint@7.32.0+typescript@4.6.4
+      '@types/wechat-miniprogram': artifactory.intra.xiaojukeji.com/@types/wechat-miniprogram/3.4.1
+      '@typescript-eslint/eslint-plugin': 3.10.1_3z7vojl37e4oxvwlh4ugr4qrou
+      '@typescript-eslint/parser': 3.10.1_e4zyhrvfnqudwdx5bevnvkluy4
       bumpp: 8.2.1
       chalk: 5.0.1
       conventional-changelog-cli: 2.2.2
       eslint: 7.32.0
       eslint-config-prettier: 6.15.0_eslint@7.32.0
-      eslint-plugin-prettier: 4.2.1_a90c626bbf8b44e0aad298faeac07fd7
+      eslint-plugin-prettier: 4.2.1_vegge257rncobkwstd5ovqd724
       esmo: 0.16.3
       inquirer: 8.2.0
-      jest: 28.1.0_e1cbf0de838c9ff3973776c475c67696
+      jest: 28.1.0_4hf7bxudrsp7hfzxo3chlrtwsy
       jest-puppeteer: 6.1.0_puppeteer@15.4.0
       lint-staged: 10.5.4
       minimist: 1.2.5
@@ -63,10 +65,14 @@ importers:
       prettier: 2.5.1
       puppeteer: 15.4.0
       rollup: 2.68.0
-      rollup-plugin-typescript2: 0.32.1_rollup@2.68.0+typescript@4.6.4
-      ts-jest: 28.0.2_19112a472d1d066c7a4616737f005501
-      ts-node: 10.7.0_9f41943e95d62fa6f5ab0dfae348d529
+      rollup-plugin-typescript2: 0.32.1_rohqnmxbvb3zcbkikt4k232eru
+      ts-jest: artifactory.intra.xiaojukeji.com/ts-jest/28.0.8_uy2hwlw3b2xjbkk4v7x6v75ly4
+      ts-node: 10.7.0_t5azipuv2yx2n5nlbx5ogsgvfe
       typescript: 4.6.4
+    publishDirectory: packages/*
+
+  packages/applet:
+    specifiers: {}
 
   packages/core:
     specifiers: {}
@@ -158,8 +164,8 @@ packages:
       convert-source-map: 1.8.0
       debug: 4.3.4
       gensync: 1.0.0-beta.2
-      json5: 2.2.1
-      semver: 6.3.0
+      json5: artifactory.intra.xiaojukeji.com/json5/2.2.3
+      semver: artifactory.intra.xiaojukeji.com/semver/6.3.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -183,7 +189,7 @@ packages:
       '@babel/core': 7.17.12
       '@babel/helper-validator-option': 7.16.7
       browserslist: 4.20.3
-      semver: 6.3.0
+      semver: artifactory.intra.xiaojukeji.com/semver/6.3.0
     dev: true
 
   /@babel/helper-environment-visitor/7.16.7:
@@ -512,7 +518,7 @@ packages:
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/types': 17.0.0
-      semver: 7.3.7
+      semver: artifactory.intra.xiaojukeji.com/semver/7.3.7
     dev: true
 
   /@commitlint/lint/17.0.3:
@@ -536,7 +542,7 @@ packages:
       '@types/node': 17.0.21
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 2.0.2_9f41943e95d62fa6f5ab0dfae348d529
+      cosmiconfig-typescript-loader: 2.0.2_t5azipuv2yx2n5nlbx5ogsgvfe
       lodash: 4.17.21
       resolve-from: 5.0.0
       typescript: 4.6.4
@@ -722,7 +728,7 @@ packages:
       '@types/node': 17.0.21
       chalk: 4.1.2
       jest-message-util: 28.1.0
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       slash: 3.0.0
     dev: true
 
@@ -747,7 +753,7 @@ packages:
       exit: 0.1.2
       graceful-fs: 4.2.9
       jest-changed-files: 28.0.2
-      jest-config: 28.1.0_e1cbf0de838c9ff3973776c475c67696
+      jest-config: 28.1.0_4hf7bxudrsp7hfzxo3chlrtwsy
       jest-haste-map: 28.1.0
       jest-message-util: 28.1.0
       jest-regex-util: 28.0.2
@@ -815,7 +821,7 @@ packages:
       '@types/node': 17.0.21
       jest-message-util: 27.5.1
       jest-mock: 27.5.1
-      jest-util: 27.5.1
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/27.5.1
     dev: true
 
   /@jest/fake-timers/28.1.0:
@@ -827,7 +833,7 @@ packages:
       '@types/node': 17.0.21
       jest-message-util: 28.1.0
       jest-mock: 28.1.0
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
     dev: true
 
   /@jest/globals/28.1.0:
@@ -867,7 +873,7 @@ packages:
       istanbul-lib-report: 3.0.0
       istanbul-lib-source-maps: 4.0.1
       istanbul-reports: 3.1.4
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       jest-worker: 28.1.0
       slash: 3.0.0
       string-length: 4.0.2
@@ -924,11 +930,11 @@ packages:
       babel-plugin-istanbul: 6.1.1
       chalk: 4.1.2
       convert-source-map: 1.8.0
-      fast-json-stable-stringify: 2.1.0
+      fast-json-stable-stringify: artifactory.intra.xiaojukeji.com/fast-json-stable-stringify/2.1.0
       graceful-fs: 4.2.9
       jest-haste-map: 28.1.0
       jest-regex-util: 28.0.2
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       micromatch: 4.0.4
       pirates: 4.0.5
       slash: 3.0.0
@@ -1326,15 +1332,7 @@ packages:
       '@types/yargs-parser': 21.0.0
     dev: true
 
-  /@types/yauzl/2.10.0:
-    resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
-    requiresBuild: true
-    dependencies:
-      '@types/node': 17.0.21
-    dev: true
-    optional: true
-
-  /@typescript-eslint/eslint-plugin/3.10.1_de7f57257bf938ebd6cb3f2868f21175:
+  /@typescript-eslint/eslint-plugin/3.10.1_3z7vojl37e4oxvwlh4ugr4qrou:
     resolution: {integrity: sha512-PQg0emRtzZFWq6PxBcdxRH3QIQiyFO3WCVpRL3fgj5oQS3CDs3AeAKfv4DxNhzn8ITdNJGJ4D3Qw8eAJf3lXeQ==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
@@ -1345,8 +1343,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/experimental-utils': 3.10.1_eslint@7.32.0+typescript@4.6.4
-      '@typescript-eslint/parser': 3.10.1_eslint@7.32.0+typescript@4.6.4
+      '@typescript-eslint/experimental-utils': 3.10.1_e4zyhrvfnqudwdx5bevnvkluy4
+      '@typescript-eslint/parser': 3.10.1_e4zyhrvfnqudwdx5bevnvkluy4
       debug: 4.3.3
       eslint: 7.32.0
       functional-red-black-tree: 1.0.1
@@ -1358,7 +1356,7 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/experimental-utils/3.10.1_eslint@7.32.0+typescript@4.6.4:
+  /@typescript-eslint/experimental-utils/3.10.1_e4zyhrvfnqudwdx5bevnvkluy4:
     resolution: {integrity: sha512-DewqIgscDzmAfd5nOGe4zm6Bl7PKtMG2Ad0KG8CUZAHlXfAKTF9Ol5PXhiMh39yRL2ChRH1cuuUGOcVyyrhQIw==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
@@ -1375,7 +1373,7 @@ packages:
       - typescript
     dev: true
 
-  /@typescript-eslint/parser/3.10.1_eslint@7.32.0+typescript@4.6.4:
+  /@typescript-eslint/parser/3.10.1_e4zyhrvfnqudwdx5bevnvkluy4:
     resolution: {integrity: sha512-Ug1RcWcrJP02hmtaXVS3axPPTTPnZjupqhgj+NnZ6BCkwSImWk/283347+x9wN+lqOdK9Eo3vsyiyDHgsmiEJw==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
@@ -1386,7 +1384,7 @@ packages:
         optional: true
     dependencies:
       '@types/eslint-visitor-keys': 1.0.0
-      '@typescript-eslint/experimental-utils': 3.10.1_eslint@7.32.0+typescript@4.6.4
+      '@typescript-eslint/experimental-utils': 3.10.1_e4zyhrvfnqudwdx5bevnvkluy4
       '@typescript-eslint/types': 3.10.1
       '@typescript-eslint/typescript-estree': 3.10.1_typescript@4.6.4
       eslint: 7.32.0
@@ -1664,7 +1662,7 @@ packages:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
     dependencies:
       fast-deep-equal: 3.1.3
-      fast-json-stable-stringify: 2.1.0
+      fast-json-stable-stringify: artifactory.intra.xiaojukeji.com/fast-json-stable-stringify/2.1.0
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
     dev: true
@@ -1871,13 +1869,6 @@ packages:
       escalade: 3.1.1
       node-releases: 2.0.4
       picocolors: 1.0.0
-    dev: true
-
-  /bs-logger/0.2.6:
-    resolution: {integrity: sha512-pd8DCoxmbgc7hyPKOvxtqNcjYoOsABPQdcCUjGp3d42VR2CX1ORhk2A87oqqu5R1kk+76nsxZupkmyd+MVtCog==}
-    engines: {node: '>= 6'}
-    dependencies:
-      fast-json-stable-stringify: 2.1.0
     dev: true
 
   /bser/2.1.1:
@@ -2094,17 +2085,6 @@ packages:
     engines: {node: '>=0.1.90'}
     dev: true
 
-  /commander/2.20.3:
-    resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /commander/5.1.0:
-    resolution: {integrity: sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==}
-    engines: {node: '>= 6'}
-    dev: true
-
   /commander/6.2.1:
     resolution: {integrity: sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==}
     engines: {node: '>= 6'}
@@ -2249,7 +2229,7 @@ packages:
       json-stringify-safe: 5.0.1
       lodash: 4.17.21
       meow: 8.1.2
-      semver: 6.3.0
+      semver: artifactory.intra.xiaojukeji.com/semver/6.3.0
       split: 1.0.1
       through2: 4.0.2
     dev: true
@@ -2284,8 +2264,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      is-text-path: 1.0.1
       JSONStream: 1.3.5
+      is-text-path: 1.0.1
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -2302,7 +2282,7 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
 
-  /cosmiconfig-typescript-loader/2.0.2_9f41943e95d62fa6f5ab0dfae348d529:
+  /cosmiconfig-typescript-loader/2.0.2_t5azipuv2yx2n5nlbx5ogsgvfe:
     resolution: {integrity: sha512-KmE+bMjWMXJbkWCeY4FJX/npHuZPNr9XF9q9CIQ/bpFwi1qHfCmSiKarrCcRa0LO4fWjk93pVoeRtJAkTGcYNw==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -2311,7 +2291,7 @@ packages:
     dependencies:
       '@types/node': 17.0.21
       cosmiconfig: 7.0.1
-      ts-node: 10.8.2_9f41943e95d62fa6f5ab0dfae348d529
+      ts-node: 10.8.2_t5azipuv2yx2n5nlbx5ogsgvfe
       typescript: 4.6.4
     transitivePeerDependencies:
       - '@swc/core'
@@ -2347,7 +2327,7 @@ packages:
     dependencies:
       nice-try: 1.0.5
       path-key: 2.0.1
-      semver: 5.7.1
+      semver: artifactory.intra.xiaojukeji.com/semver/5.7.1
       shebang-command: 1.2.0
       which: 1.3.1
     dev: true
@@ -2548,212 +2528,32 @@ packages:
       is-symbol: 1.0.4
     dev: true
 
-  /esbuild-android-64/0.14.48:
-    resolution: {integrity: sha512-3aMjboap/kqwCUpGWIjsk20TtxVoKck8/4Tu19rubh7t5Ra0Yrpg30Mt1QXXlipOazrEceGeWurXKeFJgkPOUg==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [android]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-android-arm64/0.14.48:
-    resolution: {integrity: sha512-vptI3K0wGALiDq+EvRuZotZrJqkYkN5282iAfcffjI5lmGG9G1ta/CIVauhY42MBXwEgDJkweiDcDMRLzBZC4g==}
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [android]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-darwin-64/0.14.48:
-    resolution: {integrity: sha512-gGQZa4+hab2Va/Zww94YbshLuWteyKGD3+EsVon8EWTWhnHFRm5N9NbALNbwi/7hQ/hM1Zm4FuHg+k6BLsl5UA==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-darwin-arm64/0.14.48:
-    resolution: {integrity: sha512-bFjnNEXjhZT+IZ8RvRGNJthLWNHV5JkCtuOFOnjvo5pC0sk2/QVk0Qc06g2PV3J0TcU6kaPC3RN9yy9w2PSLEA==}
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-freebsd-64/0.14.48:
-    resolution: {integrity: sha512-1NOlwRxmOsnPcWOGTB10JKAkYSb2nue0oM1AfHWunW/mv3wERfJmnYlGzL3UAOIUXZqW8GeA2mv+QGwq7DToqA==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-freebsd-arm64/0.14.48:
-    resolution: {integrity: sha512-gXqKdO8wabVcYtluAbikDH2jhXp+Klq5oCD5qbVyUG6tFiGhrC9oczKq3vIrrtwcxDQqK6+HDYK8Zrd4bCA9Gw==}
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-32/0.14.48:
-    resolution: {integrity: sha512-ghGyDfS289z/LReZQUuuKq9KlTiTspxL8SITBFQFAFRA/IkIvDpnZnCAKTCjGXAmUqroMQfKJXMxyjJA69c/nQ==}
-    engines: {node: '>=12'}
-    cpu: [ia32]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-64/0.14.48:
-    resolution: {integrity: sha512-vni3p/gppLMVZLghI7oMqbOZdGmLbbKR23XFARKnszCIBpEMEDxOMNIKPmMItQrmH/iJrL1z8Jt2nynY0bE1ug==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-arm/0.14.48:
-    resolution: {integrity: sha512-+VfSV7Akh1XUiDNXgqgY1cUP1i2vjI+BmlyXRfVz5AfV3jbpde8JTs5Q9sYgaoq5cWfuKfoZB/QkGOI+QcL1Tw==}
-    engines: {node: '>=12'}
-    cpu: [arm]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-arm64/0.14.48:
-    resolution: {integrity: sha512-3CFsOlpoxlKPRevEHq8aAntgYGYkE1N9yRYAcPyng/p4Wyx0tPR5SBYsxLKcgPB9mR8chHEhtWYz6EZ+H199Zw==}
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-mips64le/0.14.48:
-    resolution: {integrity: sha512-cs0uOiRlPp6ymknDnjajCgvDMSsLw5mST2UXh+ZIrXTj2Ifyf2aAP3Iw4DiqgnyYLV2O/v/yWBJx+WfmKEpNLA==}
-    engines: {node: '>=12'}
-    cpu: [mips64el]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-ppc64le/0.14.48:
-    resolution: {integrity: sha512-+2F0vJMkuI0Wie/wcSPDCqXvSFEELH7Jubxb7mpWrA/4NpT+/byjxDz0gG6R1WJoeDefcrMfpBx4GFNN1JQorQ==}
-    engines: {node: '>=12'}
-    cpu: [ppc64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-riscv64/0.14.48:
-    resolution: {integrity: sha512-BmaK/GfEE+5F2/QDrIXteFGKnVHGxlnK9MjdVKMTfvtmudjY3k2t8NtlY4qemKSizc+QwyombGWTBDc76rxePA==}
-    engines: {node: '>=12'}
-    cpu: [riscv64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-s390x/0.14.48:
-    resolution: {integrity: sha512-tndw/0B9jiCL+KWKo0TSMaUm5UWBLsfCKVdbfMlb3d5LeV9WbijZ8Ordia8SAYv38VSJWOEt6eDCdOx8LqkC4g==}
-    engines: {node: '>=12'}
-    cpu: [s390x]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-netbsd-64/0.14.48:
-    resolution: {integrity: sha512-V9hgXfwf/T901Lr1wkOfoevtyNkrxmMcRHyticybBUHookznipMOHoF41Al68QBsqBxnITCEpjjd4yAos7z9Tw==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [netbsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-openbsd-64/0.14.48:
-    resolution: {integrity: sha512-+IHf4JcbnnBl4T52egorXMatil/za0awqzg2Vy6FBgPcBpisDWT2sVz/tNdrK9kAqj+GZG/jZdrOkj7wsrNTKA==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [openbsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-sunos-64/0.14.48:
-    resolution: {integrity: sha512-77m8bsr5wOpOWbGi9KSqDphcq6dFeJyun8TA+12JW/GAjyfTwVtOnN8DOt6DSPUfEV+ltVMNqtXUeTeMAxl5KA==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [sunos]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-windows-32/0.14.48:
-    resolution: {integrity: sha512-EPgRuTPP8vK9maxpTGDe5lSoIBHGKO/AuxDncg5O3NkrPeLNdvvK8oywB0zGaAZXxYWfNNSHskvvDgmfVTguhg==}
-    engines: {node: '>=12'}
-    cpu: [ia32]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-windows-64/0.14.48:
-    resolution: {integrity: sha512-YmpXjdT1q0b8ictSdGwH3M8VCoqPpK1/UArze3X199w6u8hUx3V8BhAi1WjbsfDYRBanVVtduAhh2sirImtAvA==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-windows-arm64/0.14.48:
-    resolution: {integrity: sha512-HHaOMCsCXp0rz5BT2crTka6MPWVno121NKApsGs/OIW5QC0ggC69YMGs1aJct9/9FSUF4A1xNE/cLvgB5svR4g==}
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /esbuild/0.14.48:
     resolution: {integrity: sha512-w6N1Yn5MtqK2U1/WZTX9ZqUVb8IOLZkZ5AdHkT6x3cHDMVsYWC7WPdiLmx19w3i4Rwzy5LqsEMtVihG3e4rFzA==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      esbuild-android-64: 0.14.48
-      esbuild-android-arm64: 0.14.48
-      esbuild-darwin-64: 0.14.48
-      esbuild-darwin-arm64: 0.14.48
-      esbuild-freebsd-64: 0.14.48
-      esbuild-freebsd-arm64: 0.14.48
-      esbuild-linux-32: 0.14.48
-      esbuild-linux-64: 0.14.48
-      esbuild-linux-arm: 0.14.48
-      esbuild-linux-arm64: 0.14.48
-      esbuild-linux-mips64le: 0.14.48
-      esbuild-linux-ppc64le: 0.14.48
-      esbuild-linux-riscv64: 0.14.48
-      esbuild-linux-s390x: 0.14.48
-      esbuild-netbsd-64: 0.14.48
-      esbuild-openbsd-64: 0.14.48
-      esbuild-sunos-64: 0.14.48
-      esbuild-windows-32: 0.14.48
-      esbuild-windows-64: 0.14.48
-      esbuild-windows-arm64: 0.14.48
+      esbuild-android-64: artifactory.intra.xiaojukeji.com/esbuild-android-64/0.14.48
+      esbuild-android-arm64: artifactory.intra.xiaojukeji.com/esbuild-android-arm64/0.14.48
+      esbuild-darwin-64: artifactory.intra.xiaojukeji.com/esbuild-darwin-64/0.14.48
+      esbuild-darwin-arm64: artifactory.intra.xiaojukeji.com/esbuild-darwin-arm64/0.14.48
+      esbuild-freebsd-64: artifactory.intra.xiaojukeji.com/esbuild-freebsd-64/0.14.48
+      esbuild-freebsd-arm64: artifactory.intra.xiaojukeji.com/esbuild-freebsd-arm64/0.14.48
+      esbuild-linux-32: artifactory.intra.xiaojukeji.com/esbuild-linux-32/0.14.48
+      esbuild-linux-64: artifactory.intra.xiaojukeji.com/esbuild-linux-64/0.14.48
+      esbuild-linux-arm: artifactory.intra.xiaojukeji.com/esbuild-linux-arm/0.14.48
+      esbuild-linux-arm64: artifactory.intra.xiaojukeji.com/esbuild-linux-arm64/0.14.48
+      esbuild-linux-mips64le: artifactory.intra.xiaojukeji.com/esbuild-linux-mips64le/0.14.48
+      esbuild-linux-ppc64le: artifactory.intra.xiaojukeji.com/esbuild-linux-ppc64le/0.14.48
+      esbuild-linux-riscv64: artifactory.intra.xiaojukeji.com/esbuild-linux-riscv64/0.14.48
+      esbuild-linux-s390x: artifactory.intra.xiaojukeji.com/esbuild-linux-s390x/0.14.48
+      esbuild-netbsd-64: artifactory.intra.xiaojukeji.com/esbuild-netbsd-64/0.14.48
+      esbuild-openbsd-64: artifactory.intra.xiaojukeji.com/esbuild-openbsd-64/0.14.48
+      esbuild-sunos-64: artifactory.intra.xiaojukeji.com/esbuild-sunos-64/0.14.48
+      esbuild-windows-32: artifactory.intra.xiaojukeji.com/esbuild-windows-32/0.14.48
+      esbuild-windows-64: artifactory.intra.xiaojukeji.com/esbuild-windows-64/0.14.48
+      esbuild-windows-arm64: artifactory.intra.xiaojukeji.com/esbuild-windows-arm64/0.14.48
     dev: true
 
   /escalade/3.1.1:
@@ -2786,7 +2586,7 @@ packages:
       get-stdin: 6.0.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_a90c626bbf8b44e0aad298faeac07fd7:
+  /eslint-plugin-prettier/4.2.1_vegge257rncobkwstd5ovqd724:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -2989,7 +2789,7 @@ packages:
       jest-get-type: 28.0.2
       jest-matcher-utils: 28.1.0
       jest-message-util: 28.1.0
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
     dev: true
 
   /external-editor/3.1.0:
@@ -3010,7 +2810,7 @@ packages:
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
-      '@types/yauzl': 2.10.0
+      '@types/yauzl': artifactory.intra.xiaojukeji.com/@types/yauzl/2.10.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3032,10 +2832,6 @@ packages:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.4
-    dev: true
-
-  /fast-json-stable-stringify/2.1.0:
-    resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
     dev: true
 
   /fast-levenshtein/2.0.6:
@@ -3110,7 +2906,7 @@ packages:
     hasBin: true
     dependencies:
       chalk: 4.1.2
-      commander: 5.1.0
+      commander: artifactory.intra.xiaojukeji.com/commander/5.1.0
       debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
@@ -3208,14 +3004,6 @@ packages:
   /fs.realpath/1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
-
-  /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
 
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
@@ -3332,7 +3120,7 @@ packages:
     hasBin: true
     dependencies:
       meow: 8.1.2
-      semver: 6.3.0
+      semver: artifactory.intra.xiaojukeji.com/semver/6.3.0
     dev: true
 
   /gitconfiglocal/1.0.0:
@@ -3410,7 +3198,7 @@ packages:
       source-map: 0.6.1
       wordwrap: 1.0.0
     optionalDependencies:
-      uglify-js: 3.15.2
+      uglify-js: artifactory.intra.xiaojukeji.com/uglify-js/3.15.2
     dev: true
 
   /hard-rejection/2.1.0:
@@ -3472,7 +3260,7 @@ packages:
     resolution: {integrity: sha512-kyCuEOWjJqZuDbRHzL8V93NzQhwIB71oFWSyzVo+KPZI+pnQPPxucdkrOZvkLRnrf5URsQM+IJ09Dw29cRALIA==}
     engines: {node: '>=10'}
     dependencies:
-      lru-cache: 6.0.0
+      lru-cache: artifactory.intra.xiaojukeji.com/lru-cache/6.0.0
     dev: true
 
   /html-escaper/2.0.2:
@@ -3795,7 +3583,7 @@ packages:
       '@babel/parser': 7.17.3
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.0
-      semver: 6.3.0
+      semver: artifactory.intra.xiaojukeji.com/semver/6.3.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3854,7 +3642,7 @@ packages:
       jest-message-util: 28.1.0
       jest-runtime: 28.1.0
       jest-snapshot: 28.1.0
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       pretty-format: 28.1.0
       slash: 3.0.0
       stack-utils: 2.0.5
@@ -3863,7 +3651,7 @@ packages:
       - supports-color
     dev: true
 
-  /jest-cli/28.1.0_e1cbf0de838c9ff3973776c475c67696:
+  /jest-cli/28.1.0_4hf7bxudrsp7hfzxo3chlrtwsy:
     resolution: {integrity: sha512-fDJRt6WPRriHrBsvvgb93OxgajHHsJbk4jZxiPqmZbMDRcHskfJBBfTyjFko0jjfprP544hOktdSi9HVgl4VUQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -3880,7 +3668,7 @@ packages:
       exit: 0.1.2
       graceful-fs: 4.2.9
       import-local: 3.1.0
-      jest-config: 28.1.0_e1cbf0de838c9ff3973776c475c67696
+      jest-config: 28.1.0_4hf7bxudrsp7hfzxo3chlrtwsy
       jest-util: 28.1.0
       jest-validate: 28.1.0
       prompts: 2.4.2
@@ -3891,7 +3679,7 @@ packages:
       - ts-node
     dev: true
 
-  /jest-config/28.1.0_e1cbf0de838c9ff3973776c475c67696:
+  /jest-config/28.1.0_4hf7bxudrsp7hfzxo3chlrtwsy:
     resolution: {integrity: sha512-aOV80E9LeWrmflp7hfZNn/zGA4QKv/xsn2w8QCBP0t0+YqObuCWTSgNbHJ0j9YsTuCO08ZR/wsvlxqqHX20iUA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     peerDependencies:
@@ -3919,14 +3707,14 @@ packages:
       jest-regex-util: 28.0.2
       jest-resolve: 28.1.0
       jest-runner: 28.1.0
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       jest-validate: 28.1.0
       micromatch: 4.0.4
       parse-json: 5.2.0
       pretty-format: 28.1.0
       slash: 3.0.0
       strip-json-comments: 3.1.1
-      ts-node: 10.7.0_9f41943e95d62fa6f5ab0dfae348d529
+      ts-node: 10.7.0_t5azipuv2yx2n5nlbx5ogsgvfe
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3970,7 +3758,7 @@ packages:
       '@jest/types': 28.1.0
       chalk: 4.1.2
       jest-get-type: 28.0.2
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       pretty-format: 28.1.0
     dev: true
 
@@ -3995,7 +3783,7 @@ packages:
       '@jest/types': 28.1.0
       '@types/node': 17.0.21
       jest-mock: 28.1.0
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
     dev: true
 
   /jest-environment-puppeteer/6.0.3:
@@ -4027,12 +3815,12 @@ packages:
       fb-watchman: 2.0.1
       graceful-fs: 4.2.9
       jest-regex-util: 28.0.2
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       jest-worker: 28.1.0
       micromatch: 4.0.4
       walker: 1.0.8
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: artifactory.intra.xiaojukeji.com/fsevents/2.3.2
     dev: true
 
   /jest-leak-detector/28.1.0:
@@ -4147,7 +3935,7 @@ packages:
       graceful-fs: 4.2.9
       jest-haste-map: 28.1.0
       jest-pnp-resolver: 1.2.2_jest-resolve@28.1.0
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       jest-validate: 28.1.0
       resolve: 1.22.0
       resolve.exports: 1.1.0
@@ -4174,7 +3962,7 @@ packages:
       jest-message-util: 28.1.0
       jest-resolve: 28.1.0
       jest-runtime: 28.1.0
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       jest-watcher: 28.1.0
       jest-worker: 28.1.0
       source-map-support: 0.5.13
@@ -4206,7 +3994,7 @@ packages:
       jest-regex-util: 28.0.2
       jest-resolve: 28.1.0
       jest-snapshot: 28.1.0
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       slash: 3.0.0
       strip-bom: 4.0.0
     transitivePeerDependencies:
@@ -4236,10 +4024,10 @@ packages:
       jest-haste-map: 28.1.0
       jest-matcher-utils: 28.1.0
       jest-message-util: 28.1.0
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       natural-compare: 1.4.0
       pretty-format: 28.1.0
-      semver: 7.3.7
+      semver: artifactory.intra.xiaojukeji.com/semver/7.3.7
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4290,7 +4078,7 @@ packages:
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       emittery: 0.10.2
-      jest-util: 28.1.0
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
       string-length: 4.0.2
     dev: true
 
@@ -4303,7 +4091,7 @@ packages:
       supports-color: 8.1.1
     dev: true
 
-  /jest/28.1.0_e1cbf0de838c9ff3973776c475c67696:
+  /jest/28.1.0_4hf7bxudrsp7hfzxo3chlrtwsy:
     resolution: {integrity: sha512-TZR+tHxopPhzw3c3560IJXZWLNHgpcz1Zh0w5A65vynLGNcg/5pZ+VildAd7+XGOu6jd58XMY/HNn0IkZIXVXg==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -4315,7 +4103,7 @@ packages:
     dependencies:
       '@jest/core': 28.1.0_ts-node@10.7.0
       import-local: 3.1.0
-      jest-cli: 28.1.0_e1cbf0de838c9ff3973776c475c67696
+      jest-cli: 28.1.0_4hf7bxudrsp7hfzxo3chlrtwsy
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -4378,16 +4166,10 @@ packages:
     resolution: {integrity: sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=}
     dev: true
 
-  /json5/2.2.1:
-    resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
-    engines: {node: '>=6'}
-    hasBin: true
-    dev: true
-
   /jsonfile/4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: artifactory.intra.xiaojukeji.com/graceful-fs/4.2.9
     dev: true
 
   /jsonfile/6.1.0:
@@ -4395,7 +4177,7 @@ packages:
     dependencies:
       universalify: 2.0.0
     optionalDependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: artifactory.intra.xiaojukeji.com/graceful-fs/4.2.9
     dev: true
 
   /jsonparse/1.3.1:
@@ -4546,10 +4328,6 @@ packages:
     resolution: {integrity: sha1-dWy1FQyjum8RCFp4hJZF8Yj4Xzc=}
     dev: true
 
-  /lodash.memoize/4.1.2:
-    resolution: {integrity: sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=}
-    dev: true
-
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
@@ -4596,7 +4374,7 @@ packages:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
     dependencies:
-      semver: 6.3.0
+      semver: artifactory.intra.xiaojukeji.com/semver/6.3.0
     dev: true
 
   /make-error/1.3.6:
@@ -4769,7 +4547,7 @@ packages:
     dependencies:
       hosted-git-info: 2.8.9
       resolve: 1.22.0
-      semver: 5.7.1
+      semver: artifactory.intra.xiaojukeji.com/semver/5.7.1
       validate-npm-package-license: 3.0.4
     dev: true
 
@@ -4779,7 +4557,7 @@ packages:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.8.1
-      semver: 7.3.7
+      semver: artifactory.intra.xiaojukeji.com/semver/7.3.7
       validate-npm-package-license: 3.0.4
     dev: true
 
@@ -5370,7 +5148,7 @@ packages:
       glob: 7.2.0
     dev: true
 
-  /rollup-plugin-typescript2/0.32.1_rollup@2.68.0+typescript@4.6.4:
+  /rollup-plugin-typescript2/0.32.1_rohqnmxbvb3zcbkikt4k232eru:
     resolution: {integrity: sha512-RanO8bp1WbeMv0bVlgcbsFNCn+Y3rX7wF97SQLDxf0fMLsg0B/QFF005t4AsGUcDgF3aKJHoqt4JF2xVaABeKw==}
     peerDependencies:
       rollup: '>=1.26.3'
@@ -5390,7 +5168,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: artifactory.intra.xiaojukeji.com/fsevents/2.3.2
     dev: true
 
   /rollup/2.77.2:
@@ -5398,7 +5176,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: artifactory.intra.xiaojukeji.com/fsevents/2.3.2
     dev: true
 
   /run-async/2.4.1:
@@ -5432,16 +5210,6 @@ packages:
 
   /semver-compare/1.0.0:
     resolution: {integrity: sha1-De4hahyUGrN+nvsXiPavxf9VN/w=}
-    dev: true
-
-  /semver/5.7.1:
-    resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
-    hasBin: true
-    dev: true
-
-  /semver/6.3.0:
-    resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
-    hasBin: true
     dev: true
 
   /semver/7.3.5:
@@ -5882,41 +5650,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-jest/28.0.2_19112a472d1d066c7a4616737f005501:
-    resolution: {integrity: sha512-IOZMb3D0gx6IHO9ywPgiQxJ3Zl4ECylEFwoVpENB55aTn5sdO0Ptyx/7noNBxAaUff708RqQL4XBNxxOVjY0vQ==}
-    engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
-    hasBin: true
-    peerDependencies:
-      '@babel/core': '>=7.0.0-beta.0 <8'
-      '@types/jest': ^27.0.0
-      babel-jest: ^28.0.0
-      esbuild: '*'
-      jest: ^28.0.0
-      typescript: '>=4.3'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@types/jest':
-        optional: true
-      babel-jest:
-        optional: true
-      esbuild:
-        optional: true
-    dependencies:
-      '@types/jest': 28.1.6
-      bs-logger: 0.2.6
-      fast-json-stable-stringify: 2.1.0
-      jest: 28.1.0_e1cbf0de838c9ff3973776c475c67696
-      jest-util: 28.1.0
-      json5: 2.2.1
-      lodash.memoize: 4.1.2
-      make-error: 1.3.6
-      semver: 7.3.5
-      typescript: 4.6.4
-      yargs-parser: 20.2.9
-    dev: true
-
-  /ts-node/10.7.0_9f41943e95d62fa6f5ab0dfae348d529:
+  /ts-node/10.7.0_t5azipuv2yx2n5nlbx5ogsgvfe:
     resolution: {integrity: sha512-TbIGS4xgJoX2i3do417KSaep1uRAW/Lu+WAL2doDHC0D6ummjirVOXU5/7aiZotbQ5p1Zp9tP7U6cYhA0O7M8A==}
     hasBin: true
     peerDependencies:
@@ -5947,7 +5681,7 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /ts-node/10.8.2_9f41943e95d62fa6f5ab0dfae348d529:
+  /ts-node/10.8.2_t5azipuv2yx2n5nlbx5ogsgvfe:
     resolution: {integrity: sha512-LYdGnoGddf1D6v8REPtIH+5iq/gTDuZqv2/UJUU7tKjuEU8xVZorBM+buCGNjj+pGEud+sOoM4CX3/YzINpENA==}
     hasBin: true
     peerDependencies:
@@ -5972,7 +5706,7 @@ packages:
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
-      make-error: 1.3.6
+      make-error: artifactory.intra.xiaojukeji.com/make-error/1.3.6
       typescript: 4.6.4
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
@@ -6004,7 +5738,7 @@ packages:
       '@esbuild-kit/core-utils': 2.0.2
       '@esbuild-kit/esm-loader': 2.4.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: artifactory.intra.xiaojukeji.com/fsevents/2.3.2
     dev: true
 
   /type-check/0.4.0:
@@ -6055,14 +5789,6 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
-
-  /uglify-js/3.15.2:
-    resolution: {integrity: sha512-peeoTk3hSwYdoc9nrdiEJk+gx1ALCtTjdYuKSXMTDqq7n1W7dHPqWDdSi+BPL0ni2YMeHD7hKUSdbj3TZauY2A==}
-    engines: {node: '>=0.8.0'}
-    hasBin: true
-    requiresBuild: true
-    dev: true
-    optional: true
 
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
@@ -6159,7 +5885,7 @@ packages:
       resolve: 1.22.1
       rollup: 2.77.2
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: artifactory.intra.xiaojukeji.com/fsevents/2.3.2
     dev: true
 
   /vue-router/4.0.15_vue@3.2.31:
@@ -6347,7 +6073,7 @@ packages:
       require-directory: 2.1.1
       string-width: 4.2.3
       y18n: 5.0.8
-      yargs-parser: 20.2.9
+      yargs-parser: artifactory.intra.xiaojukeji.com/yargs-parser/20.2.9
     dev: true
 
   /yargs/17.5.1:
@@ -6389,5 +6115,569 @@ packages:
       lodash.isequal: 4.5.0
       validator: 13.7.0
     optionalDependencies:
-      commander: 2.20.3
+      commander: artifactory.intra.xiaojukeji.com/commander/2.20.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@jest/schemas/28.0.2:
+    resolution: {integrity: sha1-CMMN9qjQfq/qCu+fsiLF4m1y5hM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@jest/schemas/-/schemas-28.0.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40jest%2Fschemas%2F-%2Fschemas-28.0.2.tgz}
+    name: '@jest/schemas'
+    version: 28.0.2
+    engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
+    dependencies:
+      '@sinclair/typebox': artifactory.intra.xiaojukeji.com/@sinclair/typebox/0.23.5
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@jest/types/28.1.0:
+    resolution: {integrity: sha1-UIMnqJl2y/m9PhzHRkGin9ff1Rk=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@jest/types/-/types-28.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40jest%2Ftypes%2F-%2Ftypes-28.1.0.tgz}
+    name: '@jest/types'
+    version: 28.1.0
+    engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
+    dependencies:
+      '@jest/schemas': artifactory.intra.xiaojukeji.com/@jest/schemas/28.0.2
+      '@types/istanbul-lib-coverage': artifactory.intra.xiaojukeji.com/@types/istanbul-lib-coverage/2.0.4
+      '@types/istanbul-reports': artifactory.intra.xiaojukeji.com/@types/istanbul-reports/3.0.1
+      '@types/node': artifactory.intra.xiaojukeji.com/@types/node/17.0.21
+      '@types/yargs': artifactory.intra.xiaojukeji.com/@types/yargs/17.0.10
+      chalk: artifactory.intra.xiaojukeji.com/chalk/4.1.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@sinclair/typebox/0.23.5:
+    resolution: {integrity: sha1-k/e59OMoWnqa3nVX2ajTaAnLxH0=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@sinclair/typebox/-/typebox-0.23.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40sinclair%2Ftypebox%2F-%2Ftypebox-0.23.5.tgz}
+    name: '@sinclair/typebox'
+    version: 0.23.5
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/istanbul-lib-coverage/2.0.4:
+    resolution: {integrity: sha1-hGfUs8CHgF1jWASAiQeRJ3zjXEQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.4.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fistanbul-lib-coverage%2F-%2Fistanbul-lib-coverage-2.0.4.tgz}
+    name: '@types/istanbul-lib-coverage'
+    version: 2.0.4
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/istanbul-lib-report/3.0.0:
+    resolution: {integrity: sha1-wUwk8Y6oGQwRjudWK3/5mjZVJoY=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/istanbul-lib-report/-/istanbul-lib-report-3.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fistanbul-lib-report%2F-%2Fistanbul-lib-report-3.0.0.tgz}
+    name: '@types/istanbul-lib-report'
+    version: 3.0.0
+    dependencies:
+      '@types/istanbul-lib-coverage': artifactory.intra.xiaojukeji.com/@types/istanbul-lib-coverage/2.0.4
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/istanbul-reports/3.0.1:
+    resolution: {integrity: sha1-kVP+mLuivVZaY63ZQ21vDX+EaP8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/istanbul-reports/-/istanbul-reports-3.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fistanbul-reports%2F-%2Fistanbul-reports-3.0.1.tgz}
+    name: '@types/istanbul-reports'
+    version: 3.0.1
+    dependencies:
+      '@types/istanbul-lib-report': artifactory.intra.xiaojukeji.com/@types/istanbul-lib-report/3.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/node/17.0.21:
+    resolution: {integrity: sha1-hkuYfAxo0HtDRYRcPmO3Xt0UNkQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/node/-/node-17.0.21.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fnode%2F-%2Fnode-17.0.21.tgz}
+    name: '@types/node'
+    version: 17.0.21
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/wechat-miniprogram/3.4.1:
+    resolution: {integrity: sha1-4jfrql9UG4FsoqtkjkC3T66wFMs=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/wechat-miniprogram/-/wechat-miniprogram-3.4.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fwechat-miniprogram%2F-%2Fwechat-miniprogram-3.4.1.tgz}
+    name: '@types/wechat-miniprogram'
+    version: 3.4.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/yargs-parser/21.0.0:
+    resolution: {integrity: sha1-DGDlN/p5D1+Ucu0ndsK3HsEXNRs=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/yargs-parser/-/yargs-parser-21.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fyargs-parser%2F-%2Fyargs-parser-21.0.0.tgz}
+    name: '@types/yargs-parser'
+    version: 21.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/yargs/17.0.10:
+    resolution: {integrity: sha1-WRUi/Ohdhzm8p7i7kNBI5EeNGGo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/yargs/-/yargs-17.0.10.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fyargs%2F-%2Fyargs-17.0.10.tgz}
+    name: '@types/yargs'
+    version: 17.0.10
+    dependencies:
+      '@types/yargs-parser': artifactory.intra.xiaojukeji.com/@types/yargs-parser/21.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/yauzl/2.10.0:
+    resolution: {integrity: sha1-sySClSds+MbxU+vmqaugyYjLJZk=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/yauzl/-/yauzl-2.10.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fyauzl%2F-%2Fyauzl-2.10.0.tgz}
+    name: '@types/yauzl'
+    version: 2.10.0
+    requiresBuild: true
+    dependencies:
+      '@types/node': 17.0.21
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/ansi-styles/4.3.0:
+    resolution: {integrity: sha1-7dgDYornHATIWuegkG7a00tkiTc=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/ansi-styles/-/ansi-styles-4.3.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fansi-styles%2F-%2Fansi-styles-4.3.0.tgz}
+    name: ansi-styles
+    version: 4.3.0
+    engines: {node: '>=8'}
+    dependencies:
+      color-convert: artifactory.intra.xiaojukeji.com/color-convert/2.0.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/bs-logger/0.2.6:
+    resolution: {integrity: sha1-6302UwenLPl0zGzadraDVK0za9g=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/bs-logger/-/bs-logger-0.2.6.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fbs-logger%2F-%2Fbs-logger-0.2.6.tgz}
+    name: bs-logger
+    version: 0.2.6
+    engines: {node: '>= 6'}
+    dependencies:
+      fast-json-stable-stringify: artifactory.intra.xiaojukeji.com/fast-json-stable-stringify/2.1.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/chalk/4.1.2:
+    resolution: {integrity: sha1-qsTit3NKdAhnrrFr8CqtVWoeegE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/chalk/-/chalk-4.1.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fchalk%2F-%2Fchalk-4.1.2.tgz}
+    name: chalk
+    version: 4.1.2
+    engines: {node: '>=10'}
+    dependencies:
+      ansi-styles: artifactory.intra.xiaojukeji.com/ansi-styles/4.3.0
+      supports-color: artifactory.intra.xiaojukeji.com/supports-color/7.2.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/ci-info/3.3.1:
+    resolution: {integrity: sha1-WDMfb0cqJf46UKNRrjBSk2wsfzI=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/ci-info/-/ci-info-3.3.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fci-info%2F-%2Fci-info-3.3.1.tgz}
+    name: ci-info
+    version: 3.3.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/color-convert/2.0.1:
+    resolution: {integrity: sha1-ctOmjVmMm9s68q0ehPIdiWq9TeM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/color-convert/-/color-convert-2.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcolor-convert%2F-%2Fcolor-convert-2.0.1.tgz}
+    name: color-convert
+    version: 2.0.1
+    engines: {node: '>=7.0.0'}
+    dependencies:
+      color-name: artifactory.intra.xiaojukeji.com/color-name/1.1.4
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/color-name/1.1.4:
+    resolution: {integrity: sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/color-name/-/color-name-1.1.4.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcolor-name%2F-%2Fcolor-name-1.1.4.tgz}
+    name: color-name
+    version: 1.1.4
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/commander/2.20.3:
+    resolution: {integrity: sha1-/UhehMA+tIgcIHIrpIA16FMa6zM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/commander/-/commander-2.20.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcommander%2F-%2Fcommander-2.20.3.tgz}
+    name: commander
+    version: 2.20.3
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/commander/5.1.0:
+    resolution: {integrity: sha1-Rqu9FlL44Fm92u+Zu9yyrZzxea4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/commander/-/commander-5.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcommander%2F-%2Fcommander-5.1.0.tgz}
+    name: commander
+    version: 5.1.0
+    engines: {node: '>= 6'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-android-64/0.14.48:
+    resolution: {integrity: sha1-fmOUoOUX9zhkE4Wq9VPH5PttGuM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-android-64/-/esbuild-android-64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-android-64%2F-%2Fesbuild-android-64-0.14.48.tgz}
+    name: esbuild-android-64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-android-arm64/0.14.48:
+    resolution: {integrity: sha1-aHdWa+D4LdWkMDDAAH0G7Of3wC8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-android-arm64/-/esbuild-android-arm64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-android-arm64%2F-%2Fesbuild-android-arm64-0.14.48.tgz}
+    name: esbuild-android-arm64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-darwin-64/0.14.48:
+    resolution: {integrity: sha1-6jyt23B9iPhEsaod6l/zsKce8f0=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-darwin-64/-/esbuild-darwin-64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-darwin-64%2F-%2Fesbuild-darwin-64-0.14.48.tgz}
+    name: esbuild-darwin-64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-darwin-arm64/0.14.48:
+    resolution: {integrity: sha1-Tl6qtU32bMMZt2oqwOivTm8NnC8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-darwin-arm64%2F-%2Fesbuild-darwin-arm64-0.14.48.tgz}
+    name: esbuild-darwin-arm64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-freebsd-64/0.14.48:
+    resolution: {integrity: sha1-R7Wrx0JurmaGFJD/uzgKzGevWxU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-freebsd-64/-/esbuild-freebsd-64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-freebsd-64%2F-%2Fesbuild-freebsd-64-0.14.48.tgz}
+    name: esbuild-freebsd-64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-freebsd-arm64/0.14.48:
+    resolution: {integrity: sha1-6MVMhjfNRP7tln6hIziwpNo6exE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-freebsd-arm64/-/esbuild-freebsd-arm64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-freebsd-arm64%2F-%2Fesbuild-freebsd-arm64-0.14.48.tgz}
+    name: esbuild-freebsd-arm64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-32/0.14.48:
+    resolution: {integrity: sha1-IpzzJG3it5N8OsE/rGItTXoTRMU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-32/-/esbuild-linux-32-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-32%2F-%2Fesbuild-linux-32-0.14.48.tgz}
+    name: esbuild-linux-32
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [ia32]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-64/0.14.48:
+    resolution: {integrity: sha1-fA5yJsAsQqrMVlbDaXdJPcHpbE8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-64/-/esbuild-linux-64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-64%2F-%2Fesbuild-linux-64-0.14.48.tgz}
+    name: esbuild-linux-64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-arm/0.14.48:
+    resolution: {integrity: sha1-3k0fprd83NAOK7Q90IAeRoDwq1I=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-arm/-/esbuild-linux-arm-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-arm%2F-%2Fesbuild-linux-arm-0.14.48.tgz}
+    name: esbuild-linux-arm
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-arm64/0.14.48:
+    resolution: {integrity: sha1-CvHtpHS1xswMrOgjW3TQy4/PV6c=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-arm64/-/esbuild-linux-arm64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-arm64%2F-%2Fesbuild-linux-arm64-0.14.48.tgz}
+    name: esbuild-linux-arm64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-mips64le/0.14.48:
+    resolution: {integrity: sha1-giwXeElfeGjpkNTaR61ygd8o/RU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-mips64le/-/esbuild-linux-mips64le-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-mips64le%2F-%2Fesbuild-linux-mips64le-0.14.48.tgz}
+    name: esbuild-linux-mips64le
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [mips64el]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-ppc64le/0.14.48:
+    resolution: {integrity: sha1-Vd4KnsSkj+3+gqY+CDFk0AFwlEc=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-ppc64le/-/esbuild-linux-ppc64le-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-ppc64le%2F-%2Fesbuild-linux-ppc64le-0.14.48.tgz}
+    name: esbuild-linux-ppc64le
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [ppc64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-riscv64/0.14.48:
+    resolution: {integrity: sha1-zStzgYgLL0shpaWY+2c0khIPGKU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-riscv64/-/esbuild-linux-riscv64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-riscv64%2F-%2Fesbuild-linux-riscv64-0.14.48.tgz}
+    name: esbuild-linux-riscv64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [riscv64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-linux-s390x/0.14.48:
+    resolution: {integrity: sha1-SzGeyipcZGN/xzl/+9lnFxnNtr8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-linux-s390x/-/esbuild-linux-s390x-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-linux-s390x%2F-%2Fesbuild-linux-s390x-0.14.48.tgz}
+    name: esbuild-linux-s390x
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [s390x]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-netbsd-64/0.14.48:
+    resolution: {integrity: sha1-wnzei1y1XcwieUOhirB4+5jQrb8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-netbsd-64/-/esbuild-netbsd-64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-netbsd-64%2F-%2Fesbuild-netbsd-64-0.14.48.tgz}
+    name: esbuild-netbsd-64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [netbsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-openbsd-64/0.14.48:
+    resolution: {integrity: sha1-r1qy0ctB8JBku6lGX8i/EwkVDfE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-openbsd-64/-/esbuild-openbsd-64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-openbsd-64%2F-%2Fesbuild-openbsd-64-0.14.48.tgz}
+    name: esbuild-openbsd-64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [openbsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-sunos-64/0.14.48:
+    resolution: {integrity: sha1-2zriBSYFXPb9XEWCZ2IzgUYDrFQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-sunos-64/-/esbuild-sunos-64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-sunos-64%2F-%2Fesbuild-sunos-64-0.14.48.tgz}
+    name: esbuild-sunos-64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [sunos]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-windows-32/0.14.48:
+    resolution: {integrity: sha1-Ah/86wo/gweCYocNqIqRIpPFdHU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-windows-32/-/esbuild-windows-32-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-windows-32%2F-%2Fesbuild-windows-32-0.14.48.tgz}
+    name: esbuild-windows-32
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-windows-64/0.14.48:
+    resolution: {integrity: sha1-pNNAe1gPn6rFH2HuwJX6mF+z/uQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-windows-64/-/esbuild-windows-64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-windows-64%2F-%2Fesbuild-windows-64-0.14.48.tgz}
+    name: esbuild-windows-64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/esbuild-windows-arm64/0.14.48:
+    resolution: {integrity: sha1-diwFYhJ9iwm/two8gWRgdC3YKIA=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-windows-arm64/-/esbuild-windows-arm64-0.14.48.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-windows-arm64%2F-%2Fesbuild-windows-arm64-0.14.48.tgz}
+    name: esbuild-windows-arm64
+    version: 0.14.48
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/fast-json-stable-stringify/2.1.0:
+    resolution: {integrity: sha1-h0v2nG9ATCtdmcSBNBOZ/VWJJjM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ffast-json-stable-stringify%2F-%2Ffast-json-stable-stringify-2.1.0.tgz}
+    name: fast-json-stable-stringify
+    version: 2.1.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/fsevents/2.3.2:
+    resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/fsevents/-/fsevents-2.3.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ffsevents%2F-%2Ffsevents-2.3.2.tgz}
+    name: fsevents
+    version: 2.3.2
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/graceful-fs/4.2.9:
+    resolution: {integrity: sha1-BBsF30V1Xlh6JJQiebnRExRuHJY=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/graceful-fs/-/graceful-fs-4.2.9.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fgraceful-fs%2F-%2Fgraceful-fs-4.2.9.tgz}
+    name: graceful-fs
+    version: 4.2.9
+    requiresBuild: true
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/has-flag/4.0.0:
+    resolution: {integrity: sha1-lEdx/ZyByBJlxNaUGGDaBrtZR5s=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/has-flag/-/has-flag-4.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fhas-flag%2F-%2Fhas-flag-4.0.0.tgz}
+    name: has-flag
+    version: 4.0.0
+    engines: {node: '>=8'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/jest-util/27.5.1:
+    resolution: {integrity: sha1-O6l3Ho4xoLhdpI/gsIkfuGwBwvk=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/jest-util/-/jest-util-27.5.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fjest-util%2F-%2Fjest-util-27.5.1.tgz}
+    name: jest-util
+    version: 27.5.1
+    engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
+    dependencies:
+      '@jest/types': 27.5.1
+      '@types/node': 17.0.21
+      chalk: 4.1.2
+      ci-info: 3.3.1
+      graceful-fs: 4.2.9
+      picomatch: 2.3.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/jest-util/28.1.0:
+    resolution: {integrity: sha1-1U64Otd+HdRBQIc4xaUENkKCO+U=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/jest-util/-/jest-util-28.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fjest-util%2F-%2Fjest-util-28.1.0.tgz}
+    name: jest-util
+    version: 28.1.0
+    engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
+    dependencies:
+      '@jest/types': artifactory.intra.xiaojukeji.com/@jest/types/28.1.0
+      '@types/node': artifactory.intra.xiaojukeji.com/@types/node/17.0.21
+      chalk: artifactory.intra.xiaojukeji.com/chalk/4.1.2
+      ci-info: artifactory.intra.xiaojukeji.com/ci-info/3.3.1
+      graceful-fs: artifactory.intra.xiaojukeji.com/graceful-fs/4.2.9
+      picomatch: artifactory.intra.xiaojukeji.com/picomatch/2.3.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/json5/2.2.3:
+    resolution: {integrity: sha1-eM1vGhm9wStz21rQxh79ZsHikoM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/json5/-/json5-2.2.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fjson5%2F-%2Fjson5-2.2.3.tgz}
+    name: json5
+    version: 2.2.3
+    engines: {node: '>=6'}
+    hasBin: true
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/lodash.memoize/4.1.2:
+    resolution: {integrity: sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/lodash.memoize/-/lodash.memoize-4.1.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flodash.memoize%2F-%2Flodash.memoize-4.1.2.tgz}
+    name: lodash.memoize
+    version: 4.1.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/lru-cache/6.0.0:
+    resolution: {integrity: sha1-bW/mVw69lqr5D8rR2vo7JWbbOpQ=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/lru-cache/-/lru-cache-6.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flru-cache%2F-%2Flru-cache-6.0.0.tgz}
+    name: lru-cache
+    version: 6.0.0
+    engines: {node: '>=10'}
+    dependencies:
+      yallist: artifactory.intra.xiaojukeji.com/yallist/4.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/make-error/1.3.6:
+    resolution: {integrity: sha1-LrLjfqm2fEiR9oShOUeZr0hM96I=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/make-error/-/make-error-1.3.6.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fmake-error%2F-%2Fmake-error-1.3.6.tgz}
+    name: make-error
+    version: 1.3.6
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/picomatch/2.3.1:
+    resolution: {integrity: sha1-O6ODNzNkbZ0+SZWUbBNlpn+wekI=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/picomatch/-/picomatch-2.3.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fpicomatch%2F-%2Fpicomatch-2.3.1.tgz}
+    name: picomatch
+    version: 2.3.1
+    engines: {node: '>=8.6'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/semver/5.7.1:
+    resolution: {integrity: sha1-qVT5Ma66UI0we78Gnv8MAclhFvc=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/semver/-/semver-5.7.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsemver%2F-%2Fsemver-5.7.1.tgz}
+    name: semver
+    version: 5.7.1
+    hasBin: true
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/semver/6.3.0:
+    resolution: {integrity: sha1-7gpkyK9ejO6mdoexM3YeG+y9HT0=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/semver/-/semver-6.3.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsemver%2F-%2Fsemver-6.3.0.tgz}
+    name: semver
+    version: 6.3.0
+    hasBin: true
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/semver/7.3.7:
+    resolution: {integrity: sha1-EsW2Sa/b+QSXB3luIqQCiBTOUj8=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/semver/-/semver-7.3.7.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsemver%2F-%2Fsemver-7.3.7.tgz}
+    name: semver
+    version: 7.3.7
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: artifactory.intra.xiaojukeji.com/lru-cache/6.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/supports-color/7.2.0:
+    resolution: {integrity: sha1-G33NyzK4E4gBs+R4umpRyqiWSNo=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/supports-color/-/supports-color-7.2.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsupports-color%2F-%2Fsupports-color-7.2.0.tgz}
+    name: supports-color
+    version: 7.2.0
+    engines: {node: '>=8'}
+    dependencies:
+      has-flag: artifactory.intra.xiaojukeji.com/has-flag/4.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/ts-jest/28.0.8_uy2hwlw3b2xjbkk4v7x6v75ly4:
+    resolution: {integrity: sha1-zSBLjnoveNoyz2yVyaYWXFuZzHM=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/ts-jest/-/ts-jest-28.0.8.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fts-jest%2F-%2Fts-jest-28.0.8.tgz}
+    id: artifactory.intra.xiaojukeji.com/ts-jest/28.0.8
+    name: ts-jest
+    version: 28.0.8
+    engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
+    hasBin: true
+    peerDependencies:
+      '@babel/core': '>=7.0.0-beta.0 <8'
+      '@jest/types': ^28.0.0
+      babel-jest: ^28.0.0
+      esbuild: '*'
+      jest: ^28.0.0
+      typescript: '>=4.3'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@jest/types':
+        optional: true
+      babel-jest:
+        optional: true
+      esbuild:
+        optional: true
+    dependencies:
+      bs-logger: artifactory.intra.xiaojukeji.com/bs-logger/0.2.6
+      fast-json-stable-stringify: artifactory.intra.xiaojukeji.com/fast-json-stable-stringify/2.1.0
+      jest: 28.1.0_4hf7bxudrsp7hfzxo3chlrtwsy
+      jest-util: artifactory.intra.xiaojukeji.com/jest-util/28.1.0
+      json5: artifactory.intra.xiaojukeji.com/json5/2.2.3
+      lodash.memoize: artifactory.intra.xiaojukeji.com/lodash.memoize/4.1.2
+      make-error: artifactory.intra.xiaojukeji.com/make-error/1.3.6
+      semver: artifactory.intra.xiaojukeji.com/semver/7.3.7
+      typescript: 4.6.4
+      yargs-parser: artifactory.intra.xiaojukeji.com/yargs-parser/21.0.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/uglify-js/3.15.2:
+    resolution: {integrity: sha1-HtLJdvRIBjsfh622jHQb55lZ+VE=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/uglify-js/-/uglify-js-3.15.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fuglify-js%2F-%2Fuglify-js-3.15.2.tgz}
+    name: uglify-js
+    version: 3.15.2
+    engines: {node: '>=0.8.0'}
+    hasBin: true
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/yallist/4.0.0:
+    resolution: {integrity: sha1-m7knkNnA7/7GO+c1GeEaNQGaOnI=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/yallist/-/yallist-4.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fyallist%2F-%2Fyallist-4.0.0.tgz}
+    name: yallist
+    version: 4.0.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/yargs-parser/20.2.9:
+    resolution: {integrity: sha1-LrfcOwKJcY/ClfNidThFxBoMlO4=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/yargs-parser/-/yargs-parser-20.2.9.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fyargs-parser%2F-%2Fyargs-parser-20.2.9.tgz}
+    name: yargs-parser
+    version: 20.2.9
+    engines: {node: '>=10'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/yargs-parser/21.0.1:
+    resolution: {integrity: sha1-Amfyhsh3pPD3KPzrb4o+TLlcbjU=, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/yargs-parser/-/yargs-parser-21.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fyargs-parser%2F-%2Fyargs-parser-21.0.1.tgz}
+    name: yargs-parser
+    version: 21.0.1
+    engines: {node: '>=12'}
     dev: true
