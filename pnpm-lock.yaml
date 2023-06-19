@@ -75,7 +75,7 @@ importers:
     specifiers:
       '@exposure-lib/core': workspace:*
       '@exposure-lib/vue': workspace:*
-      '@vitejs/plugin-vue': 3.0.0
+      '@vitejs/plugin-vue': 3.2.0
       typescript: ^4.5.4
       vite: 3.0.4
       vue: ^3.2.25
@@ -87,7 +87,7 @@ importers:
     devDependencies:
       '@exposure-lib/core': link:../core
       '@exposure-lib/vue': link:../vue
-      '@vitejs/plugin-vue': 3.0.0_vite@3.0.4+vue@3.2.31
+      '@vitejs/plugin-vue': 3.2.0_vite@3.0.4+vue@3.2.31
       typescript: 4.6.4
       vite: 3.0.4
       vue-tsc: 0.38.9_typescript@4.6.4
@@ -1430,9 +1430,9 @@ packages:
       eslint-visitor-keys: 1.3.0
     dev: true
 
-  /@vitejs/plugin-vue/3.0.0_vite@3.0.4+vue@3.2.31:
-    resolution: {integrity: sha512-yWP34ArFh/jAeNUDkkLz/kVRLjf5ppJiq4L36f64Cp6dIrMQeYZGDP9xxdemlXfZR9ylN9JgHUl3GzfqOtgYDg==}
-    engines: {node: '>=14.18.0'}
+  /@vitejs/plugin-vue/3.2.0_vite@3.0.4+vue@3.2.31:
+    resolution: {integrity: sha512-E0tnaL4fr+qkdCNxJ+Xd0yM31UwMkQje76fsDVBBUCoGOUPexu2VDUYHL8P4CwV+zMvWw6nlRw19OnRKmYAJpw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
       vue: ^3.2.25
