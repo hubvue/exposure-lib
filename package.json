@@ -17,8 +17,8 @@
     "directory": "packages/*"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.0.3",
-    "@commitlint/config-conventional": "17.0.3",
+    "@commitlint/cli": "17.8.1",
+    "@commitlint/config-conventional": "17.8.1",
     "@microsoft/api-extractor": "^7.19.4",
     "@rollup/plugin-replace": "4.0.0",
     "@types/expect-puppeteer": "^4.4.7",
