@@ -15,7 +15,7 @@
     "@vitejs/plugin-vue": "3.0.0",
     "typescript": "^4.5.4",
     "vite": "3.0.4",
-    "vue-tsc": "0.38.9",
+    "vue-tsc": "0.40.13",
     "@exposure-lib/core": "workspace:*",
     "@exposure-lib/vue": "workspace:*"
   }
